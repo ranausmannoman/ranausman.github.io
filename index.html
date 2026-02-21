@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rana Usman — Technical Lead / Full Stack Architect</title>
+<meta name="description" content="Portfolio of Rana Usman — Technical Lead & Full Stack Architect. .NET Core, Vue.js, React, Cloud & DevOps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#030712;
+  --bg2:#0a0f1e;
+  --bg3:#0f1629;
+  --glass:rgba(10,15,30,0.55);
+  --glass2:rgba(15,22,41,0.7);
+  --border:rgba(139,92,246,0.08);
+  --border2:rgba(139,92,246,0.15);
+  --border3:rgba(139,92,246,0.25);
+  --text:#f1f5f9;
+  --text2:rgba(241,245,249,0.55);
+  --text3:rgba(241,245,249,0.28);
+  --dotnet:#7c3aed; /* .NET purple */
+  --dotnet2:#a78bfa;
+  --dotnet-glow:rgba(124,58,237,0.35);
+  --cyber:#06d6a0; /* AI cyan-green */
+  --cyber2:#34d399;
+  --cyber-glow:rgba(6,214,160,0.25);
+  --neon:#f472b6; /* accent pink */
+  --neon-glow:rgba(244,114,182,0.2);
+  --holo-1:#7c3aed;
+  --holo-2:#06d6a0;
+  --holo-3:#3b82f6;
+  --holo-4:#f472b6;
+  --amber:#fbbf24;
+  --amber-glow:rgba(251,191,36,0.15);
+  --r:16px;--rs:10px;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --spring:cubic-bezier(0.34,1.56,0.64,1);
+  --font:'Outfit',-apple-system,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --max:1200px;
+}
+
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--dotnet2);text-decoration:none}
+
+/* ── PRELOADER ── */
+.preloader{position:fixed;inset:0;z-index:99999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s;overflow:hidden}
+.preloader.done{opacity:0;visibility:hidden;pointer-events:none}
+#preloaderCanvas{position:absolute;inset:0;z-index:0;will-change:transform}
+.preloader-center{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.preloader-chip{width:180px;height:180px;position:relative;margin-bottom:36px;border:2px solid rgba(124,58,237,.3);border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(10,15,30,.85);box-shadow:0 0 50px rgba(124,58,237,.12),inset 0 0 30px rgba(124,58,237,.05)}
+.preloader-chip::before,.preloader-chip::after{content:'';position:absolute;background:rgba(124,58,237,.18)}
+.preloader-chip::before{width:60%;height:1px;top:-1px;left:20%}
+.preloader-chip::after{width:60%;height:1px;bottom:-1px;left:20%}
+.preloader-chip-pins{position:absolute;display:flex;gap:10px}
+.preloader-chip-pins.top{top:-12px;left:50%;transform:translateX(-50%);flex-direction:row}
+.preloader-chip-pins.bottom{bottom:-12px;left:50%;transform:translateX(-50%);flex-direction:row}
+.preloader-chip-pins.left{left:-12px;top:50%;transform:translateY(-50%);flex-direction:column}
+.preloader-chip-pins.right{right:-12px;top:50%;transform:translateY(-50%);flex-direction:column}
+.chip-pin{width:3px;height:12px;background:rgba(124,58,237,.35);border-radius:1px}
+.preloader-chip-pins.left .chip-pin,.preloader-chip-pins.right .chip-pin{width:12px;height:3px}
+.preloader-chip-label{font-family:var(--mono);font-size:1.3rem;font-weight:700;color:var(--dotnet2);text-shadow:0 0 25px var(--dotnet-glow)}
+.preloader-chip-label .b{color:var(--cyber)}
+.preloader-text{font-family:var(--mono);font-size:.82rem;color:var(--text3);letter-spacing:5px;text-transform:uppercase;margin-bottom:22px}
+.preloader-pct{font-family:var(--mono);font-size:1.1rem;color:var(--cyber);font-weight:600;margin-bottom:18px;letter-spacing:3px}
+.preloader-bar-wrap{width:300px;height:3px;background:rgba(124,58,237,.1);border-radius:100px;overflow:hidden}
+.preloader-bar{height:100%;width:0%;border-radius:100px;background:linear-gradient(90deg,var(--dotnet),var(--cyber));transition:width .3s}
+
+/* ── SCROLL PROGRESS ── */
+.scroll-progress{position:fixed;top:0;left:0;height:2px;z-index:10001;background:linear-gradient(90deg,var(--dotnet),var(--cyber),var(--neon));width:0%;box-shadow:0 0 12px var(--dotnet-glow)}
+
+/* ── CURSOR ── */
+.cursor-glow{position:fixed;width:500px;height:500px;pointer-events:none;z-index:9998;background:radial-gradient(circle,rgba(124,58,237,.06) 0%,transparent 70%);transform:translate(-50%,-50%);will-change:transform}
+
+/* ── SCANLINES ── */
+.scanlines{position:fixed;inset:0;pointer-events:none;z-index:9997;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(124,58,237,.015) 2px,rgba(124,58,237,.015) 4px);opacity:.6}
+
+/* ── GRAIN ── */
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:9999;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ── NAV ── */
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:1000;background:rgba(3,7,18,.6);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:1px solid var(--border);border-radius:100px;padding:5px 6px;transition:all .4s var(--ease)}
+nav.scrolled{background:rgba(3,7,18,.88);border-color:var(--border2);box-shadow:0 0 40px rgba(124,58,237,.08)}
+.nav-inner{display:flex;align-items:center;gap:2px}
+.nav-logo{font-family:var(--mono);font-weight:700;font-size:.82rem;padding:8px 16px;white-space:nowrap}
+.nav-logo .dot{color:var(--dotnet2)}
+.nav-logo .bracket{color:var(--cyber)}
+.nav-links{display:flex;gap:1px;list-style:none}
+.nav-links a{color:var(--text2);font-size:.8rem;font-weight:500;padding:8px 15px;border-radius:100px;transition:all .3s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:var(--text);background:rgba(124,58,237,.1)}
+.nav-toggle{display:none;background:none;border:none;color:var(--text);cursor:pointer;font-size:1.2rem;padding:8px 12px}
+
+/* ── SECTIONS ── */
+section{padding:120px 24px;position:relative;z-index:1}
+section::before{content:'';position:absolute;inset:0;background:rgba(3,7,18,0.82);z-index:-1;pointer-events:none}
+.hero::before{background:transparent}
+.container{max-width:var(--max);margin:0 auto}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.68rem;font-weight:500;text-transform:uppercase;letter-spacing:3px;color:var(--cyber);margin-bottom:16px;padding:6px 14px;border-radius:100px;background:rgba(6,214,160,.06);border:1px solid rgba(6,214,160,.15)}
+.section-label svg{width:14px;height:14px}
+.section-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:16px;line-height:1.1}
+.section-title .g{background:linear-gradient(135deg,var(--dotnet2),var(--cyber));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-subtitle{color:var(--text2);font-size:1.05rem;max-width:560px;margin-bottom:56px;line-height:1.8;text-align:justify}
+.divider{width:100%;height:1px;border:none;margin:0;background:linear-gradient(90deg,transparent,var(--border2),transparent)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+#neuralCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;will-change:transform}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(124,58,237,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse at 50% 50%,black 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 50%,black 20%,transparent 70%)}
+.hero-content{position:relative;z-index:1;max-width:800px}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(6,214,160,.06);border:1px solid rgba(6,214,160,.2);border-radius:100px;padding:8px 20px;font-size:.78rem;color:var(--cyber);font-weight:500;animation:hfade 1s var(--ease) .2s both}
+.hero-badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--cyber);position:relative}
+.hero-badge .pulse::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:var(--cyber);animation:pulsering 2s ease-out infinite}
+@keyframes pulsering{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.5);opacity:0}}
+.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:900;line-height:1.06;margin:28px 0;letter-spacing:-.04em;animation:hfade 1s var(--ease) .4s both}
+.hero .gradient-text{background:linear-gradient(135deg,var(--dotnet2),var(--cyber2),var(--neon));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% 200%;animation:gshift 8s ease infinite}
+@keyframes gshift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero .dotnet-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:1.1rem;font-weight:700;color:var(--dotnet2);background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.25);border-radius:8px;padding:8px 18px;margin-left:10px;vertical-align:middle;text-shadow:0 0 20px var(--dotnet-glow);animation:hfade 1s var(--ease) .5s both}
+.hero-desc{color:var(--text2);font-size:1.12rem;line-height:1.85;margin-bottom:40px;max-width:600px;text-align:justify;animation:hfade 1s var(--ease) .6s both}
+.hero-stats{display:flex;gap:10px;margin-bottom:44px;flex-wrap:wrap;animation:hfade 1s var(--ease) .8s both}
+@keyframes hfade{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+.stat-card{background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--rs);padding:20px 28px;transition:all .4s var(--ease);position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--dotnet2),transparent);opacity:0;transition:opacity .4s}
+.stat-card:hover{border-color:var(--border2);transform:translateY(-3px)}.stat-card:hover::before{opacity:1}
+.stat-number{font-size:1.7rem;font-weight:800;letter-spacing:-.02em;background:linear-gradient(135deg,var(--dotnet2),var(--cyber));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-family:var(--mono);font-size:.65rem;color:var(--text3);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;animation:hfade 1s var(--ease) 1s both}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;font-size:.88rem;font-weight:600;cursor:pointer;border:none;position:relative;overflow:hidden;transition:all .4s var(--ease)}
+.btn-primary{background:linear-gradient(135deg,var(--dotnet),var(--dotnet2));color:#fff;box-shadow:0 4px 28px var(--dotnet-glow)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 44px var(--dotnet-glow)}
+.btn-primary .shine{position:absolute;top:-50%;left:-75%;width:50%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transform:skewX(-20deg);animation:shine 4s ease-in-out infinite}
+@keyframes shine{0%,100%{left:-75%}50%{left:125%}}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2)}
+.btn-ghost:hover{border-color:var(--border3);background:rgba(124,58,237,.05);transform:translateY(-2px)}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:start}
+.about-text{color:var(--text2);font-size:1.02rem;line-height:1.9;text-align:justify}
+.about-text p+p{margin-top:18px}
+.about-text code{font-family:var(--mono);color:var(--dotnet2);background:rgba(124,58,237,.08);padding:2px 7px;border-radius:4px;font-size:.88em}
+.about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hl-card{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--r);padding:22px;transition:all .5s var(--ease);position:relative;overflow:hidden}
+.hl-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity .5s}
+.hl-card:nth-child(1)::after{background:linear-gradient(90deg,transparent,var(--dotnet2),transparent)}
+.hl-card:nth-child(2)::after{background:linear-gradient(90deg,transparent,var(--cyber),transparent)}
+.hl-card:nth-child(3)::after{background:linear-gradient(90deg,transparent,var(--neon),transparent)}
+.hl-card:nth-child(4)::after{background:linear-gradient(90deg,transparent,var(--amber),transparent)}
+.hl-card:hover{border-color:var(--border2);transform:translateY(-4px) scale(1.01)}.hl-card:hover::after{opacity:1}
+.hl-icon{font-size:1.3rem;margin-bottom:6px}
+.hl-val{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;margin-bottom:2px}
+.hl-lbl{font-size:.72rem;color:var(--text3);letter-spacing:.5px}
+
+/* ── BENTO TECH ── */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.bento-card{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--r);padding:26px;transition:all .5s var(--ease);position:relative;overflow:hidden;--sx:50%;--sy:50%}
+.bento-card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(350px circle at var(--sx) var(--sy),rgba(124,58,237,.06),transparent 60%);pointer-events:none;opacity:0;transition:opacity .4s}
+.bento-card:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,.3)}.bento-card:hover::after{opacity:1}
+.bento-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:14px}
+.bento-name{font-weight:700;font-size:.95rem;margin-bottom:12px}
+.bento-tags{display:flex;flex-wrap:wrap;gap:5px}
+.bento-tag{font-size:.72rem;padding:4px 11px;border-radius:100px;background:rgba(124,58,237,.05);color:var(--text2);border:1px solid var(--border);transition:all .3s var(--ease)}
+.bento-tag:hover{color:var(--dotnet2);background:rgba(124,58,237,.1);border-color:var(--border2);transform:scale(1.05)}
+
+/* ── MARQUEE ── */
+.marquee-wrap{overflow:hidden;padding:32px 0;mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent)}
+.marquee-track{display:flex;gap:20px;width:max-content;animation:mqscroll 40s linear infinite}.marquee-track:hover{animation-play-state:paused}
+@keyframes mqscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.mq-item{display:inline-flex;align-items:center;gap:9px;padding:9px 20px;border-radius:100px;background:var(--glass);border:1px solid var(--border);backdrop-filter:blur(8px);white-space:nowrap;font-size:.82rem;font-weight:500;color:var(--text2);transition:all .3s var(--ease)}
+.mq-item:hover{color:var(--text);border-color:var(--border2);background:rgba(124,58,237,.06);transform:scale(1.05)}
+.mq-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+
+/* ── PROJECTS ── */
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.proj-card{background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--r);padding:30px;cursor:pointer;position:relative;overflow:hidden;transition:all .5s var(--ease);--sx:50%;--sy:50%}
+.proj-card .holo{position:absolute;inset:-1px;border-radius:var(--r);background:conic-gradient(from 0deg,transparent,var(--dotnet),transparent,var(--cyber),transparent,var(--neon),transparent);opacity:0;transition:opacity .5s;z-index:-1;animation:holo-spin 6s linear infinite}
+@keyframes holo-spin{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(360deg)}}
+.proj-card:hover .holo{opacity:.2}
+.proj-card:hover{border-color:transparent;transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+/* spotlight on cards */
+.proj-card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(400px circle at var(--sx) var(--sy),rgba(124,58,237,.06),transparent 60%);pointer-events:none;opacity:0;transition:opacity .4s}.proj-card:hover::after{opacity:1}
+.proj-badge{font-family:var(--mono);font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--cyber);margin-bottom:10px}
+.proj-name{font-size:1.3rem;font-weight:800;margin-bottom:8px;letter-spacing:-.02em}
+.proj-desc{color:var(--text2);font-size:.9rem;line-height:1.7;margin-bottom:16px;text-align:justify}
+.proj-metrics{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.m{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;font-weight:600;padding:4px 13px;border-radius:100px}
+.m-g{color:var(--cyber);background:var(--cyber-glow);border:1px solid rgba(6,214,160,.15)}
+.m-p{color:var(--dotnet2);background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.15)}
+.m-n{color:var(--neon);background:var(--neon-glow);border:1px solid rgba(244,114,182,.15)}
+.m-a{color:var(--amber);background:var(--amber-glow);border:1px solid rgba(251,191,36,.15)}
+.proj-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+.pt{font-size:.7rem;padding:3px 10px;border-radius:100px;background:rgba(124,58,237,.04);color:var(--text3);border:1px solid var(--border)}
+.proj-expand{font-family:var(--mono);font-size:.72rem;color:var(--text3);display:flex;align-items:center;gap:6px;transition:all .3s}
+.proj-expand .arr{display:inline-block;transition:transform .4s var(--spring)}
+.proj-card.open .proj-expand .arr{transform:rotate(180deg)}
+.proj-card:hover .proj-expand{color:var(--dotnet2)}
+.proj-details{max-height:0;overflow:hidden;transition:max-height .6s var(--ease),padding .6s var(--ease)}
+.proj-card.open .proj-details{max-height:400px;padding-top:16px;margin-top:16px;border-top:1px solid var(--border)}
+.proj-details ul{list-style:none}.proj-details li{color:var(--text2);font-size:.84rem;line-height:1.7;padding:4px 0 4px 20px;position:relative}
+.proj-details li::before{content:'';position:absolute;left:5px;top:13px;width:5px;height:5px;border-radius:50%;background:var(--dotnet);box-shadow:0 0 8px var(--dotnet-glow)}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;max-width:700px}
+.timeline::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--dotnet),var(--cyber),transparent)}
+.tl-item{position:relative;padding-left:52px;margin-bottom:48px}.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:8px;top:4px;width:17px;height:17px;border-radius:50%;background:var(--bg);border:2px solid var(--dotnet);box-shadow:0 0 14px var(--dotnet-glow)}
+.tl-dot::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--dotnet)}
+.tl-date{font-family:var(--mono);font-size:.75rem;color:var(--cyber);font-weight:500;margin-bottom:6px}
+.tl-role{font-size:1.15rem;font-weight:700;margin-bottom:3px;letter-spacing:-.01em}
+.tl-co{font-size:.88rem;color:var(--text2);margin-bottom:10px}
+.tl-desc{color:var(--text2);font-size:.86rem;line-height:1.7;text-align:justify;background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--rs);padding:16px 20px}
+
+/* ── EDU ── */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.edu-card{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--r);padding:26px;transition:all .5s var(--ease)}
+.edu-card:hover{border-color:var(--border2);transform:translateY(-3px)}
+.edu-deg{font-size:1.02rem;font-weight:700;margin-bottom:5px}
+.edu-sch{color:var(--text2);font-size:.88rem}
+.edu-yr{font-family:var(--mono);color:var(--dotnet2);font-size:.8rem;font-weight:500;margin-top:10px}
+
+/* ── CONTACT ── */
+.contact-section{position:relative;overflow:hidden}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.c-info{display:flex;flex-direction:column;gap:18px}
+.c-item{display:flex;align-items:center;gap:14px;color:var(--text2);font-size:.92rem}
+.c-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.12);color:var(--dotnet2)}
+.c-links{display:flex;gap:12px;flex-wrap:wrap}
+.c-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:100px;background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);color:var(--text);font-size:.88rem;font-weight:500;transition:all .4s var(--ease)}
+.c-btn:hover{border-color:var(--dotnet);color:var(--dotnet2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(124,58,237,.12)}
+.c-btn svg{width:18px;height:18px}
+
+footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:var(--text3);font-size:.78rem}
+footer .h{color:var(--neon);display:inline-block;animation:hb 2s ease infinite}
+@keyframes hb{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
+
+/* ── ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.reveal.v{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}
+.stag>*{opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.stag.v>*:nth-child(1){transition-delay:0s}.stag.v>*:nth-child(2){transition-delay:.07s}.stag.v>*:nth-child(3){transition-delay:.14s}.stag.v>*:nth-child(4){transition-delay:.21s}.stag.v>*:nth-child(5){transition-delay:.28s}.stag.v>*:nth-child(6){transition-delay:.35s}
+.stag.v>*{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{width:calc(100% - 32px)}
+  .nav-links{display:none;position:absolute;top:54px;left:0;right:0;background:rgba(3,7,18,.95);backdrop-filter:blur(20px);flex-direction:column;padding:14px;gap:4px;border-radius:0 0 var(--r) var(--r);border:1px solid var(--border);border-top:none}
+  .nav-links.open{display:flex}.nav-toggle{display:block}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .bento{grid-template-columns:1fr 1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .edu-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:28px}
+  section{padding:80px 24px}
+  .cursor-glow,.scanlines{display:none}
+}
+@media(max-width:600px){
+  .bento{grid-template-columns:1fr}
+  .hero-stats{flex-direction:column;gap:10px}.stat-card{width:100%}
+  .about-highlights{grid-template-columns:1fr}
+  .hero-cta{flex-direction:column}.btn{width:100%;justify-content:center}
+  section{padding:60px 16px}
+  .marquee-track{animation-duration:22s}
+}
+</style>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+  <canvas id="preloaderCanvas"></canvas>
+  <div class="preloader-center">
+    <div class="preloader-chip">
+      <div class="preloader-chip-pins top"><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span></div>
+      <div class="preloader-chip-pins bottom"><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span></div>
+      <div class="preloader-chip-pins left"><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span></div>
+      <div class="preloader-chip-pins right"><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span></div>
+      <div class="preloader-chip-label"><span class="b">{</span> .NET <span class="b">}</span></div>
+    </div>
+    <div class="preloader-text">Initializing system</div>
+    <div class="preloader-pct" id="preloaderPct">0%</div>
+    <div class="preloader-bar-wrap"><div class="preloader-bar" id="preloaderBar"></div></div>
+  </div>
+</div>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="scanlines"></div>
+<div class="grain"></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><span class="bracket">{</span> <span class="dot">.NET</span> <span class="bracket">}</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#tech">Stack</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<!-- NEURAL NETWORK BACKGROUND (full page) -->
+<canvas id="neuralCanvas"></canvas>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-grid"></div>
+  <div class="container hero-content">
+    <div class="hero-badge"><span class="pulse"></span> Available for opportunities</div>
+    <h1>I'm <span class="gradient-text">Rana Usman</span>,<br>Technical Lead &amp;<br>Full Stack Architect <span class="dotnet-badge">.NET</span></h1>
+    <p class="hero-desc">
+      I architect enterprise SaaS platforms powered by .NET Core, AI-driven workflows, Vue.js, React, and Cloud infrastructure.
+      6+ years delivering scalable, intelligent solutions for international clients across the US, Indonesia, and Australia.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="stat-number">6+</div><div class="stat-label">Years Exp</div></div>
+      <div class="stat-card"><div class="stat-number">8+</div><div class="stat-label">Projects</div></div>
+      <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Countries</div></div>
+      <div class="stat-card"><div class="stat-number">75%</div><div class="stat-label">Optimized</div></div>
+    </div>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary"><span class="shine"></span>View Projects</a>
+      <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> about</span>
+      <h2 class="section-title">Building <span class="g">Intelligent Systems</span>,<br>One Architecture at a Time</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal rd1">
+        <p>I'm a Technical Lead and Full Stack Architect specializing in the <code>.NET</code> ecosystem with deep expertise across the entire stack &mdash; from component-driven front-end interfaces to high-performance APIs, optimized databases, and automated CI/CD pipelines.</p>
+        <p>My approach centers on <code>Domain-Driven Design</code>, microservices patterns, and <code>Test-Driven Development</code> to deliver systems that scale. I've led cross-functional teams, mentored engineers, and served as the primary technical contact for enterprise clients spanning healthcare, finance, hiring, IoT, and gaming.</p>
+        <p>Currently based in Lahore, Pakistan, I work with international teams across time zones, having delivered onsite engagements in Indonesia and served clients in the US and Australia.</p>
+      </div>
+      <div class="about-highlights stag reveal rd2">
+        <div class="hl-card"><div class="hl-icon">&#9889;</div><div class="hl-val" style="color:var(--cyber)">75%</div><div class="hl-lbl">Faster Processing</div></div>
+        <div class="hl-card"><div class="hl-icon">&#128640;</div><div class="hl-val" style="color:var(--neon)">50%</div><div class="hl-lbl">Verification Time Cut</div></div>
+        <div class="hl-card"><div class="hl-icon">&#127758;</div><div class="hl-val" style="color:var(--dotnet2)">3</div><div class="hl-lbl">Global Deployments</div></div>
+        <div class="hl-card"><div class="hl-icon">&#128187;</div><div class="hl-val" style="color:var(--amber)">100K+</div><div class="hl-lbl">Daily Transactions</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- TECH -->
+<section id="tech">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg> tech stack</span>
+      <h2 class="section-title">Technologies <span class="g">I Work With</span></h2>
+      <p class="section-subtitle">A comprehensive toolkit built across 6+ years of enterprise-grade .NET and full stack development.</p>
+    </div>
+    <div class="bento stag reveal">
+      <div class="bento-card"><div class="bento-icon" style="background:rgba(124,58,237,.1);color:var(--dotnet2)">&#9881;</div><div class="bento-name">Backend &amp; APIs</div><div class="bento-tags"><span class="bento-tag">C#</span><span class="bento-tag">ASP.NET Core</span><span class="bento-tag">.NET 5/6/7/8</span><span class="bento-tag">REST API</span><span class="bento-tag">GraphQL</span><span class="bento-tag">SignalR</span><span class="bento-tag">RabbitMQ</span><span class="bento-tag">Laravel</span><span class="bento-tag">Node.js</span></div></div>
+      <div class="bento-card"><div class="bento-icon" style="background:rgba(6,214,160,.1);color:var(--cyber)">&#9674;</div><div class="bento-name">Frontend</div><div class="bento-tags"><span class="bento-tag">Vue.js</span><span class="bento-tag">React</span><span class="bento-tag">Angular</span><span class="bento-tag">TypeScript</span><span class="bento-tag">JavaScript</span><span class="bento-tag">Blazor</span><span class="bento-tag">Razor Pages</span><span class="bento-tag">HTML5/CSS3</span></div></div>
+      <div class="bento-card"><div class="bento-icon" style="background:rgba(244,114,182,.1);color:var(--neon)">&#9729;</div><div class="bento-name">Cloud &amp; DevOps</div><div class="bento-tags"><span class="bento-tag">Azure</span><span class="bento-tag">AWS</span><span class="bento-tag">Docker</span><span class="bento-tag">Azure DevOps</span><span class="bento-tag">CI/CD</span><span class="bento-tag">Git</span><span class="bento-tag">Linux</span><span class="bento-tag">Bash</span></div></div>
+      <div class="bento-card"><div class="bento-icon" style="background:rgba(251,191,36,.1);color:var(--amber)">&#9776;</div><div class="bento-name">Databases</div><div class="bento-tags"><span class="bento-tag">SQL Server</span><span class="bento-tag">PostgreSQL</span><span class="bento-tag">MySQL</span><span class="bento-tag">MongoDB</span><span class="bento-tag">EF Core</span><span class="bento-tag">Dapper</span><span class="bento-tag">ADO.NET</span><span class="bento-tag">LINQ</span></div></div>
+      <div class="bento-card"><div class="bento-icon" style="background:rgba(59,130,246,.1);color:var(--holo-3)">&#9670;</div><div class="bento-name">Architecture</div><div class="bento-tags"><span class="bento-tag">DDD</span><span class="bento-tag">Microservices</span><span class="bento-tag">Clean Architecture</span><span class="bento-tag">SOLID</span><span class="bento-tag">TDD</span><span class="bento-tag">xUnit/NUnit</span><span class="bento-tag">Design Patterns</span></div></div>
+      <div class="bento-card"><div class="bento-icon" style="background:rgba(124,58,237,.1);color:var(--dotnet2)">&#9742;</div><div class="bento-name">Mobile &amp; More</div><div class="bento-tags"><span class="bento-tag">Xamarin</span><span class="bento-tag">.NET MAUI</span><span class="bento-tag">Flutter</span><span class="bento-tag">HL7/FHIR</span><span class="bento-tag">Dynatrace</span><span class="bento-tag">Power BI</span></div></div>
+    </div>
+    <!-- MARQUEE -->
+    <div class="marquee-wrap reveal" style="margin-top:44px">
+      <div class="marquee-track" id="mq">
+        <span class="mq-item"><span class="mq-dot" style="background:var(--dotnet)"></span>C#</span><span class="mq-item"><span class="mq-dot" style="background:var(--cyber)"></span>ASP.NET Core</span><span class="mq-item"><span class="mq-dot" style="background:var(--neon)"></span>Vue.js</span><span class="mq-item"><span class="mq-dot" style="background:var(--amber)"></span>React</span><span class="mq-item"><span class="mq-dot" style="background:var(--holo-3)"></span>GraphQL</span><span class="mq-item"><span class="mq-dot" style="background:var(--dotnet)"></span>TypeScript</span><span class="mq-item"><span class="mq-dot" style="background:var(--cyber)"></span>Azure</span><span class="mq-item"><span class="mq-dot" style="background:var(--neon)"></span>Docker</span><span class="mq-item"><span class="mq-dot" style="background:var(--amber)"></span>SQL Server</span><span class="mq-item"><span class="mq-dot" style="background:var(--holo-3)"></span>MongoDB</span><span class="mq-item"><span class="mq-dot" style="background:var(--dotnet)"></span>Microservices</span><span class="mq-item"><span class="mq-dot" style="background:var(--cyber)"></span>DDD</span><span class="mq-item"><span class="mq-dot" style="background:var(--neon)"></span>CI/CD</span><span class="mq-item"><span class="mq-dot" style="background:var(--amber)"></span>AWS</span><span class="mq-item"><span class="mq-dot" style="background:var(--holo-3)"></span>SignalR</span><span class="mq-item"><span class="mq-dot" style="background:var(--dotnet)"></span>EF Core</span>
+        <!-- duplicate -->
+        <span class="mq-item"><span class="mq-dot" style="background:var(--dotnet)"></span>C#</span><span class="mq-item"><span class="mq-dot" style="background:var(--cyber)"></span>ASP.NET Core</span><span class="mq-item"><span class="mq-dot" style="background:var(--neon)"></span>Vue.js</span><span class="mq-item"><span class="mq-dot" style="background:var(--amber)"></span>React</span><span class="mq-item"><span class="mq-dot" style="background:var(--holo-3)"></span>GraphQL</span><span class="mq-item"><span class="mq-dot" style="background:var(--dotnet)"></span>TypeScript</span><span class="mq-item"><span class="mq-dot" style="background:var(--cyber)"></span>Azure</span><span class="mq-item"><span class="mq-dot" style="background:var(--neon)"></span>Docker</span><span class="mq-item"><span class="mq-dot" style="background:var(--amber)"></span>SQL Server</span><span class="mq-item"><span class="mq-dot" style="background:var(--holo-3)"></span>MongoDB</span><span class="mq-item"><span class="mq-dot" style="background:var(--dotnet)"></span>Microservices</span><span class="mq-item"><span class="mq-dot" style="background:var(--cyber)"></span>DDD</span><span class="mq-item"><span class="mq-dot" style="background:var(--neon)"></span>CI/CD</span><span class="mq-item"><span class="mq-dot" style="background:var(--amber)"></span>AWS</span><span class="mq-item"><span class="mq-dot" style="background:var(--holo-3)"></span>SignalR</span><span class="mq-item"><span class="mq-dot" style="background:var(--dotnet)"></span>EF Core</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg> projects</span>
+      <h2 class="section-title">Things <span class="g">I've Built</span></h2>
+      <p class="section-subtitle">Enterprise systems serving thousands of users across healthcare, finance, hiring, IoT, and gaming.</p>
+    </div>
+    <div class="proj-grid stag reveal">
+
+      <div class="proj-card" onclick="this.classList.toggle('open')"><div class="holo"></div>
+        <div class="proj-badge">SaaS Platform &middot; US</div>
+        <div class="proj-name">SNAPChef</div>
+        <div class="proj-desc">Enterprise hiring platform streamlining restaurant recruitment across the US, replacing third-party SaaS workflows.</div>
+        <div class="proj-metrics"><span class="m m-g">75% Faster Processing</span><span class="m m-p">50% Faster Verification</span></div>
+        <div class="proj-tags"><span class="pt">C#</span><span class="pt">ASP.NET Core</span><span class="pt">.NET 8</span><span class="pt">Vue.js</span><span class="pt">React</span><span class="pt">GraphQL</span><span class="pt">SQL Server</span><span class="pt">MongoDB</span><span class="pt">Docker</span><span class="pt">Azure DevOps</span></div>
+        <span class="proj-expand">$ view_details <span class="arr">&#8595;</span></span>
+        <div class="proj-details"><ul><li>Led full-stack architecture across web, mobile (Xamarin/.NET MAUI), APIs (GraphQL), and databases</li><li>Architected automated document processing pipelines, eliminating manual data entry for thousands of users</li><li>Engineered secure E-Verify / I-9 integration with US Government systems</li><li>Designed DDD-based modular architecture that scaled seamlessly with growing traffic</li><li>Configured CI/CD pipelines for automated multi-environment deployments</li><li>Replaced Clear Company SaaS workflows, significantly reducing licensing costs</li><li>Mentored junior developers on architecture, testing, and best practices</li></ul></div>
+      </div>
+
+      <div class="proj-card" onclick="this.classList.toggle('open')"><div class="holo"></div>
+        <div class="proj-badge">Enterprise Finance &middot; International</div>
+        <div class="proj-name">NETSOL Financial Suite</div>
+        <div class="proj-desc">Large-scale SaaS for leasing and asset finance with two international deployments: Summit OTO and MAPLE.</div>
+        <div class="proj-metrics"><span class="m m-a">2 International Deployments</span></div>
+        <div class="proj-tags"><span class="pt">C#</span><span class="pt">.NET Framework</span><span class="pt">Vue.js</span><span class="pt">REST APIs</span><span class="pt">SQL Server</span><span class="pt">Dynatrace</span></div>
+        <span class="proj-expand">$ view_details <span class="arr">&#8595;</span></span>
+        <div class="proj-details"><ul><li>Applied DDD and SOLID principles to architect modular financial workflow engines</li><li>Handled complex leasing calculations, contract lifecycle management, and regulatory compliance</li><li>Optimized performance using Dynatrace and Fiddler profiling under heavy transactional loads</li><li>Provided 6-month onsite production support in Jakarta, Indonesia</li><li>Developed stored procedures and scripts for financial reporting and reconciliation</li></ul></div>
+      </div>
+
+      <div class="proj-card" onclick="this.classList.toggle('open')"><div class="holo"></div>
+        <div class="proj-badge">Healthcare &middot; EHR</div>
+        <div class="proj-name">eDermX</div>
+        <div class="proj-desc">Comprehensive dermatology practice management system integrating EHR, scheduling, and insurance verification.</div>
+        <div class="proj-metrics"><span class="m m-n">HL7/FHIR Compliant</span></div>
+        <div class="proj-tags"><span class="pt">.NET MVC 5</span><span class="pt">HL7</span><span class="pt">FHIR</span><span class="pt">jQuery</span><span class="pt">AWS</span><span class="pt">SQL Server</span></div>
+        <span class="proj-expand">$ view_details <span class="arr">&#8595;</span></span>
+        <div class="proj-details"><ul><li>Architected modular, independently subscribable Practice Management and EHR components</li><li>Implemented ADT, SIU, and DFT HL7 messaging for seamless healthcare data exchange</li><li>Integrated ICD, CPT, and RxNorm coding systems for compliance accuracy</li></ul></div>
+      </div>
+
+      <div class="proj-card" onclick="this.classList.toggle('open')"><div class="holo"></div>
+        <div class="proj-badge">IoT &middot; Government</div>
+        <div class="proj-name">SWGNP Research Portal</div>
+        <div class="proj-desc">IoT portal integrating remote sensing devices, handling millions of observation records for government stakeholders.</div>
+        <div class="proj-metrics"><span class="m m-p">Millions of Records</span></div>
+        <div class="proj-tags"><span class="pt">.NET Core 3.1</span><span class="pt">EF Core</span><span class="pt">IdentityServer4</span><span class="pt">Azure</span><span class="pt">PostgreSQL</span></div>
+        <span class="proj-expand">$ view_details <span class="arr">&#8595;</span></span>
+        <div class="proj-details"><ul><li>Redesigned from a specialized system to a general-purpose IoT portal</li><li>Led back-end architecture for high-performance data processing and system reliability</li><li>Collaborated with government clients to define SRS for optimal functionality</li></ul></div>
+      </div>
+
+      <div class="proj-card" onclick="this.classList.toggle('open')"><div class="holo"></div>
+        <div class="proj-badge">Real-Time &middot; Gaming (NDA)</div>
+        <div class="proj-name">Entertainment Automation</div>
+        <div class="proj-desc">Real-time hardware-to-server communication suite for a 24/7 gaming platform.</div>
+        <div class="proj-metrics"><span class="m m-g">0% Accounting Errors</span><span class="m m-a">100K+ Daily Bets</span></div>
+        <div class="proj-tags"><span class="pt">.NET Framework</span><span class="pt">SignalR</span><span class="pt">WPF</span><span class="pt">MVVM</span><span class="pt">SQL Server</span><span class="pt">AWS</span></div>
+        <span class="proj-expand">$ view_details <span class="arr">&#8595;</span></span>
+        <div class="proj-details"><ul><li>24/7 uptime processing 100K+ player-bets daily with zero accounting errors</li><li>Developed game configuration modules and reporting within an international team</li></ul></div>
+      </div>
+
+      <div class="proj-card" onclick="this.classList.toggle('open')"><div class="holo"></div>
+        <div class="proj-badge">Enterprise &middot; Construction</div>
+        <div class="proj-name">SGAM Account Management</div>
+        <div class="proj-desc">Account management portal with hierarchical ledgers and offline transaction support.</div>
+        <div class="proj-metrics"><span class="m m-n">Full Architecture Ownership</span></div>
+        <div class="proj-tags"><span class="pt">.NET 6</span><span class="pt">EF Core 6</span><span class="pt">AWS Lambda</span><span class="pt">PostgreSQL</span></div>
+        <span class="proj-expand">$ view_details <span class="arr">&#8595;</span></span>
+        <div class="proj-details"><ul><li>Designed full application architecture as team lead</li><li>Built hierarchical ledger system with offline transaction support</li><li>Implemented Google and Microsoft OAuth authentication</li></ul></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> experience</span>
+      <h2 class="section-title">Where <span class="g">I've Worked</span></h2>
+    </div>
+    <div class="timeline reveal rd1">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">March 2023 &mdash; Present</div>
+        <div class="tl-role">Senior Full Stack Engineer / Technical Lead</div>
+        <div class="tl-co">PureLogics &mdash; Lahore, Pakistan</div>
+        <div class="tl-desc">Led architecture and full-stack development of SNAPChef SaaS platform. Primary technical point of contact for US-based international clients. Drove TDD, code reviews, CI/CD automation, and Agile sprint planning.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">February 2020 &mdash; March 2023</div>
+        <div class="tl-role">Full Stack Software Engineer</div>
+        <div class="tl-co">NETSOL Technologies &mdash; Lahore, Pakistan</div>
+        <div class="tl-desc">Developed core modules for NETSOL Financial Suite with deployments in Indonesia and Australia. Provided 6-month onsite production support in Jakarta, managing UAT cycles, deployments, and client escalations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg> education</span>
+      <h2 class="section-title">Academic <span class="g">Background</span></h2>
+    </div>
+    <div class="edu-grid stag reveal rd1">
+      <div class="edu-card"><div class="edu-deg">M.Sc. Business Information System Management</div><div class="edu-sch">Middlesex University, Mauritius</div><div class="edu-yr">2020</div></div>
+      <div class="edu-card"><div class="edu-deg">B.Sc. Information Technology</div><div class="edu-sch">PUCIT, Punjab University, Pakistan</div><div class="edu-yr">2018</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="container" style="position:relative;z-index:1">
+    <div class="reveal">
+      <span class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> contact</span>
+      <h2 class="section-title">Let's <span class="g">Work Together</span></h2>
+      <p class="section-subtitle">Have a project in mind or want to discuss architecture? I'd love to connect.</p>
+    </div>
+    <div class="contact-grid reveal rd1">
+      <div class="c-info">
+        <div class="c-item"><div class="c-icon">&#9993;</div><div><div style="color:var(--text);font-weight:600;margin-bottom:2px">Email</div><a href="mailto:ranausmannoman@gmail.com">ranausmannoman@gmail.com</a></div></div>
+        <div class="c-item"><div class="c-icon">&#9742;</div><div><div style="color:var(--text);font-weight:600;margin-bottom:2px">Phone</div><span style="color:var(--text2)">+92 333 3799535</span></div></div>
+        <div class="c-item"><div class="c-icon">&#9872;</div><div><div style="color:var(--text);font-weight:600;margin-bottom:2px">Location</div><span style="color:var(--text2)">Lahore, Punjab, Pakistan</span></div></div>
+      </div>
+      <div class="c-links">
+        <a href="https://www.linkedin.com/in/ranausman008/" class="c-btn" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+        <a href="mailto:ranausmannoman@gmail.com" class="c-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>Email Me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">&copy; 2026 Rana Usman. Built with <span class="h">&#9829;</span> and <span class="dn">.NET</span></div>
+</footer>
+
+<script>
+// ══════════ NEURAL NETWORK CANVAS (full page) ══════════
+const canvas = document.getElementById('neuralCanvas');
+const ctx = canvas.getContext('2d');
+let W, H, nodes = [], mouse = {x: -999, y: -999};
+let scrollY = 0;
+
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+window.addEventListener('scroll', () => { scrollY = window.pageYOffset; }, {passive:true});
+
+// Create nodes — more nodes to fill full viewport
+for (let i = 0; i < 100; i++) {
+  nodes.push({
+    x: Math.random() * W, y: Math.random() * H,
+    vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
+    r: Math.random() * 2 + 1,
+    color: ['rgba(124,58,237,','rgba(6,214,160,','rgba(244,114,182,','rgba(59,130,246,'][Math.floor(Math.random()*4)]
+  });
+}
+
+document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+
+// Hero emit pulse: smooth sinusoidal cycle every 5 seconds
+let heroEmit = 0;
+const HERO_CYCLE = 5;
+
+function smoothstep(x) { return x * x * (3 - 2 * x); }
+
+function drawNet() {
+  ctx.clearRect(0, 0, W, H);
+  const t = Date.now() * 0.001;
+
+  // Smooth sinusoidal emit cycle: rises, peaks, fades, rests
+  const cyc = (t % HERO_CYCLE) / HERO_CYCLE;
+  let emitTarget = 0;
+  if (cyc < 0.35) emitTarget = smoothstep(cyc / 0.35);
+  else if (cyc < 0.5) emitTarget = 1;
+  else if (cyc < 0.85) emitTarget = smoothstep(1 - (cyc - 0.5) / 0.35);
+  heroEmit += (emitTarget - heroEmit) * 0.12; // faster lerp = smoother tracking
+  const em = heroEmit;
+
+  // ── Radial light emission ──
+  if (em > 0.02) {
+    const grad = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, W * 0.55);
+    grad.addColorStop(0, `rgba(124,58,237,${0.12 * em})`);
+    grad.addColorStop(0.35, `rgba(6,214,160,${0.06 * em})`);
+    grad.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  // Update positions
+  nodes.forEach(n => {
+    n.x += n.vx; n.y += n.vy;
+    if (n.x < 0 || n.x > W) n.vx *= -1;
+    if (n.y < 0 || n.y > H) n.vy *= -1;
+    const dx = mouse.x - n.x, dy = mouse.y - n.y;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    if (dist < 220) { n.vx += dx * 0.00006; n.vy += dy * 0.00006; }
+  });
+
+  // ── Connection lines ──
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      const maxDist = 160 + em * 40;
+      if (dist < maxDist) {
+        const baseAlpha = (1 - dist / maxDist) * (0.15 + em * 0.3);
+        ctx.beginPath();
+        ctx.moveTo(nodes[i].x, nodes[i].y);
+        ctx.lineTo(nodes[j].x, nodes[j].y);
+        if (em > 0.3) {
+          const g = (em - 0.3) / 0.7;
+          ctx.strokeStyle = `rgba(${Math.round(124 - 118*g)},${Math.round(58 + 156*g)},${Math.round(237 - 77*g)},${baseAlpha})`;
+          ctx.lineWidth = 0.5 + em * 0.8;
+        } else {
+          ctx.strokeStyle = `rgba(124,58,237,${baseAlpha})`;
+          ctx.lineWidth = 0.5;
+        }
+        ctx.stroke();
+
+        // Data pulses along connections during emit
+        if (em > 0.15 && (i + j) % 4 === 0) {
+          const speed = 1.5 + em * 2.5;
+          const prog = (Math.sin(t * speed + i * 0.7 + j * 0.3) + 1) / 2;
+          const ppx = nodes[i].x + (nodes[j].x - nodes[i].x) * prog;
+          const ppy = nodes[i].y + (nodes[j].y - nodes[i].y) * prog;
+          ctx.beginPath();
+          ctx.arc(ppx, ppy, 1.2 + em * 1.5, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(6,214,160,${0.25 + em * 0.45})`;
+          ctx.fill();
+        }
+      }
+    }
+  }
+
+  // ── Nodes with emit-reactive glow ──
+  nodes.forEach(n => {
+    const nodeR = n.r + em * 1;
+
+    // Emission aura
+    if (em > 0.1) {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, nodeR + 10 + em * 8, 0, Math.PI * 2);
+      ctx.fillStyle = n.color + (0.02 * em) + ')';
+      ctx.fill();
+    }
+
+    // Outer glow
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, nodeR + 3 + em * 3, 0, Math.PI * 2);
+    ctx.fillStyle = n.color + (0.08 + em * 0.1) + ')';
+    ctx.fill();
+
+    // Core
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, nodeR, 0, Math.PI * 2);
+    ctx.fillStyle = n.color + (0.5 + em * 0.35) + ')';
+    ctx.fill();
+
+    // White center at peak emit
+    if (em > 0.5) {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, nodeR * 0.45, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,255,255,${(em - 0.5) * 0.5})`;
+      ctx.fill();
+    }
+  });
+
+  requestAnimationFrame(drawNet);
+}
+drawNet();
+
+// ══════════ PRELOADER ══════════
+const preloader = document.getElementById('preloader');
+const pBar = document.getElementById('preloaderBar');
+const pPct = document.getElementById('preloaderPct');
+let loadProgress = 0;
+
+// ── Preloader Neural Network (brightens with load progress) ──
+(function(){
+  const pc = document.getElementById('preloaderCanvas');
+  const px = pc.getContext('2d');
+  let W, H, pNodes = [];
+
+  function resize() { W = pc.width = window.innerWidth; H = pc.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (let i = 0; i < 100; i++) {
+    pNodes.push({
+      x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight,
+      vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
+      r: Math.random() * 2 + 1,
+      color: ['rgba(124,58,237,','rgba(6,214,160,','rgba(244,114,182,','rgba(59,130,246,'][Math.floor(Math.random()*4)]
+    });
+  }
+
+  let preAnimId;
+  let smoothEm = 0;
+
+  function drawPreNet() {
+    px.clearRect(0, 0, W, H);
+    const t = Date.now() * 0.001;
+    const lp = loadProgress / 100;
+    const targetEm = lp;
+    smoothEm += (targetEm - smoothEm) * 0.08;
+    const em = smoothEm;
+
+    if (em > 0.02) {
+      const grad = px.createRadialGradient(W/2, H/2, 0, W/2, H/2, W * 0.55);
+      grad.addColorStop(0, `rgba(124,58,237,${0.12 * em})`);
+      grad.addColorStop(0.35, `rgba(6,214,160,${0.06 * em})`);
+      grad.addColorStop(1, 'rgba(0,0,0,0)');
+      px.fillStyle = grad;
+      px.fillRect(0, 0, W, H);
+    }
+
+    pNodes.forEach(n => {
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+      const dx = mouse.x - n.x, dy = mouse.y - n.y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 220) { n.vx += dx * 0.00006; n.vy += dy * 0.00006; }
+    });
+
+    for (let i = 0; i < pNodes.length; i++) {
+      for (let j = i + 1; j < pNodes.length; j++) {
+        const dx = pNodes[i].x - pNodes[j].x, dy = pNodes[i].y - pNodes[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        const maxDist = 160 + em * 40;
+        if (dist < maxDist) {
+          const baseAlpha = (1 - dist / maxDist) * (0.15 + em * 0.3);
+          px.beginPath();
+          px.moveTo(pNodes[i].x, pNodes[i].y);
+          px.lineTo(pNodes[j].x, pNodes[j].y);
+          if (em > 0.3) {
+            const g = (em - 0.3) / 0.7;
+            px.strokeStyle = `rgba(${Math.round(124-118*g)},${Math.round(58+156*g)},${Math.round(237-77*g)},${baseAlpha})`;
+            px.lineWidth = 0.5 + em * 0.8;
+          } else {
+            px.strokeStyle = `rgba(124,58,237,${baseAlpha})`;
+            px.lineWidth = 0.5;
+          }
+          px.stroke();
+
+          if (em > 0.15 && (i + j) % 4 === 0) {
+            const speed = 1.5 + em * 2.5;
+            const prog = (Math.sin(t * speed + i * 0.7 + j * 0.3) + 1) / 2;
+            const ppx = pNodes[i].x + (pNodes[j].x - pNodes[i].x) * prog;
+            const ppy = pNodes[i].y + (pNodes[j].y - pNodes[i].y) * prog;
+            px.beginPath();
+            px.arc(ppx, ppy, 1.2 + em * 1.5, 0, Math.PI * 2);
+            px.fillStyle = `rgba(6,214,160,${0.25 + em * 0.45})`;
+            px.fill();
+          }
+        }
+      }
+    }
+
+    pNodes.forEach(n => {
+      const nodeR = n.r + em * 1;
+      if (em > 0.1) {
+        px.beginPath();
+        px.arc(n.x, n.y, nodeR + 10 + em * 8, 0, Math.PI * 2);
+        px.fillStyle = n.color + (0.02 * em) + ')';
+        px.fill();
+      }
+      px.beginPath();
+      px.arc(n.x, n.y, nodeR + 3 + em * 3, 0, Math.PI * 2);
+      px.fillStyle = n.color + (0.08 + em * 0.1) + ')';
+      px.fill();
+      px.beginPath();
+      px.arc(n.x, n.y, nodeR, 0, Math.PI * 2);
+      px.fillStyle = n.color + (0.5 + em * 0.35) + ')';
+      px.fill();
+      if (em > 0.5) {
+        px.beginPath();
+        px.arc(n.x, n.y, nodeR * 0.45, 0, Math.PI * 2);
+        px.fillStyle = `rgba(255,255,255,${(em - 0.5) * 0.5})`;
+        px.fill();
+      }
+    });
+
+    preAnimId = requestAnimationFrame(drawPreNet);
+  }
+  drawPreNet();
+
+  window._stopPreloaderAnim = function() { cancelAnimationFrame(preAnimId); };
+})();
+
+// ── Progress ──
+let lp = 0, li;
+li = setInterval(() => {
+  lp += Math.random() * 14 + 5;
+  if (lp > 100) lp = 100;
+  loadProgress = lp;
+  pBar.style.width = lp + '%';
+  pPct.textContent = Math.round(lp) + '%';
+  if (lp >= 100) {
+    clearInterval(li);
+    setTimeout(() => {
+      preloader.classList.add('done');
+      if (window._stopPreloaderAnim) window._stopPreloaderAnim();
+    }, 700);
+  }
+}, 260);
+
+// ══════════ SCROLL PROGRESS ══════════
+const spEl = document.getElementById('scrollProgress');
+
+// ══════════ CURSOR GLOW ══════════
+const glow = document.getElementById('cursorGlow');
+let gx = 0, gy = 0;
+function ag() {
+  gx += (mouse.x - gx) * 0.06;
+  gy += (mouse.y - gy) * 0.06;
+  glow.style.transform = `translate(${gx-250}px,${gy-250}px)`;
+  requestAnimationFrame(ag);
+}
+ag();
+
+// ══════════ NAV ══════════
+const nav = document.getElementById('mainNav');
+document.getElementById('navToggle').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+
+// ══════════ UNIFIED SCROLL ══════════
+const secs = document.querySelectorAll('section[id]');
+const nls = document.querySelectorAll('.nav-links a');
+let tick = false;
+window.addEventListener('scroll', () => {
+  if (!tick) {
+    requestAnimationFrame(() => {
+      const sy = window.scrollY;
+      nav.classList.toggle('scrolled', sy > 50);
+      // Progress
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      spEl.style.width = (dh > 0 ? (sy / dh) * 100 : 0) + '%';
+      // Active link
+      let cur = '';
+      secs.forEach(s => { if (sy + 120 >= s.offsetTop) cur = s.id; });
+      nls.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + cur));
+      tick = false;
+    });
+    tick = true;
+  }
+});
+
+// ══════════ REVEAL ══════════
+const ro = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal,.stag').forEach(el => ro.observe(el));
+
+// ══════════ COUNTER ══════════
+const co = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (e.isIntersecting && !e.target.dataset.a) {
+      e.target.dataset.a = '1';
+      const t = e.target.innerText, n = parseInt(t);
+      if (isNaN(n)) return;
+      const s = t.replace(/[\d]/g, ''), dur = 1200, st = performance.now();
+      function eq(t) { return 1 - Math.pow(1 - t, 4); }
+      function tk(now) {
+        const p = Math.min((now - st) / dur, 1);
+        e.target.innerText = Math.round(eq(p) * n) + s;
+        if (p < 1) requestAnimationFrame(tk);
+      }
+      requestAnimationFrame(tk);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-number,.hl-val').forEach(el => co.observe(el));
+
+// ══════════ 3D TILT + SPOTLIGHT ══════════
+document.querySelectorAll('.proj-card,.bento-card,.hl-card,.stat-card').forEach(c => {
+  c.addEventListener('mousemove', e => {
+    const r = c.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - .5;
+    const y = (e.clientY - r.top) / r.height - .5;
+    c.style.transform = `perspective(800px) rotateX(${-y*8}deg) rotateY(${x*8}deg) translateY(-4px) scale(1.01)`;
+    c.style.setProperty('--sx', ((e.clientX-r.left)/r.width*100)+'%');
+    c.style.setProperty('--sy', ((e.clientY-r.top)/r.height*100)+'%');
+  });
+  c.addEventListener('mouseleave', () => {
+    c.style.transform = '';
+    c.style.transition = 'transform .6s cubic-bezier(.16,1,.3,1)';
+    setTimeout(() => c.style.transition = '', 600);
+  });
+});
+
+// ══════════ SMOOTH SCROLL ══════════
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    const t = document.querySelector(this.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
