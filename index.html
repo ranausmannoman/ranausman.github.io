@@ -50,33 +50,24 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 a{color:var(--dotnet2);text-decoration:none}
 
 /* ── PRELOADER ── */
-.preloader{position:fixed;inset:0;z-index:99999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s;overflow:hidden}
+.preloader{position:fixed;inset:0;z-index:99999;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s;overflow:hidden}
 .preloader.done{opacity:0;visibility:hidden;pointer-events:none}
-#preloaderCanvas{position:absolute;inset:0;z-index:0;will-change:transform}
-.preloader-center{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
-.preloader-chip{width:180px;height:180px;position:relative;margin-bottom:36px;border:2px solid rgba(124,58,237,.3);border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(10,15,30,.85);box-shadow:0 0 50px rgba(124,58,237,.12),inset 0 0 30px rgba(124,58,237,.05)}
-.preloader-chip::before,.preloader-chip::after{content:'';position:absolute;background:rgba(124,58,237,.18)}
-.preloader-chip::before{width:60%;height:1px;top:-1px;left:20%}
-.preloader-chip::after{width:60%;height:1px;bottom:-1px;left:20%}
-.preloader-chip-pins{position:absolute;display:flex;gap:10px}
-.preloader-chip-pins.top{top:-12px;left:50%;transform:translateX(-50%);flex-direction:row}
-.preloader-chip-pins.bottom{bottom:-12px;left:50%;transform:translateX(-50%);flex-direction:row}
-.preloader-chip-pins.left{left:-12px;top:50%;transform:translateY(-50%);flex-direction:column}
-.preloader-chip-pins.right{right:-12px;top:50%;transform:translateY(-50%);flex-direction:column}
-.chip-pin{width:3px;height:12px;background:rgba(124,58,237,.35);border-radius:1px}
-.preloader-chip-pins.left .chip-pin,.preloader-chip-pins.right .chip-pin{width:12px;height:3px}
-.preloader-chip-label{font-family:var(--mono);font-size:1.3rem;font-weight:700;color:var(--dotnet2);text-shadow:0 0 25px var(--dotnet-glow)}
-.preloader-chip-label .b{color:var(--cyber)}
-.preloader-text{font-family:var(--mono);font-size:.82rem;color:var(--text3);letter-spacing:5px;text-transform:uppercase;margin-bottom:22px}
-.preloader-pct{font-family:var(--mono);font-size:1.1rem;color:var(--cyber);font-weight:600;margin-bottom:18px;letter-spacing:3px}
-.preloader-bar-wrap{width:300px;height:3px;background:rgba(124,58,237,.1);border-radius:100px;overflow:hidden}
-.preloader-bar{height:100%;width:0%;border-radius:100px;background:linear-gradient(90deg,var(--dotnet),var(--cyber));transition:width .3s}
+#shaderContainer{position:absolute;inset:0;z-index:0}
+#shaderContainer canvas{width:100%!important;height:100%!important}
+.preloader-center{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;pointer-events:none}
+.preloader-name{font-family:var(--font);font-size:4.5rem;font-weight:700;color:#fff;letter-spacing:-2px;line-height:1;text-align:center;text-shadow:0 0 60px rgba(255,255,255,0.15)}
+.preloader-title{font-family:var(--mono);font-size:.9rem;color:rgba(255,255,255,0.5);letter-spacing:5px;text-transform:uppercase;margin-top:16px;margin-bottom:40px;text-align:center}
+.preloader-sub{display:flex;flex-direction:column;align-items:center;gap:14px}
+.preloader-text{font-family:var(--mono);font-size:.7rem;color:rgba(255,255,255,0.25);letter-spacing:5px;text-transform:uppercase}
+.preloader-pct{font-family:var(--mono);font-size:.85rem;color:rgba(255,255,255,0.45);font-weight:500;letter-spacing:3px}
+.preloader-bar-wrap{width:200px;height:1px;background:rgba(255,255,255,.08);border-radius:100px;overflow:hidden}
+.preloader-bar{height:100%;width:0%;border-radius:100px;background:rgba(255,255,255,0.5);transition:width .3s}
 
 /* ── SCROLL PROGRESS ── */
-.scroll-progress{position:fixed;top:0;left:0;height:2px;z-index:10001;background:linear-gradient(90deg,var(--dotnet),var(--cyber),var(--neon));width:0%;box-shadow:0 0 12px var(--dotnet-glow)}
+.scroll-progress{position:fixed;top:0;left:0;height:2px;z-index:10001;background:linear-gradient(90deg,#b43c3c,#c87838,#e8a060,#5050d0);width:0%;box-shadow:0 0 12px rgba(200,90,50,.3)}
 
 /* ── CURSOR ── */
-.cursor-glow{position:fixed;width:500px;height:500px;pointer-events:none;z-index:9998;background:radial-gradient(circle,rgba(124,58,237,.06) 0%,transparent 70%);transform:translate(-50%,-50%);will-change:transform}
+.cursor-glow{position:fixed;width:500px;height:500px;pointer-events:none;z-index:9998;background:radial-gradient(circle,rgba(200,90,50,.04) 0%,rgba(80,80,220,.02) 40%,transparent 70%);transform:translate(-50%,-50%);will-change:transform}
 
 /* ── SCANLINES ── */
 .scanlines{position:fixed;inset:0;pointer-events:none;z-index:9997;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(124,58,237,.015) 2px,rgba(124,58,237,.015) 4px);opacity:.6}
@@ -98,43 +89,45 @@ nav.scrolled{background:rgba(3,7,18,.88);border-color:var(--border2);box-shadow:
 
 /* ── SECTIONS ── */
 section{padding:120px 24px;position:relative;z-index:1}
-section::before{content:'';position:absolute;inset:0;background:rgba(3,7,18,0.82);z-index:-1;pointer-events:none}
-.hero::before{background:transparent}
 .container{max-width:var(--max);margin:0 auto}
 .section-label{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.68rem;font-weight:500;text-transform:uppercase;letter-spacing:3px;color:var(--cyber);margin-bottom:16px;padding:6px 14px;border-radius:100px;background:rgba(6,214,160,.06);border:1px solid rgba(6,214,160,.15)}
 .section-label svg{width:14px;height:14px}
 .section-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:16px;line-height:1.1}
-.section-title .g{background:linear-gradient(135deg,var(--dotnet2),var(--cyber));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-title .g{background:linear-gradient(135deg,#c85a3a,#e8a060,#7878e0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .section-subtitle{color:var(--text2);font-size:1.05rem;max-width:560px;margin-bottom:56px;line-height:1.8;text-align:justify}
-.divider{width:100%;height:1px;border:none;margin:0;background:linear-gradient(90deg,transparent,var(--border2),transparent)}
+/* ── SHADER-SYNCED DIVIDERS ── */
+.divider{width:100%;height:1px;border:none;margin:0;background:linear-gradient(90deg,transparent 5%,rgba(180,60,60,.25) 25%,rgba(200,120,60,.2) 50%,rgba(80,80,220,.25) 75%,transparent 95%);position:relative;overflow:visible}
+.divider::after{content:'';position:absolute;inset:-1px 0;height:3px;background:linear-gradient(90deg,transparent 5%,rgba(180,60,60,.08) 25%,rgba(200,120,60,.06) 50%,rgba(80,80,220,.08) 75%,transparent 95%);filter:blur(4px)}
 
 /* ── HERO ── */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
-#neuralCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;will-change:transform}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(124,58,237,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse at 50% 50%,black 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 50%,black 20%,transparent 70%)}
-.hero-content{position:relative;z-index:1;max-width:800px}
-.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(6,214,160,.06);border:1px solid rgba(6,214,160,.2);border-radius:100px;padding:8px 20px;font-size:.78rem;color:var(--cyber);font-weight:500;animation:hfade 1s var(--ease) .2s both}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to bottom,transparent,var(--bg));z-index:2;pointer-events:none}
+#bgShader{position:absolute;inset:0;z-index:0;pointer-events:none}
+#bgShader canvas{width:100%!important;height:100%!important}
+.hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 30% 50%,rgba(3,7,18,.75) 0%,rgba(3,7,18,.5) 40%,rgba(3,7,18,.25) 70%,transparent 100%)}
+.hero-grid{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(124,58,237,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse at 50% 50%,black 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 50%,black 20%,transparent 70%)}
+.hero-content{position:relative;z-index:3;max-width:800px}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(6,214,160,.1);border:1px solid rgba(6,214,160,.25);border-radius:100px;padding:8px 20px;font-size:.78rem;color:var(--cyber);font-weight:500;animation:hfade 1s var(--ease) .2s both;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .hero-badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--cyber);position:relative}
 .hero-badge .pulse::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:var(--cyber);animation:pulsering 2s ease-out infinite}
 @keyframes pulsering{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.5);opacity:0}}
-.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:900;line-height:1.06;margin:28px 0;letter-spacing:-.04em;animation:hfade 1s var(--ease) .4s both}
-.hero .gradient-text{background:linear-gradient(135deg,var(--dotnet2),var(--cyber2),var(--neon));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% 200%;animation:gshift 8s ease infinite}
-@keyframes gshift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.hero .dotnet-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:1.1rem;font-weight:700;color:var(--dotnet2);background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.25);border-radius:8px;padding:8px 18px;margin-left:10px;vertical-align:middle;text-shadow:0 0 20px var(--dotnet-glow);animation:hfade 1s var(--ease) .5s both}
-.hero-desc{color:var(--text2);font-size:1.12rem;line-height:1.85;margin-bottom:40px;max-width:600px;text-align:justify;animation:hfade 1s var(--ease) .6s both}
+.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:900;line-height:1.06;margin:28px 0;letter-spacing:-.04em;animation:hfade 1s var(--ease) .4s both;text-shadow:0 2px 20px rgba(0,0,0,.5),0 0 40px rgba(0,0,0,.3)}
+/* gradient-text now handled by shimmer in new effects section */
+.hero .dotnet-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:1.1rem;font-weight:700;color:var(--dotnet2);background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.3);border-radius:8px;padding:8px 18px;margin-left:10px;vertical-align:middle;text-shadow:0 0 20px var(--dotnet-glow);animation:hfade 1s var(--ease) .5s both;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.hero-desc{color:rgba(241,245,249,0.75);font-size:1.12rem;line-height:1.85;margin-bottom:40px;max-width:600px;text-align:justify;animation:hfade 1s var(--ease) .6s both;text-shadow:0 1px 8px rgba(0,0,0,.4)}
 .hero-stats{display:flex;gap:10px;margin-bottom:44px;flex-wrap:wrap;animation:hfade 1s var(--ease) .8s both}
 @keyframes hfade{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
-.stat-card{background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--rs);padding:20px 28px;transition:all .4s var(--ease);position:relative;overflow:hidden}
-.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--dotnet2),transparent);opacity:0;transition:opacity .4s}
+.stat-card{background:rgba(3,7,18,0.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--rs);padding:20px 28px;transition:all .4s var(--ease);position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,120,60,.25),transparent);opacity:0;transition:opacity .5s}
 .stat-card:hover{border-color:var(--border2);transform:translateY(-3px)}.stat-card:hover::before{opacity:1}
-.stat-number{font-size:1.7rem;font-weight:800;letter-spacing:-.02em;background:linear-gradient(135deg,var(--dotnet2),var(--cyber));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-number{font-size:1.7rem;font-weight:800;letter-spacing:-.02em;background:linear-gradient(135deg,#c85a3a,#e8a060,#7878e0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .stat-label{font-family:var(--mono);font-size:.65rem;color:var(--text3);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
 
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;animation:hfade 1s var(--ease) 1s both}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;font-size:.88rem;font-weight:600;cursor:pointer;border:none;position:relative;overflow:hidden;transition:all .4s var(--ease)}
-.btn-primary{background:linear-gradient(135deg,var(--dotnet),var(--dotnet2));color:#fff;box-shadow:0 4px 28px var(--dotnet-glow)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 44px var(--dotnet-glow)}
+.btn-primary{background:linear-gradient(135deg,#b43c3c,#c87838,#e8a060);color:#fff;box-shadow:0 4px 28px rgba(200,90,50,.25)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 44px rgba(200,90,50,.35)}
 .btn-primary .shine{position:absolute;top:-50%;left:-75%;width:50%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transform:skewX(-20deg);animation:shine 4s ease-in-out infinite}
 @keyframes shine{0%,100%{left:-75%}50%{left:125%}}
 .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2)}
@@ -148,11 +141,11 @@ section::before{content:'';position:absolute;inset:0;background:rgba(3,7,18,0.82
 .about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .hl-card{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--r);padding:22px;transition:all .5s var(--ease);position:relative;overflow:hidden}
 .hl-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity .5s}
-.hl-card:nth-child(1)::after{background:linear-gradient(90deg,transparent,var(--dotnet2),transparent)}
-.hl-card:nth-child(2)::after{background:linear-gradient(90deg,transparent,var(--cyber),transparent)}
-.hl-card:nth-child(3)::after{background:linear-gradient(90deg,transparent,var(--neon),transparent)}
-.hl-card:nth-child(4)::after{background:linear-gradient(90deg,transparent,var(--amber),transparent)}
-.hl-card:hover{border-color:var(--border2);transform:translateY(-4px) scale(1.01)}.hl-card:hover::after{opacity:1}
+.hl-card:nth-child(1)::after{background:linear-gradient(90deg,transparent,rgba(180,60,60,.4),transparent)}
+.hl-card:nth-child(2)::after{background:linear-gradient(90deg,transparent,rgba(200,120,60,.4),transparent)}
+.hl-card:nth-child(3)::after{background:linear-gradient(90deg,transparent,rgba(100,100,230,.4),transparent)}
+.hl-card:nth-child(4)::after{background:linear-gradient(90deg,transparent,rgba(230,180,80,.4),transparent)}
+.hl-card:hover{border-color:rgba(200,120,60,.15);transform:translateY(-3px)}.hl-card:hover::after{opacity:1}
 .hl-icon{font-size:1.3rem;margin-bottom:6px}
 .hl-val{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;margin-bottom:2px}
 .hl-lbl{font-size:.72rem;color:var(--text3);letter-spacing:.5px}
@@ -160,8 +153,8 @@ section::before{content:'';position:absolute;inset:0;background:rgba(3,7,18,0.82
 /* ── BENTO TECH ── */
 .bento{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .bento-card{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--r);padding:26px;transition:all .5s var(--ease);position:relative;overflow:hidden;--sx:50%;--sy:50%}
-.bento-card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(350px circle at var(--sx) var(--sy),rgba(124,58,237,.06),transparent 60%);pointer-events:none;opacity:0;transition:opacity .4s}
-.bento-card:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,.3)}.bento-card:hover::after{opacity:1}
+.bento-card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(250px circle at var(--sx) var(--sy),rgba(200,120,60,.04),transparent 60%);pointer-events:none;opacity:0;transition:opacity .5s}
+.bento-card:hover{border-color:rgba(200,120,60,.15);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}.bento-card:hover::after{opacity:1}
 .bento-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:14px}
 .bento-name{font-weight:700;font-size:.95rem;margin-bottom:12px}
 .bento-tags{display:flex;flex-wrap:wrap;gap:5px}
@@ -179,12 +172,9 @@ section::before{content:'';position:absolute;inset:0;background:rgba(3,7,18,0.82
 /* ── PROJECTS ── */
 .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .proj-card{background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--r);padding:30px;cursor:pointer;position:relative;overflow:hidden;transition:all .5s var(--ease);--sx:50%;--sy:50%}
-.proj-card .holo{position:absolute;inset:-1px;border-radius:var(--r);background:conic-gradient(from 0deg,transparent,var(--dotnet),transparent,var(--cyber),transparent,var(--neon),transparent);opacity:0;transition:opacity .5s;z-index:-1;animation:holo-spin 6s linear infinite}
-@keyframes holo-spin{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(360deg)}}
-.proj-card:hover .holo{opacity:.2}
-.proj-card:hover{border-color:transparent;transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.proj-card:hover{border-color:rgba(200,120,60,.15);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.25),0 0 0 1px rgba(200,120,60,.08)}
 /* spotlight on cards */
-.proj-card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(400px circle at var(--sx) var(--sy),rgba(124,58,237,.06),transparent 60%);pointer-events:none;opacity:0;transition:opacity .4s}.proj-card:hover::after{opacity:1}
+.proj-card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(300px circle at var(--sx) var(--sy),rgba(200,120,60,.04),transparent 60%);pointer-events:none;opacity:0;transition:opacity .5s}.proj-card:hover::after{opacity:1}
 .proj-badge{font-family:var(--mono);font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--cyber);margin-bottom:10px}
 .proj-name{font-size:1.3rem;font-weight:800;margin-bottom:8px;letter-spacing:-.02em}
 .proj-desc{color:var(--text2);font-size:.9rem;line-height:1.7;margin-bottom:16px;text-align:justify}
@@ -207,7 +197,7 @@ section::before{content:'';position:absolute;inset:0;background:rgba(3,7,18,0.82
 
 /* ── TIMELINE ── */
 .timeline{position:relative;max-width:700px}
-.timeline::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--dotnet),var(--cyber),transparent)}
+.timeline::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,#b43c3c,#e8a060,transparent)}
 .tl-item{position:relative;padding-left:52px;margin-bottom:48px}.tl-item:last-child{margin-bottom:0}
 .tl-dot{position:absolute;left:8px;top:4px;width:17px;height:17px;border-radius:50%;background:var(--bg);border:2px solid var(--dotnet);box-shadow:0 0 14px var(--dotnet-glow)}
 .tl-dot::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--dotnet)}
@@ -239,6 +229,32 @@ footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:v
 footer .h{color:var(--neon);display:inline-block;animation:hb 2s ease infinite}
 @keyframes hb{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
 footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
+
+/* ── CARD TOP ACCENT LINE ── */
+.border-beam{position:relative}
+.border-beam::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,120,60,.2),rgba(100,100,230,.15),transparent);opacity:0;transition:opacity .5s}
+.border-beam:hover::before{opacity:1}
+
+/* ── TEXT BLUR FADE IN ── */
+.blur-fade{opacity:0;filter:blur(8px);transform:translateY(20px);transition:opacity .8s var(--ease),filter .8s var(--ease),transform .8s var(--ease)}
+.blur-fade.v{opacity:1;filter:blur(0);transform:translateY(0)}
+.bf-d1{transition-delay:.15s}.bf-d2{transition-delay:.3s}.bf-d3{transition-delay:.45s}.bf-d4{transition-delay:.6s}.bf-d5{transition-delay:.75s}
+
+/* ── HERO TEXT SHIMMER (synced to shader warm tones) ── */
+.hero h1 .gradient-text{background:linear-gradient(110deg,#c85a3a 20%,#e8a060 40%,#fff 50%,#7878e0 70%,#c85a3a 90%);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s ease-in-out infinite}
+@keyframes shimmer{0%,100%{background-position:100% 0}50%{background-position:-100% 0}}
+
+/* ── SHADER-SYNCED SECTION GLOW ── */
+section:not(.hero)::before{content:'';position:absolute;top:-1px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(180,60,60,.12),rgba(200,120,60,.08),rgba(80,80,220,.12),transparent);z-index:2;pointer-events:none}
+section:not(.hero)::after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:200px;background:radial-gradient(ellipse at center top,rgba(180,60,60,.03) 0%,rgba(200,120,60,.015) 30%,transparent 70%);z-index:0;pointer-events:none}
+
+/* ── SHADER-SYNCED CARD ACCENTS ── */
+.edu-card:hover{border-color:rgba(200,120,60,.15);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.stat-card:hover{border-color:rgba(200,120,60,.15)}
+
+/* ── GLOW LINE (timeline, shader-synced) ── */
+.timeline{position:relative}
+.timeline::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,#b43c3c,#e8a060,#5050d0,transparent);opacity:.35}
 
 /* ── ANIMATIONS ── */
 .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.reveal.v{opacity:1;transform:translateY(0)}
@@ -274,18 +290,14 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
 
 <!-- PRELOADER -->
 <div class="preloader" id="preloader">
-  <canvas id="preloaderCanvas"></canvas>
+  <div id="shaderContainer"></div>
   <div class="preloader-center">
-    <div class="preloader-chip">
-      <div class="preloader-chip-pins top"><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span></div>
-      <div class="preloader-chip-pins bottom"><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span></div>
-      <div class="preloader-chip-pins left"><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span></div>
-      <div class="preloader-chip-pins right"><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span><span class="chip-pin"></span></div>
-      <div class="preloader-chip-label"><span class="b">{</span> .NET <span class="b">}</span></div>
+    <div class="preloader-name">Rana Usman</div>
+    <div class="preloader-title">Technical Lead &bull; Full Stack Architect</div>
+    <div class="preloader-sub">
+      <div class="preloader-bar-wrap"><div class="preloader-bar" id="preloaderBar"></div></div>
+      <div class="preloader-pct" id="preloaderPct">0%</div>
     </div>
-    <div class="preloader-text">Initializing system</div>
-    <div class="preloader-pct" id="preloaderPct">0%</div>
-    <div class="preloader-bar-wrap"><div class="preloader-bar" id="preloaderBar"></div></div>
   </div>
 </div>
 
@@ -309,11 +321,10 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
   </div>
 </nav>
 
-<!-- NEURAL NETWORK BACKGROUND (full page) -->
-<canvas id="neuralCanvas"></canvas>
-
 <!-- HERO -->
 <section class="hero" id="hero">
+  <div id="bgShader"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-grid"></div>
   <div class="container hero-content">
     <div class="hero-badge"><span class="pulse"></span> Available for opportunities</div>
@@ -340,9 +351,9 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
-    <div class="reveal">
-      <span class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> about</span>
-      <h2 class="section-title">Building <span class="g">Intelligent Systems</span>,<br>One Architecture at a Time</h2>
+    <div>
+      <span class="section-label blur-fade">about</span>
+      <h2 class="section-title blur-fade bf-d1">Building <span class="g">Intelligent Systems</span>,<br>One Architecture at a Time</h2>
     </div>
     <div class="about-grid">
       <div class="about-text reveal rd1">
@@ -351,10 +362,10 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
         <p>Currently based in Lahore, Pakistan, I work with international teams across time zones, having delivered onsite engagements in Indonesia and served clients in the US and Australia.</p>
       </div>
       <div class="about-highlights stag reveal rd2">
-        <div class="hl-card"><div class="hl-icon">&#9889;</div><div class="hl-val" style="color:var(--cyber)">75%</div><div class="hl-lbl">Faster Processing</div></div>
-        <div class="hl-card"><div class="hl-icon">&#128640;</div><div class="hl-val" style="color:var(--neon)">50%</div><div class="hl-lbl">Verification Time Cut</div></div>
-        <div class="hl-card"><div class="hl-icon">&#127758;</div><div class="hl-val" style="color:var(--dotnet2)">3</div><div class="hl-lbl">Global Deployments</div></div>
-        <div class="hl-card"><div class="hl-icon">&#128187;</div><div class="hl-val" style="color:var(--amber)">100K+</div><div class="hl-lbl">Daily Transactions</div></div>
+        <div class="hl-card border-beam"><div class="hl-icon">&#9889;</div><div class="hl-val" style="color:var(--cyber)">75%</div><div class="hl-lbl">Faster Processing</div></div>
+        <div class="hl-card border-beam"><div class="hl-icon">&#128640;</div><div class="hl-val" style="color:var(--neon)">50%</div><div class="hl-lbl">Verification Time Cut</div></div>
+        <div class="hl-card border-beam"><div class="hl-icon">&#127758;</div><div class="hl-val" style="color:var(--dotnet2)">3</div><div class="hl-lbl">Global Deployments</div></div>
+        <div class="hl-card border-beam"><div class="hl-icon">&#128187;</div><div class="hl-val" style="color:var(--amber)">100K+</div><div class="hl-lbl">Daily Transactions</div></div>
       </div>
     </div>
   </div>
@@ -365,18 +376,18 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
 <!-- TECH -->
 <section id="tech">
   <div class="container">
-    <div class="reveal">
-      <span class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg> tech stack</span>
-      <h2 class="section-title">Technologies <span class="g">I Work With</span></h2>
-      <p class="section-subtitle">A comprehensive toolkit built across 6+ years of enterprise-grade .NET and full stack development.</p>
+    <div>
+      <span class="section-label blur-fade">tech stack</span>
+      <h2 class="section-title blur-fade bf-d1">Technologies <span class="g">I Work With</span></h2>
+      <p class="section-subtitle blur-fade bf-d2">A comprehensive toolkit built across 6+ years of enterprise-grade .NET and full stack development.</p>
     </div>
     <div class="bento stag reveal">
-      <div class="bento-card"><div class="bento-icon" style="background:rgba(124,58,237,.1);color:var(--dotnet2)">&#9881;</div><div class="bento-name">Backend &amp; APIs</div><div class="bento-tags"><span class="bento-tag">C#</span><span class="bento-tag">ASP.NET Core</span><span class="bento-tag">.NET 5/6/7/8</span><span class="bento-tag">REST API</span><span class="bento-tag">GraphQL</span><span class="bento-tag">SignalR</span><span class="bento-tag">RabbitMQ</span><span class="bento-tag">Laravel</span><span class="bento-tag">Node.js</span></div></div>
-      <div class="bento-card"><div class="bento-icon" style="background:rgba(6,214,160,.1);color:var(--cyber)">&#9674;</div><div class="bento-name">Frontend</div><div class="bento-tags"><span class="bento-tag">Vue.js</span><span class="bento-tag">React</span><span class="bento-tag">Angular</span><span class="bento-tag">TypeScript</span><span class="bento-tag">JavaScript</span><span class="bento-tag">Blazor</span><span class="bento-tag">Razor Pages</span><span class="bento-tag">HTML5/CSS3</span></div></div>
-      <div class="bento-card"><div class="bento-icon" style="background:rgba(244,114,182,.1);color:var(--neon)">&#9729;</div><div class="bento-name">Cloud &amp; DevOps</div><div class="bento-tags"><span class="bento-tag">Azure</span><span class="bento-tag">AWS</span><span class="bento-tag">Docker</span><span class="bento-tag">Azure DevOps</span><span class="bento-tag">CI/CD</span><span class="bento-tag">Git</span><span class="bento-tag">Linux</span><span class="bento-tag">Bash</span></div></div>
-      <div class="bento-card"><div class="bento-icon" style="background:rgba(251,191,36,.1);color:var(--amber)">&#9776;</div><div class="bento-name">Databases</div><div class="bento-tags"><span class="bento-tag">SQL Server</span><span class="bento-tag">PostgreSQL</span><span class="bento-tag">MySQL</span><span class="bento-tag">MongoDB</span><span class="bento-tag">EF Core</span><span class="bento-tag">Dapper</span><span class="bento-tag">ADO.NET</span><span class="bento-tag">LINQ</span></div></div>
-      <div class="bento-card"><div class="bento-icon" style="background:rgba(59,130,246,.1);color:var(--holo-3)">&#9670;</div><div class="bento-name">Architecture</div><div class="bento-tags"><span class="bento-tag">DDD</span><span class="bento-tag">Microservices</span><span class="bento-tag">Clean Architecture</span><span class="bento-tag">SOLID</span><span class="bento-tag">TDD</span><span class="bento-tag">xUnit/NUnit</span><span class="bento-tag">Design Patterns</span></div></div>
-      <div class="bento-card"><div class="bento-icon" style="background:rgba(124,58,237,.1);color:var(--dotnet2)">&#9742;</div><div class="bento-name">Mobile &amp; More</div><div class="bento-tags"><span class="bento-tag">Xamarin</span><span class="bento-tag">.NET MAUI</span><span class="bento-tag">Flutter</span><span class="bento-tag">HL7/FHIR</span><span class="bento-tag">Dynatrace</span><span class="bento-tag">Power BI</span></div></div>
+      <div class="bento-card border-beam"><div class="bento-icon" style="background:rgba(124,58,237,.1);color:var(--dotnet2)">&#9881;</div><div class="bento-name">Backend &amp; APIs</div><div class="bento-tags"><span class="bento-tag">C#</span><span class="bento-tag">ASP.NET Core</span><span class="bento-tag">.NET 5/6/7/8</span><span class="bento-tag">REST API</span><span class="bento-tag">GraphQL</span><span class="bento-tag">SignalR</span><span class="bento-tag">RabbitMQ</span><span class="bento-tag">Laravel</span><span class="bento-tag">Node.js</span></div></div>
+      <div class="bento-card border-beam"><div class="bento-icon" style="background:rgba(6,214,160,.1);color:var(--cyber)">&#9674;</div><div class="bento-name">Frontend</div><div class="bento-tags"><span class="bento-tag">Vue.js</span><span class="bento-tag">React</span><span class="bento-tag">Angular</span><span class="bento-tag">TypeScript</span><span class="bento-tag">JavaScript</span><span class="bento-tag">Blazor</span><span class="bento-tag">Razor Pages</span><span class="bento-tag">HTML5/CSS3</span></div></div>
+      <div class="bento-card border-beam"><div class="bento-icon" style="background:rgba(244,114,182,.1);color:var(--neon)">&#9729;</div><div class="bento-name">Cloud &amp; DevOps</div><div class="bento-tags"><span class="bento-tag">Azure</span><span class="bento-tag">AWS</span><span class="bento-tag">Docker</span><span class="bento-tag">Azure DevOps</span><span class="bento-tag">CI/CD</span><span class="bento-tag">Git</span><span class="bento-tag">Linux</span><span class="bento-tag">Bash</span></div></div>
+      <div class="bento-card border-beam"><div class="bento-icon" style="background:rgba(251,191,36,.1);color:var(--amber)">&#9776;</div><div class="bento-name">Databases</div><div class="bento-tags"><span class="bento-tag">SQL Server</span><span class="bento-tag">PostgreSQL</span><span class="bento-tag">MySQL</span><span class="bento-tag">MongoDB</span><span class="bento-tag">EF Core</span><span class="bento-tag">Dapper</span><span class="bento-tag">ADO.NET</span><span class="bento-tag">LINQ</span></div></div>
+      <div class="bento-card border-beam"><div class="bento-icon" style="background:rgba(59,130,246,.1);color:var(--holo-3)">&#9670;</div><div class="bento-name">Architecture</div><div class="bento-tags"><span class="bento-tag">DDD</span><span class="bento-tag">Microservices</span><span class="bento-tag">Clean Architecture</span><span class="bento-tag">SOLID</span><span class="bento-tag">TDD</span><span class="bento-tag">xUnit/NUnit</span><span class="bento-tag">Design Patterns</span></div></div>
+      <div class="bento-card border-beam"><div class="bento-icon" style="background:rgba(124,58,237,.1);color:var(--dotnet2)">&#9742;</div><div class="bento-name">Mobile &amp; More</div><div class="bento-tags"><span class="bento-tag">Xamarin</span><span class="bento-tag">.NET MAUI</span><span class="bento-tag">Flutter</span><span class="bento-tag">HL7/FHIR</span><span class="bento-tag">Dynatrace</span><span class="bento-tag">Power BI</span></div></div>
     </div>
     <!-- MARQUEE -->
     <div class="marquee-wrap reveal" style="margin-top:44px">
@@ -394,15 +405,14 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
 <!-- PROJECTS -->
 <section id="projects">
   <div class="container">
-    <div class="reveal">
-      <span class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg> projects</span>
-      <h2 class="section-title">Things <span class="g">I've Built</span></h2>
-      <p class="section-subtitle">Enterprise systems serving thousands of users across healthcare, finance, hiring, IoT, and gaming.</p>
+    <div>
+      <span class="section-label blur-fade">projects</span>
+      <h2 class="section-title blur-fade bf-d1">Things <span class="g">I've Built</span></h2>
+      <p class="section-subtitle blur-fade bf-d2">Enterprise systems serving thousands of users across healthcare, finance, hiring, IoT, and gaming.</p>
     </div>
     <div class="proj-grid stag reveal">
 
-      <div class="proj-card" onclick="this.classList.toggle('open')"><div class="holo"></div>
-        <div class="proj-badge">SaaS Platform &middot; US</div>
+      <div class="proj-card border-beam" onclick="this.classList.toggle('open')">        <div class="proj-badge">SaaS Platform &middot; US</div>
         <div class="proj-name">SNAPChef</div>
         <div class="proj-desc">Enterprise hiring platform streamlining restaurant recruitment across the US, replacing third-party SaaS workflows.</div>
         <div class="proj-metrics"><span class="m m-g">75% Faster Processing</span><span class="m m-p">50% Faster Verification</span></div>
@@ -411,8 +421,7 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
         <div class="proj-details"><ul><li>Led full-stack architecture across web, mobile (Xamarin/.NET MAUI), APIs (GraphQL), and databases</li><li>Architected automated document processing pipelines, eliminating manual data entry for thousands of users</li><li>Engineered secure E-Verify / I-9 integration with US Government systems</li><li>Designed DDD-based modular architecture that scaled seamlessly with growing traffic</li><li>Configured CI/CD pipelines for automated multi-environment deployments</li><li>Replaced Clear Company SaaS workflows, significantly reducing licensing costs</li><li>Mentored junior developers on architecture, testing, and best practices</li></ul></div>
       </div>
 
-      <div class="proj-card" onclick="this.classList.toggle('open')"><div class="holo"></div>
-        <div class="proj-badge">Enterprise Finance &middot; International</div>
+      <div class="proj-card border-beam" onclick="this.classList.toggle('open')">        <div class="proj-badge">Enterprise Finance &middot; International</div>
         <div class="proj-name">NETSOL Financial Suite</div>
         <div class="proj-desc">Large-scale SaaS for leasing and asset finance with two international deployments: Summit OTO and MAPLE.</div>
         <div class="proj-metrics"><span class="m m-a">2 International Deployments</span></div>
@@ -421,8 +430,7 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
         <div class="proj-details"><ul><li>Applied DDD and SOLID principles to architect modular financial workflow engines</li><li>Handled complex leasing calculations, contract lifecycle management, and regulatory compliance</li><li>Optimized performance using Dynatrace and Fiddler profiling under heavy transactional loads</li><li>Provided 6-month onsite production support in Jakarta, Indonesia</li><li>Developed stored procedures and scripts for financial reporting and reconciliation</li></ul></div>
       </div>
 
-      <div class="proj-card" onclick="this.classList.toggle('open')"><div class="holo"></div>
-        <div class="proj-badge">Healthcare &middot; EHR</div>
+      <div class="proj-card border-beam" onclick="this.classList.toggle('open')">        <div class="proj-badge">Healthcare &middot; EHR</div>
         <div class="proj-name">eDermX</div>
         <div class="proj-desc">Comprehensive dermatology practice management system integrating EHR, scheduling, and insurance verification.</div>
         <div class="proj-metrics"><span class="m m-n">HL7/FHIR Compliant</span></div>
@@ -431,8 +439,7 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
         <div class="proj-details"><ul><li>Architected modular, independently subscribable Practice Management and EHR components</li><li>Implemented ADT, SIU, and DFT HL7 messaging for seamless healthcare data exchange</li><li>Integrated ICD, CPT, and RxNorm coding systems for compliance accuracy</li></ul></div>
       </div>
 
-      <div class="proj-card" onclick="this.classList.toggle('open')"><div class="holo"></div>
-        <div class="proj-badge">IoT &middot; Government</div>
+      <div class="proj-card border-beam" onclick="this.classList.toggle('open')">        <div class="proj-badge">IoT &middot; Government</div>
         <div class="proj-name">SWGNP Research Portal</div>
         <div class="proj-desc">IoT portal integrating remote sensing devices, handling millions of observation records for government stakeholders.</div>
         <div class="proj-metrics"><span class="m m-p">Millions of Records</span></div>
@@ -441,8 +448,7 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
         <div class="proj-details"><ul><li>Redesigned from a specialized system to a general-purpose IoT portal</li><li>Led back-end architecture for high-performance data processing and system reliability</li><li>Collaborated with government clients to define SRS for optimal functionality</li></ul></div>
       </div>
 
-      <div class="proj-card" onclick="this.classList.toggle('open')"><div class="holo"></div>
-        <div class="proj-badge">Real-Time &middot; Gaming (NDA)</div>
+      <div class="proj-card border-beam" onclick="this.classList.toggle('open')">        <div class="proj-badge">Real-Time &middot; Gaming (NDA)</div>
         <div class="proj-name">Entertainment Automation</div>
         <div class="proj-desc">Real-time hardware-to-server communication suite for a 24/7 gaming platform.</div>
         <div class="proj-metrics"><span class="m m-g">0% Accounting Errors</span><span class="m m-a">100K+ Daily Bets</span></div>
@@ -451,8 +457,7 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
         <div class="proj-details"><ul><li>24/7 uptime processing 100K+ player-bets daily with zero accounting errors</li><li>Developed game configuration modules and reporting within an international team</li></ul></div>
       </div>
 
-      <div class="proj-card" onclick="this.classList.toggle('open')"><div class="holo"></div>
-        <div class="proj-badge">Enterprise &middot; Construction</div>
+      <div class="proj-card border-beam" onclick="this.classList.toggle('open')">        <div class="proj-badge">Enterprise &middot; Construction</div>
         <div class="proj-name">SGAM Account Management</div>
         <div class="proj-desc">Account management portal with hierarchical ledgers and offline transaction support.</div>
         <div class="proj-metrics"><span class="m m-n">Full Architecture Ownership</span></div>
@@ -470,9 +475,9 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="container">
-    <div class="reveal">
-      <span class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> experience</span>
-      <h2 class="section-title">Where <span class="g">I've Worked</span></h2>
+    <div>
+      <span class="section-label blur-fade">experience</span>
+      <h2 class="section-title blur-fade bf-d1">Where <span class="g">I've Worked</span></h2>
     </div>
     <div class="timeline reveal rd1">
       <div class="tl-item">
@@ -498,9 +503,9 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
 <!-- EDUCATION -->
 <section id="education">
   <div class="container">
-    <div class="reveal">
-      <span class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg> education</span>
-      <h2 class="section-title">Academic <span class="g">Background</span></h2>
+    <div>
+      <span class="section-label blur-fade">education</span>
+      <h2 class="section-title blur-fade bf-d1">Academic <span class="g">Background</span></h2>
     </div>
     <div class="edu-grid stag reveal rd1">
       <div class="edu-card"><div class="edu-deg">M.Sc. Business Information System Management</div><div class="edu-sch">Middlesex University, Mauritius</div><div class="edu-yr">2020</div></div>
@@ -514,10 +519,10 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div class="container" style="position:relative;z-index:1">
-    <div class="reveal">
-      <span class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> contact</span>
-      <h2 class="section-title">Let's <span class="g">Work Together</span></h2>
-      <p class="section-subtitle">Have a project in mind or want to discuss architecture? I'd love to connect.</p>
+    <div>
+      <span class="section-label blur-fade">contact</span>
+      <h2 class="section-title blur-fade bf-d1">Let's <span class="g">Work Together</span></h2>
+      <p class="section-subtitle blur-fade bf-d2">Have a project in mind or want to discuss architecture? I'd love to connect.</p>
     </div>
     <div class="contact-grid reveal rd1">
       <div class="c-info">
@@ -537,144 +542,85 @@ footer .dn{color:var(--dotnet2);font-family:var(--mono);font-weight:600}
   <div class="container">&copy; 2026 Rana Usman. Built with <span class="h">&#9829;</span> and <span class="dn">.NET</span></div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
 <script>
-// ══════════ NEURAL NETWORK CANVAS (full page) ══════════
-const canvas = document.getElementById('neuralCanvas');
-const ctx = canvas.getContext('2d');
-let W, H, nodes = [], mouse = {x: -999, y: -999};
-let scrollY = 0;
-
-function resize() {
-  W = canvas.width = window.innerWidth;
-  H = canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener('resize', resize);
-window.addEventListener('scroll', () => { scrollY = window.pageYOffset; }, {passive:true});
-
-// Create nodes — more nodes to fill full viewport
-for (let i = 0; i < 100; i++) {
-  nodes.push({
-    x: Math.random() * W, y: Math.random() * H,
-    vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
-    r: Math.random() * 2 + 1,
-    color: ['rgba(124,58,237,','rgba(6,214,160,','rgba(244,114,182,','rgba(59,130,246,'][Math.floor(Math.random()*4)]
-  });
-}
-
+// ══════════ SHADER LINES BACKGROUND (full page, Three.js WebGL) ══════════
+let mouse = {x: -999, y: -999};
 document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
 
-// Hero emit pulse: smooth sinusoidal cycle every 5 seconds
-let heroEmit = 0;
-const HERO_CYCLE = 5;
+(function(){
+  if (!window.THREE) return;
+  const THREE = window.THREE;
+  const container = document.getElementById('bgShader');
 
-function smoothstep(x) { return x * x * (3 - 2 * x); }
+  const camera = new THREE.Camera();
+  camera.position.z = 1;
+  const scene = new THREE.Scene();
+  const geometry = new THREE.PlaneBufferGeometry(2, 2);
 
-function drawNet() {
-  ctx.clearRect(0, 0, W, H);
-  const t = Date.now() * 0.001;
+  const uniforms = {
+    time: { type: 'f', value: 1.0 },
+    resolution: { type: 'v2', value: new THREE.Vector2() },
+  };
 
-  // Smooth sinusoidal emit cycle: rises, peaks, fades, rests
-  const cyc = (t % HERO_CYCLE) / HERO_CYCLE;
-  let emitTarget = 0;
-  if (cyc < 0.35) emitTarget = smoothstep(cyc / 0.35);
-  else if (cyc < 0.5) emitTarget = 1;
-  else if (cyc < 0.85) emitTarget = smoothstep(1 - (cyc - 0.5) / 0.35);
-  heroEmit += (emitTarget - heroEmit) * 0.12; // faster lerp = smoother tracking
-  const em = heroEmit;
+  const vertexShader = 'void main(){gl_Position=vec4(position,1.0);}';
 
-  // ── Radial light emission ──
-  if (em > 0.02) {
-    const grad = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, W * 0.55);
-    grad.addColorStop(0, `rgba(124,58,237,${0.12 * em})`);
-    grad.addColorStop(0.35, `rgba(6,214,160,${0.06 * em})`);
-    grad.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, W, H);
-  }
+  const fragmentShader = [
+    '#define TWO_PI 6.2831853072',
+    '#define PI 3.14159265359',
+    'precision highp float;',
+    'uniform vec2 resolution;',
+    'uniform float time;',
+    'float random(in float x){return fract(sin(x)*1e4);}',
+    'float random(vec2 st){return fract(sin(dot(st.xy,vec2(12.9898,78.233)))*43758.5453123);}',
+    'varying vec2 vUv;',
+    'void main(void){',
+    '  vec2 uv=(gl_FragCoord.xy*2.0-resolution.xy)/min(resolution.x,resolution.y);',
+    '  vec2 fMosaicScal=vec2(4.0,2.0);',
+    '  vec2 vScreenSize=vec2(256,256);',
+    '  uv.x=floor(uv.x*vScreenSize.x/fMosaicScal.x)/(vScreenSize.x/fMosaicScal.x);',
+    '  uv.y=floor(uv.y*vScreenSize.y/fMosaicScal.y)/(vScreenSize.y/fMosaicScal.y);',
+    '  float t=time*0.06+random(uv.x)*0.4;',
+    '  float lineWidth=0.0008;',
+    '  vec3 color=vec3(0.0);',
+    '  for(int j=0;j<3;j++){',
+    '    for(int i=0;i<5;i++){',
+    '      color[j]+=lineWidth*float(i*i)/abs(fract(t-0.01*float(j)+float(i)*0.01)*1.0-length(uv));',
+    '    }',
+    '  }',
+    '  gl_FragColor=vec4(color[2],color[1],color[0],1.0);',
+    '}'
+  ].join('\n');
 
-  // Update positions
-  nodes.forEach(n => {
-    n.x += n.vx; n.y += n.vy;
-    if (n.x < 0 || n.x > W) n.vx *= -1;
-    if (n.y < 0 || n.y > H) n.vy *= -1;
-    const dx = mouse.x - n.x, dy = mouse.y - n.y;
-    const dist = Math.sqrt(dx*dx + dy*dy);
-    if (dist < 220) { n.vx += dx * 0.00006; n.vy += dy * 0.00006; }
+  const material = new THREE.ShaderMaterial({
+    uniforms: uniforms,
+    vertexShader: vertexShader,
+    fragmentShader: fragmentShader,
   });
 
-  // ── Connection lines ──
-  for (let i = 0; i < nodes.length; i++) {
-    for (let j = i + 1; j < nodes.length; j++) {
-      const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-      const maxDist = 160 + em * 40;
-      if (dist < maxDist) {
-        const baseAlpha = (1 - dist / maxDist) * (0.15 + em * 0.3);
-        ctx.beginPath();
-        ctx.moveTo(nodes[i].x, nodes[i].y);
-        ctx.lineTo(nodes[j].x, nodes[j].y);
-        if (em > 0.3) {
-          const g = (em - 0.3) / 0.7;
-          ctx.strokeStyle = `rgba(${Math.round(124 - 118*g)},${Math.round(58 + 156*g)},${Math.round(237 - 77*g)},${baseAlpha})`;
-          ctx.lineWidth = 0.5 + em * 0.8;
-        } else {
-          ctx.strokeStyle = `rgba(124,58,237,${baseAlpha})`;
-          ctx.lineWidth = 0.5;
-        }
-        ctx.stroke();
+  const mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
 
-        // Data pulses along connections during emit
-        if (em > 0.15 && (i + j) % 4 === 0) {
-          const speed = 1.5 + em * 2.5;
-          const prog = (Math.sin(t * speed + i * 0.7 + j * 0.3) + 1) / 2;
-          const ppx = nodes[i].x + (nodes[j].x - nodes[i].x) * prog;
-          const ppy = nodes[i].y + (nodes[j].y - nodes[i].y) * prog;
-          ctx.beginPath();
-          ctx.arc(ppx, ppy, 1.2 + em * 1.5, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(6,214,160,${0.25 + em * 0.45})`;
-          ctx.fill();
-        }
-      }
-    }
+  const renderer = new THREE.WebGLRenderer();
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  function onResize() {
+    const rect = container.getBoundingClientRect();
+    renderer.setSize(rect.width, rect.height);
+    uniforms.resolution.value.x = renderer.domElement.width;
+    uniforms.resolution.value.y = renderer.domElement.height;
   }
+  onResize();
+  window.addEventListener('resize', onResize, false);
 
-  // ── Nodes with emit-reactive glow ──
-  nodes.forEach(n => {
-    const nodeR = n.r + em * 1;
-
-    // Emission aura
-    if (em > 0.1) {
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, nodeR + 10 + em * 8, 0, Math.PI * 2);
-      ctx.fillStyle = n.color + (0.02 * em) + ')';
-      ctx.fill();
-    }
-
-    // Outer glow
-    ctx.beginPath();
-    ctx.arc(n.x, n.y, nodeR + 3 + em * 3, 0, Math.PI * 2);
-    ctx.fillStyle = n.color + (0.08 + em * 0.1) + ')';
-    ctx.fill();
-
-    // Core
-    ctx.beginPath();
-    ctx.arc(n.x, n.y, nodeR, 0, Math.PI * 2);
-    ctx.fillStyle = n.color + (0.5 + em * 0.35) + ')';
-    ctx.fill();
-
-    // White center at peak emit
-    if (em > 0.5) {
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, nodeR * 0.45, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255,255,255,${(em - 0.5) * 0.5})`;
-      ctx.fill();
-    }
-  });
-
-  requestAnimationFrame(drawNet);
-}
-drawNet();
+  function animate() {
+    requestAnimationFrame(animate);
+    uniforms.time.value += 0.05;
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
 
 // ══════════ PRELOADER ══════════
 const preloader = document.getElementById('preloader');
@@ -682,117 +628,85 @@ const pBar = document.getElementById('preloaderBar');
 const pPct = document.getElementById('preloaderPct');
 let loadProgress = 0;
 
-// ── Preloader Neural Network (brightens with load progress) ──
+// ── Preloader Shader Lines (Three.js WebGL) ──
 (function(){
-  const pc = document.getElementById('preloaderCanvas');
-  const px = pc.getContext('2d');
-  let W, H, pNodes = [];
+  if (!window.THREE) return;
+  const THREE = window.THREE;
+  const container = document.getElementById('shaderContainer');
 
-  function resize() { W = pc.width = window.innerWidth; H = pc.height = window.innerHeight; }
-  resize();
-  window.addEventListener('resize', resize);
+  const camera = new THREE.Camera();
+  camera.position.z = 1;
+  const scene = new THREE.Scene();
+  const geometry = new THREE.PlaneBufferGeometry(2, 2);
 
-  for (let i = 0; i < 100; i++) {
-    pNodes.push({
-      x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight,
-      vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
-      r: Math.random() * 2 + 1,
-      color: ['rgba(124,58,237,','rgba(6,214,160,','rgba(244,114,182,','rgba(59,130,246,'][Math.floor(Math.random()*4)]
-    });
+  const uniforms = {
+    time: { type: 'f', value: 1.0 },
+    resolution: { type: 'v2', value: new THREE.Vector2() },
+  };
+
+  const vertexShader = 'void main(){gl_Position=vec4(position,1.0);}';
+
+  const fragmentShader = [
+    '#define TWO_PI 6.2831853072',
+    '#define PI 3.14159265359',
+    'precision highp float;',
+    'uniform vec2 resolution;',
+    'uniform float time;',
+    'float random(in float x){return fract(sin(x)*1e4);}',
+    'float random(vec2 st){return fract(sin(dot(st.xy,vec2(12.9898,78.233)))*43758.5453123);}',
+    'varying vec2 vUv;',
+    'void main(void){',
+    '  vec2 uv=(gl_FragCoord.xy*2.0-resolution.xy)/min(resolution.x,resolution.y);',
+    '  vec2 fMosaicScal=vec2(4.0,2.0);',
+    '  vec2 vScreenSize=vec2(256,256);',
+    '  uv.x=floor(uv.x*vScreenSize.x/fMosaicScal.x)/(vScreenSize.x/fMosaicScal.x);',
+    '  uv.y=floor(uv.y*vScreenSize.y/fMosaicScal.y)/(vScreenSize.y/fMosaicScal.y);',
+    '  float t=time*0.06+random(uv.x)*0.4;',
+    '  float lineWidth=0.0008;',
+    '  vec3 color=vec3(0.0);',
+    '  for(int j=0;j<3;j++){',
+    '    for(int i=0;i<5;i++){',
+    '      color[j]+=lineWidth*float(i*i)/abs(fract(t-0.01*float(j)+float(i)*0.01)*1.0-length(uv));',
+    '    }',
+    '  }',
+    '  gl_FragColor=vec4(color[2],color[1],color[0],1.0);',
+    '}'
+  ].join('\n');
+
+  const material = new THREE.ShaderMaterial({
+    uniforms: uniforms,
+    vertexShader: vertexShader,
+    fragmentShader: fragmentShader,
+  });
+
+  const mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
+
+  const renderer = new THREE.WebGLRenderer();
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  function onResize() {
+    const rect = container.getBoundingClientRect();
+    renderer.setSize(rect.width, rect.height);
+    uniforms.resolution.value.x = renderer.domElement.width;
+    uniforms.resolution.value.y = renderer.domElement.height;
   }
+  onResize();
+  window.addEventListener('resize', onResize, false);
 
-  let preAnimId;
-  let smoothEm = 0;
-
-  function drawPreNet() {
-    px.clearRect(0, 0, W, H);
-    const t = Date.now() * 0.001;
-    const lp = loadProgress / 100;
-    const targetEm = lp;
-    smoothEm += (targetEm - smoothEm) * 0.08;
-    const em = smoothEm;
-
-    if (em > 0.02) {
-      const grad = px.createRadialGradient(W/2, H/2, 0, W/2, H/2, W * 0.55);
-      grad.addColorStop(0, `rgba(124,58,237,${0.12 * em})`);
-      grad.addColorStop(0.35, `rgba(6,214,160,${0.06 * em})`);
-      grad.addColorStop(1, 'rgba(0,0,0,0)');
-      px.fillStyle = grad;
-      px.fillRect(0, 0, W, H);
-    }
-
-    pNodes.forEach(n => {
-      n.x += n.vx; n.y += n.vy;
-      if (n.x < 0 || n.x > W) n.vx *= -1;
-      if (n.y < 0 || n.y > H) n.vy *= -1;
-      const dx = mouse.x - n.x, dy = mouse.y - n.y;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-      if (dist < 220) { n.vx += dx * 0.00006; n.vy += dy * 0.00006; }
-    });
-
-    for (let i = 0; i < pNodes.length; i++) {
-      for (let j = i + 1; j < pNodes.length; j++) {
-        const dx = pNodes[i].x - pNodes[j].x, dy = pNodes[i].y - pNodes[j].y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        const maxDist = 160 + em * 40;
-        if (dist < maxDist) {
-          const baseAlpha = (1 - dist / maxDist) * (0.15 + em * 0.3);
-          px.beginPath();
-          px.moveTo(pNodes[i].x, pNodes[i].y);
-          px.lineTo(pNodes[j].x, pNodes[j].y);
-          if (em > 0.3) {
-            const g = (em - 0.3) / 0.7;
-            px.strokeStyle = `rgba(${Math.round(124-118*g)},${Math.round(58+156*g)},${Math.round(237-77*g)},${baseAlpha})`;
-            px.lineWidth = 0.5 + em * 0.8;
-          } else {
-            px.strokeStyle = `rgba(124,58,237,${baseAlpha})`;
-            px.lineWidth = 0.5;
-          }
-          px.stroke();
-
-          if (em > 0.15 && (i + j) % 4 === 0) {
-            const speed = 1.5 + em * 2.5;
-            const prog = (Math.sin(t * speed + i * 0.7 + j * 0.3) + 1) / 2;
-            const ppx = pNodes[i].x + (pNodes[j].x - pNodes[i].x) * prog;
-            const ppy = pNodes[i].y + (pNodes[j].y - pNodes[i].y) * prog;
-            px.beginPath();
-            px.arc(ppx, ppy, 1.2 + em * 1.5, 0, Math.PI * 2);
-            px.fillStyle = `rgba(6,214,160,${0.25 + em * 0.45})`;
-            px.fill();
-          }
-        }
-      }
-    }
-
-    pNodes.forEach(n => {
-      const nodeR = n.r + em * 1;
-      if (em > 0.1) {
-        px.beginPath();
-        px.arc(n.x, n.y, nodeR + 10 + em * 8, 0, Math.PI * 2);
-        px.fillStyle = n.color + (0.02 * em) + ')';
-        px.fill();
-      }
-      px.beginPath();
-      px.arc(n.x, n.y, nodeR + 3 + em * 3, 0, Math.PI * 2);
-      px.fillStyle = n.color + (0.08 + em * 0.1) + ')';
-      px.fill();
-      px.beginPath();
-      px.arc(n.x, n.y, nodeR, 0, Math.PI * 2);
-      px.fillStyle = n.color + (0.5 + em * 0.35) + ')';
-      px.fill();
-      if (em > 0.5) {
-        px.beginPath();
-        px.arc(n.x, n.y, nodeR * 0.45, 0, Math.PI * 2);
-        px.fillStyle = `rgba(255,255,255,${(em - 0.5) * 0.5})`;
-        px.fill();
-      }
-    });
-
-    preAnimId = requestAnimationFrame(drawPreNet);
+  let shaderAnimId;
+  function animate() {
+    shaderAnimId = requestAnimationFrame(animate);
+    uniforms.time.value += 0.05;
+    renderer.render(scene, camera);
   }
-  drawPreNet();
+  animate();
 
-  window._stopPreloaderAnim = function() { cancelAnimationFrame(preAnimId); };
+  window._stopPreloaderAnim = function() {
+    cancelAnimationFrame(shaderAnimId);
+    renderer.dispose();
+  };
 })();
 
 // ── Progress ──
@@ -859,6 +773,13 @@ const ro = new IntersectionObserver(es => {
 }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
 document.querySelectorAll('.reveal,.stag').forEach(el => ro.observe(el));
 
+
+// ══════════ BLUR FADE ══════════
+const bfo = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('v'); bfo.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.blur-fade').forEach(el => bfo.observe(el));
+
 // ══════════ COUNTER ══════════
 const co = new IntersectionObserver(es => {
   es.forEach(e => {
@@ -879,20 +800,12 @@ const co = new IntersectionObserver(es => {
 }, { threshold: 0.5 });
 document.querySelectorAll('.stat-number,.hl-val').forEach(el => co.observe(el));
 
-// ══════════ 3D TILT + SPOTLIGHT ══════════
-document.querySelectorAll('.proj-card,.bento-card,.hl-card,.stat-card').forEach(c => {
+// ══════════ CARD SPOTLIGHT (mouse-tracking glow only) ══════════
+document.querySelectorAll('.proj-card,.bento-card').forEach(c => {
   c.addEventListener('mousemove', e => {
     const r = c.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width - .5;
-    const y = (e.clientY - r.top) / r.height - .5;
-    c.style.transform = `perspective(800px) rotateX(${-y*8}deg) rotateY(${x*8}deg) translateY(-4px) scale(1.01)`;
     c.style.setProperty('--sx', ((e.clientX-r.left)/r.width*100)+'%');
     c.style.setProperty('--sy', ((e.clientY-r.top)/r.height*100)+'%');
-  });
-  c.addEventListener('mouseleave', () => {
-    c.style.transform = '';
-    c.style.transition = 'transform .6s cubic-bezier(.16,1,.3,1)';
-    setTimeout(() => c.style.transition = '', 600);
   });
 });
 
