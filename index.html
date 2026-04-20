@@ -195,6 +195,9 @@ section + section{border-top:1px solid var(--rule)}
 .sec-head h2 em{font-style:italic;color:var(--hue)}
 .sec-head .right{font-family:var(--sans);font-size:17px;line-height:1.55;color:var(--ink-2);max-width:46ch;text-align:justify;text-justify:inter-word;hyphens:auto}
 
+#approach .sec-head{grid-template-columns:1fr;text-align:center;gap:20px;margin-bottom:72px}
+#approach .sec-head h2{font-size:clamp(40px, 5vw, 72px);white-space:nowrap}
+
 /* reveal */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease-io), transform .9s var(--ease-io)}
 .rv.on{opacity:1;transform:none}
@@ -341,11 +344,17 @@ section + section{border-top:1px solid var(--rule)}
 .contact-bottom{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;padding-top:40px;border-top:1px solid var(--rule);align-items:start}
 .contact-bottom .cell{display:flex;flex-direction:column;gap:8px}
 .contact-bottom .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
-.contact-bottom .v{font-family:var(--serif);font-size:22px;font-weight:400;line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;overflow-wrap:anywhere;min-width:0}
+.contact-bottom .v{font-family:var(--serif);font-size:22px;font-weight:400;line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;overflow-wrap:break-word;min-width:0}
 .contact-bottom .v a{border-bottom:1px solid var(--rule-2);transition:border-color .3s, color .3s}
 .contact-bottom .v a:hover{border-bottom-color:var(--hue);color:var(--hue)}
 .contact-bottom .lede{grid-column:span 1}
 .contact-bottom .lede .v{max-width:32ch;font-size:17px;font-family:var(--sans);color:var(--ink-2);line-height:1.55}
+
+@media(max-width:1100px){
+  .contact-bottom{grid-template-columns:1fr 1fr 1fr;gap:28px 32px}
+  .contact-bottom .lede{grid-column:1 / -1}
+  .contact-bottom .v{font-size:20px}
+}
 
 /* footer */
 .foot{padding:32px 0 24px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;color:var(--ink-3);text-transform:uppercase;border-top:1px solid var(--rule);margin-top:72px}
@@ -382,6 +391,7 @@ section + section{border-top:1px solid var(--rule)}
   .hero-bottom{grid-template-columns:1fr 1fr;gap:28px}
   .hero-bottom .statement{grid-column:span 2}
   .sec-head{grid-template-columns:1fr;gap:20px}
+  #approach .sec-head h2{white-space:normal;font-size:clamp(32px, 7vw, 48px)}
   .approach-body{grid-template-columns:1fr;gap:48px}
   .work-item{grid-template-columns:56px 1fr 40px;gap:16px}
   .work-item .chev{grid-row:1;grid-column:3;justify-self:end;padding-top:6px}
