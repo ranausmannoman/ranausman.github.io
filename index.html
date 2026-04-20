@@ -340,7 +340,7 @@ section + section{border-top:1px solid var(--rule)}
 .contact-bottom{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;padding-top:40px;border-top:1px solid var(--rule);align-items:start}
 .contact-bottom .cell{display:flex;flex-direction:column;gap:8px}
 .contact-bottom .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
-.contact-bottom .v{font-family:var(--serif);font-size:22px;font-weight:400;line-height:1.25;letter-spacing:-.01em;text-wrap:pretty}
+.contact-bottom .v{font-family:var(--serif);font-size:22px;font-weight:400;line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;overflow-wrap:anywhere;min-width:0}
 .contact-bottom .v a{border-bottom:1px solid var(--rule-2);transition:border-color .3s, color .3s}
 .contact-bottom .v a:hover{border-bottom-color:var(--hue);color:var(--hue)}
 .contact-bottom .lede{grid-column:span 1}
@@ -391,8 +391,9 @@ section + section{border-top:1px solid var(--rule)}
   .xp-body{grid-template-columns:1fr;gap:40px}
   .tl-item{grid-template-columns:1fr;gap:12px}
   .edu-body{grid-template-columns:1fr}
-  .contact-bottom{grid-template-columns:1fr 1fr;gap:24px}
-  .contact-bottom .lede{grid-column:span 2}
+  .contact-bottom{grid-template-columns:1fr;gap:24px}
+  .contact-bottom .lede{grid-column:span 1}
+  .contact-bottom .v{font-size:19px}
 }
 </style>
 </head>
