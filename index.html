@@ -333,7 +333,8 @@ section + section{border-top:1px solid var(--rule)}
 .contact-giant .ln{display:block}
 .contact-giant em{font-style:italic;color:var(--hue)}
 .contact-giant a{display:inline-flex;align-items:center;gap:.15em;position:relative}
-.contact-giant a .arr{display:inline-block;transition:transform .5s var(--ease)}
+.contact-giant a .arr{display:inline-block;width:.7em;height:.7em;transition:transform .5s var(--ease);vertical-align:baseline}
+.contact-giant a .arr svg{width:100%;height:100%;display:block}
 .contact-giant a:hover .arr{transform:translate(.1em,-.1em) rotate(-8deg)}
 .contact-giant a:hover em{font-style:italic}
 
@@ -815,7 +816,7 @@ section + section{border-top:1px solid var(--rule)}
       <span class="ln">Let's <em>build</em></span>
       <span class="ln">something that</span>
       <span class="ln">outlives the</span>
-      <span class="ln"><a href="mailto:ranausmannoman@gmail.com" data-cursor="hover"><em>roadmap.</em><span class="arr">↗</span></a></span>
+      <span class="ln"><a href="mailto:ranausmannoman@gmail.com" data-cursor="hover"><em>roadmap.</em><span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="9,7 17,7 17,15"/></svg></span></a></span>
     </h2>
 
     <div class="contact-bottom">
