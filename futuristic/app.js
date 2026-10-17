@@ -96,7 +96,7 @@
   const activeEntrances = new Map();
 
   function motionAllowed() {
-    return !suspended && !reduced.matches && !userPaused;
+    return !document.documentElement.hasAttribute('data-preloading') && !suspended && !reduced.matches && !userPaused;
   }
 
   function updateHero() {
@@ -193,6 +193,7 @@
       configureMotion();
     });
   });
+  document.addEventListener('portfolio:ready', configureMotion);
   document.addEventListener('visibilitychange', () => {
     updateHero();
     syncEntrances();

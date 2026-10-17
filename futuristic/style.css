@@ -541,3 +541,16 @@ html[data-motion-paused="true"] .button-primary:hover, html[data-motion-paused="
 @keyframes collaboration-implementer { 0%, 100% { opacity: .15; } 28%, 36% { opacity: .15; } 29%, 35% { opacity: 1; } 68%, 72% { opacity: .15; } 69%, 71% { opacity: 1; } }
 @keyframes collaboration-review { 0%, 100% { opacity: .15; } 42%, 48% { opacity: .15; } 43%, 47% { opacity: 1; } 76%, 80% { opacity: .15; } 77%, 79% { opacity: 1; } }
 @keyframes collaboration-approval { 0%, 100% { opacity: .15; } 86%, 94% { opacity: .15; } 87%, 93% { opacity: 1; } }
+
+/* Optional first-visit loader. Content and keyboard interaction stay available. */
+.page-preloader { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 24px; background: var(--bg); color: var(--ink); opacity: 0; pointer-events: none; transition: opacity var(--motion-hover) var(--motion-ease); animation: preloader-fail-open 1ms step-end 2.5s forwards; }
+html[data-preloading="active"] .page-preloader { opacity: 1; }
+.preloader-brand { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.preloader-brand .brand-mark { width: 58px; height: 58px; font-size: 33px; border-radius: 12px 3px 12px 3px; }
+.preloader-name { font-size: 17px; font-weight: 650; letter-spacing: -.025em; }
+.preloader-track { display: block; width: 112px; height: 2px; overflow: hidden; background: var(--line); }
+.preloader-track > span { display: block; width: 40%; height: 100%; background: var(--accent); animation: preloader-sweep calc(var(--motion-cycle) / 8) linear infinite; }
+.preloader-label { color: var(--soft); font: 9px/1.5 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+@keyframes preloader-sweep { 0% { transform: translateX(-100%); opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateX(250%); opacity: 0; } }
+@keyframes preloader-fail-open { to { visibility: hidden; opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .page-preloader { display: none !important; } }
