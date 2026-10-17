@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="440" viewBox="0 0 600 440" fill="none">
+  <title>From a product brief to a manufacturing partner</title>
+  <desc>An original sourcing workspace illustration with a garment specification, manufacturer capabilities and a brief, find, connect workflow.</desc>
+  <defs>
+    <linearGradient id="workspace" x1="278" y1="36" x2="576" y2="320" gradientUnits="userSpaceOnUse"><stop stop-color="#244c3e"/><stop offset="1" stop-color="#15382d"/></linearGradient>
+    <linearGradient id="paper" x1="24" y1="36" x2="252" y2="320" gradientUnits="userSpaceOnUse"><stop stop-color="#f4f3df"/><stop offset="1" stop-color="#dfe9ce"/></linearGradient>
+  </defs>
+  <g stroke="#537a5d" stroke-opacity=".4"><path d="M40 18H148M452 18H560M16 348H584"/><circle cx="300" cy="18" r="3" fill="#a8da8a" stroke="none"/></g>
+  <rect x="24" y="36" width="228" height="284" rx="18" fill="url(#paper)" stroke="#d4e3bc"/>
+  <path d="M218 36V64H252" fill="#c5d8af"/>
+  <g font-family="Arial,sans-serif" fill="#243e2d">
+    <text x="46" y="73" font-weight="700" font-size="30">Project brief</text>
+    <text x="46" y="240" font-size="16" font-weight="700">Product specification</text>
+    <text x="46" y="274" font-size="16">Materials</text>
+    <text x="136" y="274" font-size="16">Cotton blend</text>
+    <text x="46" y="300" font-size="16">Scope</text>
+    <text x="136" y="300" font-size="16">First run</text>
+  </g>
+  <path d="M46 89H230M46 252H230" stroke="#a5bc94"/>
+  <g stroke="#55744b" stroke-width="2" stroke-linejoin="round">
+    <path d="M104 115L81 125L65 154L90 168L100 152V211H177V152L187 168L212 154L196 125L173 115C166 134 111 134 104 115Z" fill="#d5dfc4"/>
+    <path d="M104 115C120 124 157 124 173 115M111 121C118 145 159 145 166 121M108 153V202H169M111 186H165" stroke="#75916a"/>
+    <path d="M87 111H190M87 107V115M190 107V115" stroke="#77946b" stroke-dasharray="3 4"/>
+  </g>
+  <rect x="278" y="36" width="298" height="284" rx="18" fill="url(#workspace)" stroke="#537d63"/>
+  <text x="300" y="73" fill="#e8f1dc" font-family="Arial,sans-serif" font-weight="700" font-size="30">Manufacturers</text>
+  <path d="M300 89H554" stroke="#52745c"/>
+  <g fill="#2a5543" stroke="#5c8063"><rect x="298" y="106" width="258" height="54" rx="12"/><rect x="298" y="174" width="258" height="54" rx="12"/><rect x="298" y="242" width="258" height="54" rx="12"/></g>
+  <g fill="#c1ef98"><circle cx="324" cy="133" r="15"/><circle cx="324" cy="201" r="15"/><circle cx="324" cy="269" r="15"/></g>
+  <g font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#25402b"><text x="324" y="139">1</text><text x="324" y="207">2</text><text x="324" y="275">3</text></g>
+  <g font-family="Arial,sans-serif" font-size="18" fill="#ecf3df"><text x="350" y="139" font-size="30">Cut &amp; sew</text><text x="350" y="207" font-size="30">Small batch</text><text x="350" y="275" font-size="30">Production</text></g>
+  <g stroke="#bfe998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M530 128L536 133L530 138M530 196L536 201L530 206M530 264L536 269L530 274"/></g>
+  <path d="M252 178H278" stroke="#618c66" stroke-width="2"/>
+  <path class="project-signal" data-flow="0" pathLength="100" d="M252 178H278" stroke="#c1ff72" stroke-width="2"/>
+  <path d="M110 374H280M320 374H490" stroke="#527951" stroke-width="2"/>
+  <path class="project-signal" data-flow="1" pathLength="100" d="M110 374H280" stroke="#c1ff72" stroke-width="2"/>
+<path class="project-signal" data-flow="2" pathLength="100" d="M320 374H490" stroke="#c1ff72" stroke-width="2"/>
+  <g fill="#1c3e2c" stroke="#a2d47d" stroke-width="1.5"><circle cx="90" cy="374" r="20"/><circle cx="300" cy="374" r="20"/><circle cx="510" cy="374" r="20"/></g>
+  <g font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#d9f1bc"><text x="90" y="380">1</text><text x="300" y="380">2</text><text x="510" y="380">3</text></g>
+  <g font-family="Arial,sans-serif" font-size="18" text-anchor="middle" fill="#e4eed7"><text x="90" y="424" font-size="30">Brief</text><text x="300" y="424" font-size="30">Find</text><text x="510" y="424" font-size="30">Connect</text></g>
+</svg>

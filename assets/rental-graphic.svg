@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="440" viewBox="0 0 600 440" fill="none">
+  <title>A villa stay with a clear booking journey</title>
+  <desc>An original property and booking illustration showing a villa, a calendar with dates fourteen to eighteen selected and a destination, dates and guests search bar.</desc>
+  <defs>
+    <linearGradient id="villaSky" x1="24" y1="56" x2="314" y2="346" gradientUnits="userSpaceOnUse"><stop stop-color="#4d4169"/><stop offset="1" stop-color="#2b2541"/></linearGradient>
+  </defs>
+  <rect x="24" y="56" width="290" height="290" rx="18" fill="url(#villaSky)" stroke="#75668c"/>
+  <circle cx="242" cy="115" r="33" fill="#bdacd0" fill-opacity=".45"/>
+  <path d="M42 102H112M55 118H92" stroke="#9b89b3" stroke-opacity=".5" stroke-linecap="round"/>
+  <g class="villa-platform">
+    <rect x="44" y="246" width="252" height="62" rx="12" fill="#514166" stroke="#89759c"/>
+  </g>
+  <g stroke="#9b86ad" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M68 171L174 148L238 176L132 201Z" fill="#ece3eb"/>
+    <path d="M68 171L132 201V286L68 252Z" fill="#b5a1c2"/>
+    <path d="M132 201L238 176V252L132 286Z" fill="#d8c9df"/>
+    <path d="M68 171L68 160L174 137L238 165V176M68 160L132 190L238 165" fill="#f3eaf1"/>
+    <path d="M132 190V201"/>
+  </g>
+  <path d="M84 201L112 214V258L84 244Z" fill="#534366" stroke="#e5d7e9"/>
+  <path d="M152 207L216 191V236L152 253Z" fill="#66537e" stroke="#f1e4ee" stroke-width="2"/>
+  <path d="M174 202V247M195 197V241" stroke="#bbadc9"/>
+  <g stroke="#a995b5" stroke-width="3" stroke-linecap="round"><path d="M48 238C61 195 65 151 59 127"/><path d="M59 127C43 111 35 120 35 137M59 127C71 107 91 112 96 126M59 127C51 105 66 94 77 99M59 127C78 126 88 139 88 151"/></g>
+  <g fill="#b0b59c"><path d="M45 118C33 115 31 129 35 137C37 125 41 123 52 125Z"/><path d="M65 119C78 107 91 112 96 126C84 120 77 121 65 126Z"/><path d="M60 116C57 101 67 94 77 99C66 101 66 111 64 121Z"/></g>
+  <text x="44" y="89" fill="#efe8f4" font-family="Arial,sans-serif" font-weight="700" font-size="30">Villa stay</text>
+  <rect x="328" y="56" width="248" height="290" rx="18" fill="#f4eff9" stroke="#d0c0df"/>
+  <g font-family="Arial,sans-serif" fill="#342840"><text x="350" y="91" font-weight="700" font-size="30">Booking dates</text><text x="350" y="124" font-size="16" fill="#6a577b">Your dates</text></g>
+  <path d="M350 136H554" stroke="#d9cee3"/>
+  <g font-family="Arial,sans-serif" font-size="16" fill="#756184" text-anchor="middle"><text x="364" y="157">M</text><text x="392" y="157">T</text><text x="420" y="157">W</text><text x="448" y="157">T</text><text x="476" y="157">F</text><text x="504" y="157">S</text><text x="532" y="157">S</text></g>
+  <rect x="406" y="168" width="140" height="30" rx="15" fill="#d8c6ec"/>
+  <rect class="booking-highlight" x="406" y="168" width="140" height="30" rx="15" stroke="#9a73bc" stroke-width="1.5" stroke-dasharray="6 10"/>
+  <g font-family="Arial,sans-serif" font-size="16" text-anchor="middle" fill="#574465"><text x="364" y="189">12</text><text x="392" y="189">13</text></g>
+  <g font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#3b264b"><text x="420" y="189">14</text><text x="448" y="189">15</text><text x="476" y="189">16</text><text x="504" y="189">17</text><text x="532" y="189">18</text></g>
+  <g font-family="Arial,sans-serif" font-size="16" text-anchor="middle" fill="#73607f"><text x="364" y="224">19</text><text x="392" y="224">20</text><text x="420" y="224">21</text><text x="448" y="224">22</text><text x="476" y="224">23</text><text x="504" y="224">24</text><text x="532" y="224">25</text><text x="364" y="259">26</text><text x="392" y="259">27</text><text x="420" y="259">28</text><text x="448" y="259">29</text><text x="476" y="259">30</text><text x="504" y="259">31</text><text x="532" y="259">1</text></g>
+  <path d="M350 275H554" stroke="#d9cee3"/>
+  <rect x="350" y="291" width="204" height="34" rx="10" fill="#e2d7ee"/>
+  <path d="M363 307L368 312L377 302" stroke="#715184" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="386" y="313" fill="#513562" font-family="Arial,sans-serif" font-size="16" font-weight="700">14–18 confirmed</text>
+  <rect x="24" y="366" width="552" height="56" rx="14" fill="#322a47" stroke="#89769e"/>
+  <path d="M208 380V408M390 380V408" stroke="#736082"/>
+  <g fill="#eee7f4" font-family="Arial,sans-serif" font-size="16"><text x="42" y="400" font-size="30">Destination</text><text x="228" y="400" font-size="30">Dates</text><text x="410" y="400" font-size="30">Guests</text></g>
+  <circle cx="545" cy="394" r="18" fill="#c5afd9"/>
+  <circle cx="542" cy="391" r="5" stroke="#3e2d50" stroke-width="2"/>
+  <path d="M546 395L551 400" stroke="#3e2d50" stroke-width="2" stroke-linecap="round"/>
+</svg>

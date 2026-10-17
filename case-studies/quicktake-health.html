@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0b1014">
+  <title>QuickTake Health case study — Rana Usman</title>
+  <meta name="description" content="Connected kiosk experiences, from software delivery to real-device validation. Technical leadership and backend delivery through PureLogics.">
+  <link rel="canonical" href="https://ranausman.dev/case-studies/quicktake-health.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Rana Usman">
+  <meta property="og:title" content="QuickTake Health — Connected kiosk experiences, from software delivery to real-device validation.">
+  <meta property="og:description" content="QuickTake 2.0 · Development &amp; UAT · Kiosk release lifecycle, API delivery and real-device validation">
+  <meta property="og:url" content="https://ranausman.dev/case-studies/quicktake-health.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../futuristic/style.css">
+  <link rel="stylesheet" href="../futuristic/case-study.css">
+  <script src="../futuristic/app.js" defer></script>
+</head>
+<body class="case-page case-kiosk">
+  <a class="skip-link" href="#main">Skip to case study</a>
+  <header class="site-header case-header">
+    <div class="case-header-inner">
+      <a class="brand" href="../index.html" aria-label="Rana Usman, home"><span class="brand-mark" aria-hidden="true">ru.</span><span class="brand-name">Rana Usman</span></a>
+      <nav class="case-header-links" aria-label="Case-study navigation">
+        <a href="../index.html#work"><span aria-hidden="true">←</span> Back to work</a>
+        <a class="case-public-link" href="https://quicktakehealth.com/" target="_blank" rel="noopener noreferrer">Visit product <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="case-container">
+      <nav class="case-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">QuickTake Health</span></nav>
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="case-hero-grid">
+          <div class="case-hero-copy">
+            <p class="case-eyebrow">Healthcare kiosk / Device, API &amp; cloud</p>
+            <h1 class="case-title" id="case-title">QuickTake Health</h1>
+            <p class="case-lead">Connected kiosk experiences, from software delivery to real-device validation.</p>
+            <p class="case-status"><strong>QuickTake 2.0 · Development &amp; UAT</strong>PureLogics · Technical leadership and backend delivery</p>
+            <a class="text-link case-hero-action" href="#contribution">Explore my contribution <span aria-hidden="true">↓</span></a>
+          </div>
+          <figure class="project-visual kiosk hero-visual case-figure">
+            <svg class="project-vector" role="img" aria-label="Conceptual kiosk and assessment flow" xmlns="http://www.w3.org/2000/svg" width="600" height="440" viewBox="0 0 600 440" fill="none">
+  <title>Self-service kiosk and assessment flow</title>
+  <desc>Original conceptual illustration of a freestanding touchscreen kiosk with a centered camera above the display and a level floor base. The illustrative flow shows check-in, measurements and review.</desc>
+  <defs>
+    <linearGradient id="kiosk-body" x1="120" y1="72" x2="266" y2="328" gradientUnits="userSpaceOnUse"><stop stop-color="#353938"/><stop offset=".48" stop-color="#171d1c"/><stop offset="1" stop-color="#0d1413"/></linearGradient>
+    <linearGradient id="kiosk-screen" x1="139" y1="88" x2="248" y2="291" gradientUnits="userSpaceOnUse"><stop stop-color="#f4e7d1"/><stop offset="1" stop-color="#dfc4a3"/></linearGradient>
+    <linearGradient id="kiosk-base" x1="112" y1="380" x2="276" y2="380" gradientUnits="userSpaceOnUse"><stop stop-color="#3a403b"/><stop offset="1" stop-color="#101715"/></linearGradient>
+  </defs>
+
+  <ellipse class="kiosk-shadow" cx="194" cy="402" rx="98" ry="8" fill="#17150f" fill-opacity=".25"/>
+
+  <g class="kiosk-camera">
+    <rect class="camera-mount" x="187" y="51" width="14" height="20" rx="3" fill="#202825" stroke="#87907c" stroke-width="1.5"/>
+    <rect class="camera-housing" x="166" y="27" width="56" height="26" rx="9" fill="#202825" stroke="#b4b99f" stroke-width="1.5"/>
+    <circle class="camera-lens" cx="194" cy="40" r="8.5" fill="#0a1310" stroke="#c4aa83" stroke-width="2"/>
+    <circle cx="194" cy="40" r="4.5" fill="#33483c"/>
+    <circle cx="196" cy="38" r="1.7" fill="#dbe9c8"/>
+  </g>
+
+  <g class="kiosk-support">
+    <path d="M178 318H210L214 382H174Z" fill="#19221d" stroke="#6c7465" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M190 329H198V376H190Z" fill="#333c31"/>
+    <rect x="112" y="385" width="164" height="15" rx="6" fill="#19221d" stroke="#7d826c" stroke-width="1.5"/>
+    <rect x="112" y="380" width="164" height="15" rx="6" fill="url(#kiosk-base)" stroke="#8b927c" stroke-width="1.5"/>
+    <path d="M123 390H265" stroke="#a1a58a" stroke-opacity=".45" stroke-linecap="round"/>
+  </g>
+
+  <path d="M125 70L113 79V319L125 330L254 320L264 309V80L253 70Z" fill="#0d1512" stroke="#626c5f" stroke-width="1.5"/>
+  <rect x="124" y="69" width="140" height="258" rx="13" fill="url(#kiosk-body)" stroke="#8d947e" stroke-width="1.5"/>
+  <path d="M132 79H255" stroke="#c1c8ac" stroke-opacity=".22"/>
+  <rect x="134" y="85" width="120" height="207" rx="6" fill="url(#kiosk-screen)"/>
+  <path d="M135 91C171 94 219 110 253 133V91C253 88 251 86 248 86H140C137 86 135 88 135 91Z" fill="#fff9ea" fill-opacity=".22"/>
+
+  <text x="146" y="113" fill="#3d4637" font-family="Arial,sans-serif" font-size="18" font-weight="600">Check in</text>
+  <path d="M146 126H241" stroke="#9a9c7c" stroke-opacity=".5"/>
+  <circle cx="194" cy="167" r="29" fill="#d2d3b2" stroke="#89977d"/>
+  <circle cx="194" cy="160" r="8" stroke="#64745e" stroke-width="2"/>
+  <path d="M178 181C180 172 187 169 194 169C201 169 208 172 210 181" stroke="#64745e" stroke-width="2" stroke-linecap="round"/>
+  <rect x="147" y="211" width="94" height="10" rx="5" fill="#b8bb98" fill-opacity=".65"/>
+  <rect x="164" y="230" width="60" height="7" rx="3.5" fill="#b8bb98" fill-opacity=".45"/>
+  <rect x="147" y="252" width="94" height="28" rx="5" fill="#4c6347"/>
+  <text x="194" y="272" text-anchor="middle" fill="#f3efd9" font-family="Arial,sans-serif" font-size="16" font-weight="600">Begin</text>
+  <circle cx="194" cy="310" r="3" fill="#b9d194"/>
+  <path d="M144 308H170M218 308H243" stroke="#78856c" stroke-width="1.5" stroke-linecap="round"/>
+
+  <path d="M276 224H300C311 224 317 218 317 207V126C317 118 324 114 335 114M360 160V186M360 270V296" stroke="#b88d69" stroke-opacity=".5" stroke-width="2"/>
+  <path d="M355 179L360 185L365 179M355 289L360 295L365 289" stroke="#d2ab82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="project-signal" data-flow="0" pathLength="100" d="M276 224H300C311 224 317 218 317 207V126C317 118 324 114 335 114" stroke="#efc795" stroke-width="2.5"/>
+<path class="project-signal" data-flow="1" pathLength="100" d="M360 160V186" stroke="#efc795" stroke-width="2.5"/>
+<path class="project-signal" data-flow="2" pathLength="100" d="M360 270V296" stroke="#efc795" stroke-width="2.5"/>
+
+  <rect x="335" y="76" width="225" height="84" rx="10" fill="#48392d" stroke="#8e7257"/>
+  <circle cx="360" cy="110" r="14" fill="#6e5540" stroke="#cfab80"/>
+  <text x="360" y="116" text-anchor="middle" fill="#f2dfc0" font-family="Arial,sans-serif" font-size="16">1</text>
+  <text x="386" y="116" fill="#f1dfc2" font-family="Arial,sans-serif" font-weight="600" font-size="30">Check-in</text>
+  <text x="353" y="143" fill="#d4bea0" font-family="Arial,sans-serif" font-size="16">A simple starting point</text>
+
+  <rect x="335" y="186" width="225" height="84" rx="10" fill="#48392d" stroke="#8e7257"/>
+  <circle cx="360" cy="220" r="14" fill="#6e5540" stroke="#cfab80"/>
+  <text x="360" y="226" text-anchor="middle" fill="#f2dfc0" font-family="Arial,sans-serif" font-size="16">2</text>
+  <text x="386" y="226" fill="#f1dfc2" font-family="Arial,sans-serif" font-weight="600" font-size="30">Measure</text>
+  <text x="353" y="253" fill="#d4bea0" font-family="Arial,sans-serif" font-size="16">Guided assessment steps</text>
+
+  <rect x="335" y="296" width="225" height="84" rx="10" fill="#48392d" stroke="#8e7257"/>
+  <circle cx="360" cy="330" r="14" fill="#6e5540" stroke="#cfab80"/>
+  <text x="360" y="336" text-anchor="middle" fill="#f2dfc0" font-family="Arial,sans-serif" font-size="16">3</text>
+  <text x="386" y="336" fill="#f1dfc2" font-family="Arial,sans-serif" font-weight="600" font-size="30">Review</text>
+  <text x="353" y="363" fill="#d4bea0" font-family="Arial,sans-serif" font-size="16">Clear next-step summary</text>
+</svg>
+            <figcaption class="case-figure-caption"><span>Conceptual kiosk and assessment flow</span><button class="motion-toggle" id="motion-toggle" type="button" aria-label="Pause decorative motion" hidden>Pause motion</button></figcaption>
+          </figure>
+        </div>
+        <dl class="case-summary" aria-label="Contribution summary"><div class="case-summary-item"><dt>Role</dt><dd>Technical leadership and backend delivery</dd></div><div class="case-summary-item"><dt>Team</dt><dd>PureLogics</dd></div><div class="case-summary-item"><dt>Scope</dt><dd>Kiosk release lifecycle, API delivery and real-device validation</dd></div><div class="case-summary-item"><dt>Stack</dt><dd>C# / .NET 10 · PostgreSQL · WinUI 3 · AWS ECS Fargate · GitHub Actions · MSIX / App Installer · Microsoft Intune</dd></div></dl>
+      </section>
+
+      <div class="case-content-layout">
+        <aside class="case-toc" aria-labelledby="case-toc-title"><h2 id="case-toc-title">In this case study</h2><nav aria-label="On this page"><ol><li><a href="#product"><span aria-hidden="true">01</span>The product</a></li><li><a href="#challenge"><span aria-hidden="true">02</span>The challenge</a></li><li><a href="#contribution"><span aria-hidden="true">03</span>My contribution</a></li><li><a href="#decisions"><span aria-hidden="true">04</span>Technical decisions</a></li><li><a href="#outcomes"><span aria-hidden="true">05</span>Outcome &amp; delivery scope</a></li><li><a href="#stack"><span aria-hidden="true">06</span>Relevant stack</a></li></ol></nav></aside>
+        <article class="case-article" aria-label="QuickTake Health case study">
+          <!-- case-copy:start -->
+          <section class="case-section" id="product" tabindex="-1"><h2><span class="case-chapter" aria-hidden="true">01 /</span>The product</h2><p>QuickTake Health brings a self-service health-measurement experience into physical spaces. Its public offering serves settings such as medical clinics, senior living communities, fitness facilities, sports programs, and workplaces. A person interacts with a kiosk, completes a guided session, and receives results through a connected digital experience. The wider product connects that encounter with member-facing and administrative software.</p><p>For a visitor, the experience needs to feel straightforward: approach the kiosk, follow the prompts, complete the measurement steps, and understand what happens next. For the teams delivering the product, that simple journey depends on several disciplines working together. Physical devices, Windows software, backend services, web interfaces, and release processes all need to support the same experience. That relationship between software and the real world is what makes the engineering work distinctive.</p><ol class="case-workflow"><li><span aria-hidden="true">01</span><strong>Approach</strong><p>A self-service kiosk</p></li><li><span aria-hidden="true">02</span><strong>Follow prompts</strong><p>A guided session</p></li><li><span aria-hidden="true">03</span><strong>Continue</strong><p>A connected experience</p></li></ol></section>
+          <section class="case-section" id="challenge" tabindex="-1"><h2><span class="case-chapter" aria-hidden="true">02 /</span>The challenge</h2><p>The 2.0 delivery effort had to support both clinical and wellness application experiences while keeping shared development practical. It also needed a repeatable way to install and update kiosk applications as work progressed through development and UAT. A release is more than a web deployment when it must arrive on a physical device and continue behaving correctly alongside hardware and the rest of the application.</p><p>I focused on separating application delivery channels, preserving a workable update lifecycle, and requiring evidence from builds, application checks, and real-device validation before promoting changes.</p></section>
+          <section class="case-section" id="contribution" tabindex="-1"><h2><span class="case-chapter" aria-hidden="true">03 /</span>My contribution</h2><p>As technical lead and backend developer at PureLogics, I combined implementation work with technical direction, review, planning, and cross-functional coordination. I worked across the API and kiosk delivery effort, coordinated with frontend, kiosk, QA, and DevOps colleagues, and translated product requirements into bounded engineering work.</p><p>I owned key decisions around the kiosk release and update approach. I directed the evolution from a single application release setup to distinct clinical and wellness delivery channels, each with development and UAT tracks. The shared-code restructure was implemented by a colleague; my contribution centered on release engineering, review, validation requirements, and rollout coordination.</p></section>
+          <section class="case-section" id="decisions" tabindex="-1"><h2><span class="case-chapter" aria-hidden="true">04 /</span>Technical decisions</h2><p>I established a clear distinction between initial installation and ongoing application updates. That gave the team a more coherent lifecycle to test and maintain. I also worked on automated delivery for the .NET API and coordinated promotions across the connected applications, with verification tied to each environment.</p><p>My workflow combined Claude Code and OpenAI Codex with explicit engineering ownership. AI tools assisted with implementation, testing, review, and documentation. I set scope, evaluated the results, corrected assumptions, and retained responsibility for merge and release decisions. Real-device checks and collaboration with QA remained important parts of that process.</p><h3>Four delivery tracks</h3><ul class="case-channel-grid"><li>Clinical <strong>DEV</strong></li><li>Clinical <strong>UAT</strong></li><li>Wellness <strong>DEV</strong></li><li>Wellness <strong>UAT</strong></li></ul></section>
+          <section class="case-section" id="outcomes" tabindex="-1"><h2><span class="case-chapter" aria-hidden="true">05 /</span>Outcome &amp; delivery scope</h2><div class="case-callout"><p>The work established four functioning development/UAT release channels across the clinical and wellness kiosk applications, supported ongoing application updates, and contributed to onboarding a client kiosk into UAT. It also created a clearer delivery path across the backend and connected applications. These outcomes describe the 2.0 development and acceptance-testing effort as of October 2026.</p></div></section>
+          <section class="case-section" id="stack" tabindex="-1"><h2><span class="case-chapter" aria-hidden="true">06 /</span>Relevant stack</h2><p>C# / .NET 10, PostgreSQL, WinUI 3, AWS ECS Fargate, GitHub Actions, MSIX / App Installer, and Microsoft Intune.</p><p>Connected web portals use React and TypeScript, with frontend implementation owned by a teammate.</p></section>
+          <!-- case-copy:end -->
+        </article>
+      </div>
+    </div>
+
+    <section class="case-next" aria-labelledby="case-next-title"><div class="case-container"><div class="case-next-heading"><h2 id="case-next-title">Explore another case study</h2><a class="text-link" href="../index.html#work">All selected work <span aria-hidden="true">↗</span></a></div><nav aria-label="Case studies"><ul class="case-next-grid"><li><a href="quicktake-health.html" aria-current="page"><span>This case study</span><strong>QuickTake Health</strong></a></li><li><a href="makers-row.html"><span>Manufacturing marketplace</span><strong>Maker’s Row <span aria-hidden="true">↗</span></strong></a></li><li><a href="guestay.html"><span>Hospitality platform</span><strong>Guestay <span aria-hidden="true">↗</span></strong></a></li><li><a href="roundhere.html"><span>Events &amp; communities</span><strong>RoundHere <span aria-hidden="true">↗</span></strong></a></li></ul></nav></div></section>
+  </main>
+  <footer class="case-container case-footer"><p>© 2026 Rana Usman · Lahore, Pakistan</p><a href="mailto:ranausmannoman@gmail.com?subject=Project%20enquiry">Discuss a project <span aria-hidden="true">↗</span></a><a href="../index.html">Back to portfolio</a></footer>
+</body>
+</html>

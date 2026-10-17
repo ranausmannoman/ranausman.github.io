@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="440" viewBox="0 0 600 440" fill="none">
+  <title>Self-service kiosk and assessment flow</title>
+  <desc>Original conceptual illustration of a freestanding touchscreen kiosk with a centered camera above the display and a level floor base. The illustrative flow shows check-in, measurements and review.</desc>
+  <defs>
+    <linearGradient id="kiosk-body" x1="120" y1="72" x2="266" y2="328" gradientUnits="userSpaceOnUse"><stop stop-color="#353938"/><stop offset=".48" stop-color="#171d1c"/><stop offset="1" stop-color="#0d1413"/></linearGradient>
+    <linearGradient id="kiosk-screen" x1="139" y1="88" x2="248" y2="291" gradientUnits="userSpaceOnUse"><stop stop-color="#f4e7d1"/><stop offset="1" stop-color="#dfc4a3"/></linearGradient>
+    <linearGradient id="kiosk-base" x1="112" y1="380" x2="276" y2="380" gradientUnits="userSpaceOnUse"><stop stop-color="#3a403b"/><stop offset="1" stop-color="#101715"/></linearGradient>
+  </defs>
+
+  <ellipse class="kiosk-shadow" cx="194" cy="402" rx="98" ry="8" fill="#17150f" fill-opacity=".25"/>
+
+  <g class="kiosk-camera">
+    <rect class="camera-mount" x="187" y="51" width="14" height="20" rx="3" fill="#202825" stroke="#87907c" stroke-width="1.5"/>
+    <rect class="camera-housing" x="166" y="27" width="56" height="26" rx="9" fill="#202825" stroke="#b4b99f" stroke-width="1.5"/>
+    <circle class="camera-lens" cx="194" cy="40" r="8.5" fill="#0a1310" stroke="#c4aa83" stroke-width="2"/>
+    <circle cx="194" cy="40" r="4.5" fill="#33483c"/>
+    <circle cx="196" cy="38" r="1.7" fill="#dbe9c8"/>
+  </g>
+
+  <g class="kiosk-support">
+    <path d="M178 318H210L214 382H174Z" fill="#19221d" stroke="#6c7465" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M190 329H198V376H190Z" fill="#333c31"/>
+    <rect x="112" y="385" width="164" height="15" rx="6" fill="#19221d" stroke="#7d826c" stroke-width="1.5"/>
+    <rect x="112" y="380" width="164" height="15" rx="6" fill="url(#kiosk-base)" stroke="#8b927c" stroke-width="1.5"/>
+    <path d="M123 390H265" stroke="#a1a58a" stroke-opacity=".45" stroke-linecap="round"/>
+  </g>
+
+  <path d="M125 70L113 79V319L125 330L254 320L264 309V80L253 70Z" fill="#0d1512" stroke="#626c5f" stroke-width="1.5"/>
+  <rect x="124" y="69" width="140" height="258" rx="13" fill="url(#kiosk-body)" stroke="#8d947e" stroke-width="1.5"/>
+  <path d="M132 79H255" stroke="#c1c8ac" stroke-opacity=".22"/>
+  <rect x="134" y="85" width="120" height="207" rx="6" fill="url(#kiosk-screen)"/>
+  <path d="M135 91C171 94 219 110 253 133V91C253 88 251 86 248 86H140C137 86 135 88 135 91Z" fill="#fff9ea" fill-opacity=".22"/>
+
+  <text x="146" y="113" fill="#3d4637" font-family="Arial,sans-serif" font-size="18" font-weight="600">Check in</text>
+  <path d="M146 126H241" stroke="#9a9c7c" stroke-opacity=".5"/>
+  <circle cx="194" cy="167" r="29" fill="#d2d3b2" stroke="#89977d"/>
+  <circle cx="194" cy="160" r="8" stroke="#64745e" stroke-width="2"/>
+  <path d="M178 181C180 172 187 169 194 169C201 169 208 172 210 181" stroke="#64745e" stroke-width="2" stroke-linecap="round"/>
+  <rect x="147" y="211" width="94" height="10" rx="5" fill="#b8bb98" fill-opacity=".65"/>
+  <rect x="164" y="230" width="60" height="7" rx="3.5" fill="#b8bb98" fill-opacity=".45"/>
+  <rect x="147" y="252" width="94" height="28" rx="5" fill="#4c6347"/>
+  <text x="194" y="272" text-anchor="middle" fill="#f3efd9" font-family="Arial,sans-serif" font-size="16" font-weight="600">Begin</text>
+  <circle cx="194" cy="310" r="3" fill="#b9d194"/>
+  <path d="M144 308H170M218 308H243" stroke="#78856c" stroke-width="1.5" stroke-linecap="round"/>
+
+  <path d="M276 224H300C311 224 317 218 317 207V126C317 118 324 114 335 114M360 160V186M360 270V296" stroke="#b88d69" stroke-opacity=".5" stroke-width="2"/>
+  <path d="M355 179L360 185L365 179M355 289L360 295L365 289" stroke="#d2ab82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="project-signal" data-flow="0" pathLength="100" d="M276 224H300C311 224 317 218 317 207V126C317 118 324 114 335 114" stroke="#efc795" stroke-width="2.5"/>
+<path class="project-signal" data-flow="1" pathLength="100" d="M360 160V186" stroke="#efc795" stroke-width="2.5"/>
+<path class="project-signal" data-flow="2" pathLength="100" d="M360 270V296" stroke="#efc795" stroke-width="2.5"/>
+
+  <rect x="335" y="76" width="225" height="84" rx="10" fill="#48392d" stroke="#8e7257"/>
+  <circle cx="360" cy="110" r="14" fill="#6e5540" stroke="#cfab80"/>
+  <text x="360" y="116" text-anchor="middle" fill="#f2dfc0" font-family="Arial,sans-serif" font-size="16">1</text>
+  <text x="386" y="116" fill="#f1dfc2" font-family="Arial,sans-serif" font-weight="600" font-size="30">Check-in</text>
+  <text x="353" y="143" fill="#d4bea0" font-family="Arial,sans-serif" font-size="16">A simple starting point</text>
+
+  <rect x="335" y="186" width="225" height="84" rx="10" fill="#48392d" stroke="#8e7257"/>
+  <circle cx="360" cy="220" r="14" fill="#6e5540" stroke="#cfab80"/>
+  <text x="360" y="226" text-anchor="middle" fill="#f2dfc0" font-family="Arial,sans-serif" font-size="16">2</text>
+  <text x="386" y="226" fill="#f1dfc2" font-family="Arial,sans-serif" font-weight="600" font-size="30">Measure</text>
+  <text x="353" y="253" fill="#d4bea0" font-family="Arial,sans-serif" font-size="16">Guided assessment steps</text>
+
+  <rect x="335" y="296" width="225" height="84" rx="10" fill="#48392d" stroke="#8e7257"/>
+  <circle cx="360" cy="330" r="14" fill="#6e5540" stroke="#cfab80"/>
+  <text x="360" y="336" text-anchor="middle" fill="#f2dfc0" font-family="Arial,sans-serif" font-size="16">3</text>
+  <text x="386" y="336" fill="#f1dfc2" font-family="Arial,sans-serif" font-weight="600" font-size="30">Review</text>
+  <text x="353" y="363" fill="#d4bea0" font-family="Arial,sans-serif" font-size="16">Clear next-step summary</text>
+</svg>
