@@ -20,8 +20,7 @@
 .case-page .case-hero-action { margin-top: 24px; }
 .case-page .case-figure { width: 100%; max-width: none; min-height: 0; aspect-ratio: auto; margin: 0; padding: 20px 22px 16px; display: flex; flex-direction: column; align-items: stretch; gap: 8px; border-radius: 8px; }
 .case-page .case-figure .project-vector { width: 100%; max-width: 100%; height: auto; min-height: 0; aspect-ratio: 600 / 440; flex: none; }
-.case-page .case-figure-caption { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; min-height: 44px; color: #d4bea0; font: 11px/1.6 var(--mono); }
-.case-page .case-figure .motion-toggle { color: #e4c9a7; border-color: #947555; }
+.case-page .case-figure-caption { color: #d4bea0; font: 11px/1.6 var(--mono); }
 .case-page .case-summary { display: grid; grid-template-columns: 1fr 1fr 1.4fr 1.6fr; gap: 24px 32px; border-block: 1px solid var(--line); margin-top: 48px; padding-block: 26px; }
 .case-page .case-summary-item { min-width: 0; }
 .case-page .case-summary dt { color: var(--soft); font: 10px/1.5 var(--mono); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 9px; }
@@ -106,16 +105,20 @@
 .case-page.case-live { --case-accent: #a6d2df; }
 .case-page .case-summary dd { overflow-wrap: anywhere; }
 .case-page .case-chapter { display: block; margin-bottom: 14px; font: 11px/1.5 var(--mono); letter-spacing: .12em; color: var(--case-accent); }
-.case-page .case-workflow { display: grid; grid-template-columns: repeat(auto-fit,minmax(120px,1fr)); gap: 22px; padding: 0; margin-block: 32px 8px; list-style: none; }
-.case-page .case-workflow li { padding-top: 18px; border-top: 1px solid var(--case-accent); margin: 0; }
+.case-page .case-section .case-workflow { display: grid; grid-template-columns: repeat(auto-fit,minmax(120px,1fr)); gap: 22px; padding: 0; margin-block: 32px 8px; list-style: none; }
+.case-page .case-section .case-workflow > li { min-width: 0; padding-top: 18px; border-top: 1px solid var(--case-accent); margin: 0; }
 .case-page .case-workflow li > span { display: block; color: var(--case-accent); font: 11px/1.5 var(--mono); margin-bottom: 14px; }
 .case-page .case-workflow strong { display: block; font-size: 16px; line-height: 1.4; }
 .case-page .case-workflow p { font-size: 13px; line-height: 1.65; margin-top: 8px; }
-.case-page .case-channel-grid { list-style: none; padding: 0; margin-block: 22px 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.case-page .case-channel-grid li { margin: 0; border: 1px solid var(--line); padding: 14px 18px; font-size: 14px; display: flex; justify-content: space-between; gap: 12px; }
-@media (max-width: 560px) { .case-page .case-workflow { grid-template-columns: 1fr 1fr; } .case-page .case-channel-grid { grid-template-columns: 1fr; } }
+.case-page .case-section .case-channel-grid { list-style: none; padding: 0; margin-block: 22px 8px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.case-page .case-section .case-channel-grid > li { min-width: 0; align-items: center; margin: 0; border: 1px solid var(--line); padding: 14px 18px; font-size: 14px; display: flex; justify-content: space-between; gap: 12px; }
+@media (max-width: 560px) { .case-page .case-section .case-workflow { grid-template-columns: 1fr 1fr; } .case-page .case-section .case-channel-grid { grid-template-columns: 1fr; } }
 
 .case-page .case-section p { text-align: justify; text-align-last: start; hyphens: auto; hyphenate-limit-chars: 6 3 3; text-wrap: pretty; }
 .case-page .case-workflow p { text-align: start; }
 .case-page .case-toc a { align-items: flex-start; padding-block: 10px; }
 .case-page .case-toc a > span { flex: 0 0 18px; white-space: nowrap; padding-top: 3px; }
+
+/* Keep a four-step journey balanced as the reading column narrows. */
+.case-page .case-section .case-workflow-four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1050px) { .case-page .case-section .case-workflow-four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

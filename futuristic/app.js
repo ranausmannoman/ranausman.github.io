@@ -73,22 +73,21 @@
 (() => {
   'use strict';
 
-  const visuals = Array.from(document.querySelectorAll('.hero-visual, .project-visual, .collaboration-visual'));
+  const visuals = Array.from(document.querySelectorAll('.hero-visual, .project-visual, .collaboration-visual, .fitness-visual'));
   const visibleVisuals = new Set();
-  const toggles = Array.from(document.querySelectorAll('#motion-toggle, [data-motion-toggle]'));
-  const entranceSelector = '.hero-enter, .section-heading, .service, .ai-offer, .experience-row, .process-list li, .contact-inner, .project-visual';
+  const entranceSelector = '.hero-enter, .section-heading, .service, .ai-offer, .experience-row, .process-list li, .contact-inner, .project-visual, .fitness-copy';
   const entrances = Array.from(document.querySelectorAll(entranceSelector))
     .filter(element => typeof element.animate === 'function');
 
   visuals.forEach(visual => { visual.dataset.motionActive = 'false'; });
-  toggles.forEach(toggle => { toggle.hidden = true; });
+  // Manual pause controls are retired; discard any stale page-state marker.
+  document.documentElement.removeAttribute('data-motion-paused');
 
   // Unsupported APIs leave the fully visible, static baseline intact.
   if (typeof window.matchMedia !== 'function' || typeof window.IntersectionObserver !== 'function') return;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (typeof reduced.addEventListener !== 'function' && typeof reduced.addListener !== 'function') return;
 
-  let userPaused = false;
   let suspended = false;
   let heroObserver = null;
   let entranceObserver = null;
@@ -96,19 +95,12 @@
   const activeEntrances = new Map();
 
   function motionAllowed() {
-    return !document.documentElement.hasAttribute('data-preloading') && !suspended && !reduced.matches && !userPaused;
+    return !document.documentElement.hasAttribute('data-preloading') && !suspended && !reduced.matches;
   }
 
-  function updateHero() {
-    document.documentElement.dataset.motionPaused = String(userPaused);
+  function updateVisuals() {
     visuals.forEach(visual => {
-      visual.dataset.motionActive = String(motionAllowed() && visibleVisuals.has(visual) && document.visibilityState === 'visible' && !userPaused);
-    });
-    toggles.forEach(toggle => {
-      toggle.hidden = !visuals.length || suspended || reduced.matches;
-      toggle.textContent = userPaused ? 'Resume motion' : 'Pause motion';
-      toggle.setAttribute('aria-label', userPaused ? 'Resume page motion' : 'Pause page motion');
-      toggle.setAttribute('aria-pressed', String(userPaused));
+      visual.dataset.motionActive = String(motionAllowed() && visibleVisuals.has(visual) && document.visibilityState === 'visible');
     });
   }
 
@@ -134,7 +126,7 @@
 
   function configureMotion() {
     disconnectObservers();
-    updateHero();
+    updateVisuals();
     if (!motionAllowed()) {
       if (reduced.matches || suspended) cancelEntrances();
       else syncEntrances();
@@ -149,7 +141,7 @@
           if (entry.isIntersecting) visibleVisuals.add(entry.target);
           else visibleVisuals.delete(entry.target);
         });
-        updateHero();
+        updateVisuals();
       }, { threshold: 0 });
       heroObserver = observer;
       visuals.forEach(visual => observer.observe(visual));
@@ -187,15 +179,9 @@
     pending.forEach(element => observer.observe(element));
   }
 
-  toggles.forEach(toggle => {
-    toggle.addEventListener('click', () => {
-      userPaused = !userPaused;
-      configureMotion();
-    });
-  });
   document.addEventListener('portfolio:ready', configureMotion);
   document.addEventListener('visibilitychange', () => {
-    updateHero();
+    updateVisuals();
     syncEntrances();
     if (document.visibilityState === 'visible' && motionAllowed()) configureMotion();
   });

@@ -77,7 +77,7 @@ section:focus, main:focus { outline: none; }
 .text-link:hover span { transform: translate(2px, -2px); }
 .hero-visual { position: relative; width: 100%; margin-left: 0; }
 .hero-visual img, .hero-visual > svg { width: 100%; height: auto; filter: drop-shadow(0 20px 50px rgba(0, 0, 0, .2)); }
-.visual-caption { display: flex; justify-content: space-between; margin: 0 11%; font: 9px/1.5 var(--mono); letter-spacing: .08em; color: var(--soft); text-transform: uppercase; }
+.visual-caption { margin: 0 11%; font: 9px/1.5 var(--mono); letter-spacing: .08em; color: var(--soft); text-transform: uppercase; }
 .hero-bottom { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 24px; color: var(--soft); font: 10px/1.6 var(--mono); }
 .hero-bottom p span { margin-inline: 12px; }
 .hero-bottom a { min-height: 44px; display: inline-flex; align-items: center; gap: 24px; }
@@ -219,7 +219,6 @@ summary:hover { color: var(--accent); }
   .hero-visual { width: 100%; margin-left: 0; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 12px; }
   .visual-caption { font-size: 8px; }
-  .visual-caption span:last-child { display: none; }
   .hero-bottom { font-size: 9px; }
   .hero-bottom a { display: none; }
   .expertise-strip .wrap { flex-direction: column; align-items: flex-start; gap: 12px; padding-block: 20px; }
@@ -334,9 +333,6 @@ summary:hover { color: var(--accent); }
 @keyframes node-signal { 0%, 100% { opacity: .55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.55); } }
 @keyframes route-flow { to { stroke-dashoffset: -56; } }
 @keyframes orbit-flow { to { stroke-dashoffset: -288; } }
-.visual-caption { align-items: center; flex-wrap: wrap; gap: 8px; min-height: 44px; }
-.motion-toggle { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 112px; padding: 8px 10px; border: 1px solid #53695b; border-radius: 4px; background: transparent; color: var(--muted); font: 10px/1.5 var(--mono); letter-spacing: .04em; cursor: pointer; transition: color .2s, border-color .2s; }
-.motion-toggle:hover { color: var(--accent); border-color: var(--accent); }
 @media (hover: hover) and (pointer: fine) {
   .project:hover .project-visual { border-color: var(--accent); }
   .project-visual { transition: border-color .3s; }
@@ -358,7 +354,6 @@ summary:hover { color: var(--accent); }
   .button-primary:hover span { transform: none; }
 }
 
-@media (max-width: 560px) { .visual-caption { min-height: 64px; } }
 
 /* AI positioning keeps the identity, offer and engineering credentials distinct. */
 .hero-inner { grid-template-columns: 1.22fr 1fr; gap: 36px; }
@@ -453,7 +448,7 @@ summary:hover { color: var(--accent); }
 /* A readable collaboration sequence with fixed labels and moving signals. */
 .collaboration-visual { --collaboration-play-state: paused; padding: 28px; border: 1px solid #405848; border-radius: 12px; background: radial-gradient(ellipse at 50% 20%, #1a2a22 0, #101a18 70%); overflow: hidden; }
 .collaboration-visual[data-motion-active="true"] { --collaboration-play-state: running; }
-.collaboration-heading { display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 44px; margin-bottom: 12px; }
+.collaboration-heading { margin-bottom: 20px; }
 .collaboration-heading .eyebrow { color: var(--muted); }
 .collaboration-svg { width: 100%; height: auto; }
 .collaboration-mobile { display: none; }
@@ -482,8 +477,8 @@ summary:hover { color: var(--accent); }
 .book-authors { color: var(--ink); font-size: 12px; line-height: 1.7; margin-top: 18px; }
 .book-edition { color: var(--soft); font-size: 11px; margin-top: 10px; }
 @media (max-width: 1100px) { .book { grid-template-columns: 125px minmax(0, 1fr); gap: 22px; } .book-list { gap: 32px; } .book-jacket { padding: 14px 11px; } .book-jacket strong { font-size: 21px; } .book-human strong { font-size: 23px; } }
-@media (max-width: 800px) { .collaboration-desktop { display: none; } .collaboration-mobile { display: block; max-width: 440px; margin-inline: auto; } .collaboration-visual { padding: 22px; } .collaboration-heading { align-items: flex-start; } .collaboration-heading .eyebrow { max-width: 24ch; } .book-list { grid-template-columns: 1fr; gap: 36px; } .book { grid-template-columns: 156px minmax(0, 1fr); gap: 28px; } .book-jacket strong { font-size: 24px; } .book-human strong { font-size: 27px; } }
-@media (max-width: 560px) { .collaboration-visual { padding: 18px 6px 22px; } .collaboration-heading, .collaboration-visual figcaption { margin-inline: 12px; } .collaboration-heading { gap: 12px; } .collaboration-heading .eyebrow { font-size: 9px; max-width: 17ch; } .book { grid-template-columns: 112px minmax(0, 1fr); gap: 22px; } .book-jacket { padding: 13px 9px; } .book-jacket strong { font-size: 19px; } .book-human strong { font-size: 21px; } .book-cover-kicker, .book-cover-edition { font-size: 7px; } .book-copy h3 { font-size: 21px; } }
+@media (max-width: 800px) { .collaboration-desktop { display: none; } .collaboration-mobile { display: block; max-width: 440px; margin-inline: auto; } .collaboration-visual { padding: 22px; } .book-list { grid-template-columns: 1fr; gap: 36px; } .book { grid-template-columns: 156px minmax(0, 1fr); gap: 28px; } .book-jacket strong { font-size: 24px; } .book-human strong { font-size: 27px; } }
+@media (max-width: 560px) { .collaboration-visual { padding: 18px 6px 22px; } .collaboration-heading, .collaboration-visual figcaption { margin-inline: 12px; } .collaboration-heading .eyebrow { font-size: 9px; } .book { grid-template-columns: 112px minmax(0, 1fr); gap: 22px; } .book-jacket { padding: 13px 9px; } .book-jacket strong { font-size: 19px; } .book-human strong { font-size: 21px; } .book-cover-kicker, .book-cover-edition { font-size: 7px; } .book-copy h3 { font-size: 21px; } }
 @media (max-width: 360px) { .book { grid-template-columns: 96px minmax(0, 1fr); gap: 18px; } .book-jacket strong { font-size: 16px; } .book-human strong { font-size: 18px; } .book-cover-kicker, .book-cover-edition { font-size: 6px; } .book-copy h3 { font-size: 19px; } }
 @media (prefers-reduced-motion: reduce) { .collaboration-signal, .collaboration-feedback { display: none; } .collaboration-stage { animation: none; opacity: .35; } }
 
@@ -494,7 +489,7 @@ summary:hover { color: var(--accent); }
 /* Shared scene clocks: fixed geometry, sequenced signals and invisible resets. */
 .hero-visual, .project-visual, .collaboration-visual { --visual-play-state: paused; }
 .hero-visual[data-motion-active="true"], .project-visual[data-motion-active="true"], .collaboration-visual[data-motion-active="true"] { --visual-play-state: running; }
-.site-nav a, .button, .button span, .text-link span, .motion-toggle, .project-visual { transition-duration: var(--motion-hover); transition-timing-function: var(--motion-ease); }
+.site-nav a, .button, .button span, .text-link span, .project-visual { transition-duration: var(--motion-hover); transition-timing-function: var(--motion-ease); }
 .project-signal, .workspace-flow, .collaboration-signal, .collaboration-feedback { stroke-dasharray: 12 112; stroke-dashoffset: 12; opacity: 0; animation-duration: var(--motion-cycle); animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: infinite; animation-play-state: var(--visual-play-state); pointer-events: none; }
 .project-signal[data-flow="0"] { animation-name: product-flow-0; }
 .project-signal[data-flow="1"] { animation-name: product-flow-1; }
@@ -522,8 +517,6 @@ summary:hover { color: var(--accent); }
 @keyframes replay-progress { 0%, 8% { transform: scaleX(0); opacity: 0; } 12% { opacity: 1; } 72%, 84% { transform: scaleX(1); opacity: 1; } 94%, 100% { transform: scaleX(1); opacity: 0; } }
 @keyframes booking-confirmation { 0%, 35%, 75%, 100% { opacity: .25; } 55% { opacity: .8; } }
 @keyframes review-confirmation { 0%, 24%, 48%, 100% { opacity: .6; } 30%, 42% { opacity: 1; } }
-html[data-motion-paused="true"] { scroll-behavior: auto; }
-html[data-motion-paused="true"] .button-primary:hover, html[data-motion-paused="true"] .button-primary:hover span, html[data-motion-paused="true"] .text-link:hover span, html[data-motion-paused="true"] .project:hover .project-visual img { transform: none; }
 @media (prefers-reduced-motion: reduce) { .booking-highlight { animation: none; opacity: .4; } .scene-progress { transform: none; opacity: 1; } }
 @keyframes product-flow-0 { 0% { opacity: 0; stroke-dashoffset: 12; } 12% { opacity: 0; stroke-dashoffset: 12; } 13% { opacity: 1; stroke-dashoffset: 5.77778; } 29% { opacity: 1; stroke-dashoffset: -93.7778; } 30% { opacity: 0; stroke-dashoffset: -100; } 30.1% { opacity: 0; stroke-dashoffset: 12; } 100% { opacity: 0; stroke-dashoffset: 12; } }
 @keyframes product-flow-1 { 0% { opacity: 0; stroke-dashoffset: 12; } 38% { opacity: 0; stroke-dashoffset: 12; } 39% { opacity: 1; stroke-dashoffset: 5.77778; } 55% { opacity: 1; stroke-dashoffset: -93.7778; } 56% { opacity: 0; stroke-dashoffset: -100; } 56.1% { opacity: 0; stroke-dashoffset: 12; } 100% { opacity: 0; stroke-dashoffset: 12; } }
@@ -554,3 +547,29 @@ html[data-preloading="active"] .page-preloader { opacity: 1; }
 @keyframes preloader-sweep { 0% { transform: translateX(-100%); opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateX(250%); opacity: 0; } }
 @keyframes preloader-fail-open { to { visibility: hidden; opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .page-preloader { display: none !important; } }
+
+/* A personal routine, with the official static Strava profile badge. */
+.fitness-section { --fitness-accent: #ff8552; background: #171814; border-top: 1px solid var(--line); }
+.fitness-section .accent, .fitness-section .section-number { color: var(--fitness-accent); }
+.fitness-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: center; gap: clamp(32px, 5vw, 80px); }
+.fitness-visual { min-width: 0; --visual-play-state: paused; }
+.fitness-visual[data-motion-active="true"] { --visual-play-state: running; }
+.fitness-track { width: 100%; height: auto; }
+.fitness-lap { stroke-dasharray: 6 94; animation: fitness-lap var(--motion-cycle) linear infinite; animation-play-state: var(--visual-play-state); }
+.fitness-caption { margin-top: 12px; color: var(--soft); font: 10px/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.fitness-copy { min-width: 0; }
+.fitness-practices { list-style: none; }
+.fitness-practices > li { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 16px; padding-block: 22px; border-top: 1px solid var(--line); }
+.fitness-index { padding-top: 5px; color: var(--fitness-accent); font: 10px/1.5 var(--mono); }
+.fitness-practices h3 { font-size: 23px; line-height: 1.3; letter-spacing: -.025em; font-weight: 500; }
+.fitness-practices p { margin-top: 8px; color: var(--muted); font-size: 15px; line-height: 1.7; text-align: start; }
+.fitness-strava { padding-top: 22px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.fitness-strava > p { color: var(--muted); font: 10px/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.strava-badge { display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-height: 44px; padding: 10px 14px 10px 34px; background: #fc5200 url('../assets/strava-echelon.png') no-repeat 12px center; border: 1px solid transparent; border-radius: 3px; color: #171717; font: 600 12px/1.5 Helvetica, Arial, sans-serif; white-space: nowrap; transition: border-color var(--motion-hover) var(--motion-ease); }
+.strava-badge img { display: inline-block; width: 51px; height: 13px; flex-shrink: 0; }
+.strava-badge:hover { border-color: #fff; }
+@keyframes fitness-lap { to { stroke-dashoffset: -100; } }
+@media (max-width: 800px) { .fitness-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; } .fitness-visual { width: 100%; max-width: 640px; margin-inline: auto; } .fitness-practices > li { padding-block: 24px; } }
+@media (max-width: 560px) { .fitness-section .section-heading { margin-bottom: 28px; } .fitness-grid { gap: 32px; } .fitness-practices h3 { font-size: 22px; } .fitness-practices p { font-size: 15px; } }
+@media (prefers-reduced-motion: reduce) { .fitness-lap { animation: none; } }
+@media (forced-colors: active) { .fitness-track { forced-color-adjust: none; } .strava-badge { border-color: LinkText; } }
