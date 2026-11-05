@@ -73,9 +73,9 @@
 (() => {
   'use strict';
 
-  const visuals = Array.from(document.querySelectorAll('.hero-visual, .project-visual, .collaboration-visual, .fitness-visual'));
+  const visuals = Array.from(document.querySelectorAll('.hero-visual, .project-visual, .collaboration-visual, .fitness-visual, .security-visual'));
   const visibleVisuals = new Set();
-  const entranceSelector = '.hero-enter, .section-heading, .service, .ai-offer, .experience-row, .process-list li, .contact-inner, .project-visual, .fitness-copy';
+  const entranceSelector = '.hero-enter, .section-heading, .service, .si-offer, .experience-row, .process-list li, .security-principles li, .contact-inner, .project-visual, .fitness-copy, .security-copy';
   const entrances = Array.from(document.querySelectorAll(entranceSelector))
     .filter(element => typeof element.animate === 'function');
 
