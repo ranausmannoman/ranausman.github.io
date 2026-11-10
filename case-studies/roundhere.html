@@ -19,10 +19,14 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <script src="../futuristic/preloader.js" async></script>
   <link rel="stylesheet" href="../futuristic/style.css">
-  <link rel="stylesheet" href="../futuristic/case-study.css">
-  <script src="../futuristic/app.js" defer></script>
+  <link rel="stylesheet" href="../futuristic/redesign.css?v=20261110-ux2">
+  <link rel="stylesheet" href="../futuristic/case-study.css?v=20261110-ux2">
+  <link rel="stylesheet" href="../futuristic/neural-theme.css?v=20261110-ux2">
+  <script src="../futuristic/app.js?v=20261110-ux2" defer></script>
+  <script src="../futuristic/neural.js" defer></script>
 </head>
 <body class="case-page case-live">
+  <canvas class="neural-network" id="neural-network" aria-hidden="true"></canvas>
   <a class="skip-link" href="#main">Skip to case study</a>
   <header class="site-header case-header">
     <div class="case-header-inner">
@@ -82,8 +86,8 @@
       </div>
     </div>
 
-    <section class="case-next" aria-labelledby="case-next-title"><div class="case-container"><div class="case-next-heading"><h2 id="case-next-title">Explore another case study</h2><a class="text-link" href="../index.html#work">All selected work <span aria-hidden="true">↗</span></a></div><nav aria-label="Case studies"><ul class="case-next-grid"><li><a href="quicktake-health.html"><span>Healthcare kiosk</span><strong>QuickTake Health <span aria-hidden="true">↗</span></strong></a></li><li><a href="makers-row.html"><span>Manufacturing marketplace</span><strong>Maker’s Row <span aria-hidden="true">↗</span></strong></a></li><li><a href="guestay.html"><span>Hospitality platform</span><strong>Guestay <span aria-hidden="true">↗</span></strong></a></li><li><a href="roundhere.html" aria-current="page"><span>This case study</span><strong>RoundHere</strong></a></li></ul></nav></div></section>
+    <section class="case-next" aria-labelledby="case-next-title"><div class="case-container"><div class="case-next-heading"><h2 id="case-next-title">Explore another case study</h2><a class="text-link" href="../index.html#work">All selected work <span aria-hidden="true">↗</span></a></div><nav aria-label="Case studies"><ul class="case-next-grid"><li><a href="openvitals.html"><span>Ongoing product · Native SDK</span><strong>OpenVitals <span aria-hidden="true">↗</span></strong></a></li><li><a href="quicktake-health.html"><span>Healthcare kiosk</span><strong>QuickTake Health <span aria-hidden="true">↗</span></strong></a></li><li><a href="makers-row.html"><span>Manufacturing marketplace</span><strong>Maker’s Row <span aria-hidden="true">↗</span></strong></a></li><li><a href="guestay.html"><span>Hospitality platform</span><strong>Guestay <span aria-hidden="true">↗</span></strong></a></li><li><a href="roundhere.html" aria-current="page"><span>This case study</span><strong>RoundHere</strong></a></li></ul></nav></div></section>
   </main>
-  <footer class="case-container case-footer"><p>© 2026 Rana Usman · Lahore, Pakistan</p><a href="mailto:ranausmannoman@gmail.com?subject=Project%20enquiry">Discuss a project <span aria-hidden="true">↗</span></a><a href="../index.html">Back to portfolio</a></footer>
+  <footer class="case-container case-footer"><p>© 2026 Rana Usman · Lahore, Pakistan</p><a href="mailto:ranausmannoman@gmail.com?subject=Project%20enquiry">Discuss a project <span aria-hidden="true">↗</span></a><a href="../index.html">Back to portfolio</a><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button></footer>
 </body>
 </html>

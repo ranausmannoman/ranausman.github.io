@@ -1,0 +1,201 @@
+/* Original charcoal and green palette, with the current layout and network retained. */
+:root {
+  --bg: #0b1014;
+  --surface: #10191d;
+  --surface-light: #172126;
+  --ink: #f2f5ed;
+  --muted: #b0bab5;
+  --soft: #8f9c96;
+  --line: #304039;
+  --accent: #c1ff72;
+  --accent-ink: #10190b;
+  --signal: #a8da8a;
+  --neural-primary: 193, 255, 114;
+  --neural-secondary: 108, 146, 127;
+  --neural-highlight: 220, 242, 207;
+}
+
+/* One continuous network reaches the viewport edges behind every section. */
+.neural-network {
+  position: fixed;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  opacity: .78;
+}
+body::before {
+  background:
+    radial-gradient(ellipse at 90% 15%, #345b4022, transparent 58%),
+    radial-gradient(ellipse at 5% 90%, #25463816, transparent 60%),
+    var(--bg);
+}
+.hero, .work-section, .experience-section, .approach-section,
+.reading-section, .fitness-section, .security-section,
+.services-section, .si-section, .contact-section {
+  background: rgb(11 16 20 / .16);
+  border-color: var(--line);
+}
+.services-section, .si-section, .reading-section { background: rgb(21 31 34 / .3); }
+.hero-grid { opacity: .2; background-image: linear-gradient(#c1ff7209 1px, transparent 1px), linear-gradient(90deg, #c1ff7209 1px, transparent 1px); }
+.site-header, .chapter-nav { background: rgb(11 16 20 / .9); border-color: #b0bab529; }
+.expertise-strip { background: rgb(16 23 26 / .55); border-color: #b0bab529; }
+.site-footer { background: rgb(11 16 20 / .68); }
+.brand-mark { background: var(--accent); color: var(--accent-ink); box-shadow: none; }
+.hero-statement .accent { color: var(--accent); }
+.button-primary, .security-cta { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); box-shadow: 0 4px 20px #c1ff7210; }
+.button-primary:hover, .security-cta:hover { background: #d8ffa8; border-color: #d8ffa8; }
+.button-outline { border-color: #7f9187; }
+.signal-dot { box-shadow: 0 0 14px #a8da8a77; }
+.section-number::before { box-shadow: 0 0 12px #a8da8a33; }
+.chapter-nav a span { color: var(--soft); }
+.chapter-nav a[aria-current] span { color: var(--accent); }
+
+.hero-visual {
+  border-color: #49655580;
+  background: linear-gradient(145deg, #203b2ccc, #101e18ee);
+  box-shadow: 0 24px 64px #0004, inset 0 1px 0 #dff7cc10;
+}
+.hero-visual::after { border-color: #a8da8a; box-shadow: 0 0 18px #a8da8a22; }
+.neural-frame-label { border-color: #8abda530; }
+.project { background: rgb(16 25 29 / .92); }
+.project-featured { background: linear-gradient(120deg, #193a30e6, #101e1de6); border-color: #456c60; }
+.project-featured .project-visual { background: rgb(7 18 16 / .22); border-color: #456c6055; }
+.project .project-visual:not(.openvitals) { background: #15362c; }
+.project .project-visual.rental { background: #232440; }
+.project .project-visual.kiosk { background: #392b23; }
+.project .project-visual.live { background: #142b3a; }
+.project-visual::before { background: linear-gradient(135deg, #c1ff720f, transparent 60%); }
+.project-stack li { border-color: #43584f; color: #bdcfc1; background: #c1ff7204; }
+.project-tagline { color: #d5f4e8; }
+.project-status { color: #b6f5e4; border-color: #5c8f7b; background: #a8da8a08; }
+.project-study { border-color: var(--accent); }
+.project-role, .art-caption, .art-footnote { color: var(--muted); }
+.more-work { background: #122023b3; }
+.service, .process-list li { border-color: #4d6956; }
+.si-offer { background: #10191db3; border-color: #415d54; }
+.recruiter-note { background: #1c302977; }
+.collaboration-visual { border-color: #4d6956; background: linear-gradient(135deg, #1d3029dd, #0f1c21ee); }
+.security-masthead .eyebrow, .security-kicker,
+.security-copy .section-intro, .security-principles p,
+.security-visual figcaption, .security-signoff { color: var(--muted); }
+.venture-status { color: var(--soft); border-color: #496052; }
+.security-principles, .security-principles li, .security-signoff { border-color: var(--line); }
+.security-principles .service-index { color: var(--accent); }
+.book { background: #172825bb; }
+.book-data { background: #e3e4d4; color: #223b37; }
+.book-human { background: #d7ad80; color: #26291e; }
+.book-cover-lines { background: repeating-linear-gradient(0deg, transparent 0 8px, #718c7d 8px 9px); }
+.fitness-section { --fitness-accent: #ff8552; }
+.fitness-visual { background: #262321bb; border-color: #655345; }
+.contact-orbit { border-color: #42604c; box-shadow: 0 0 0 80px #42604c12, 0 0 0 160px #42604c08; }
+.contact-orbit::before { background: var(--accent); box-shadow: 0 0 30px #c1ff7233; }
+
+/* Preserve the original colors and contrast of each illustration. */
+.engineering-graphic, .project-vector, .collaboration-svg,
+.fitness-track, .security-artwork, .hero-visual > svg { filter: none; }
+
+/* Keep the charcoal-and-green artwork and its complete assessment boundary visible. */
+.security-visual { aspect-ratio: 1402 / 1122; background: var(--bg); }
+.security-artwork { display: block; object-fit: contain; object-position: center; filter: none; }
+.security-visual::after { background: linear-gradient(0deg, #0b1014e6, transparent 22%); }
+
+body.case-page { --case-accent: #dfbd95; --case-surface: #392b23; --case-line: #45504a; }
+.case-page.case-marketplace { --case-accent: #c1dda0; --case-surface: #15362c; --case-line: #3e5b50; }
+.case-page.case-rental { --case-accent: #cebae8; --case-surface: #232440; --case-line: #515271; }
+.case-page.case-live { --case-accent: #a6d2df; --case-surface: #142b3a; --case-line: #4d788c; }
+.case-page.case-openvitals { --case-accent: #9bf4d9; --case-surface: #10241e; --case-line: #456e5b; }
+.case-page .case-figure { background: var(--case-surface); border-color: var(--case-line); }
+.case-page .case-figure-caption { color: var(--muted); }
+.case-page .case-breadcrumb > span[aria-hidden] { color: var(--soft); }
+.case-page .case-toc a:hover, .case-page .case-toc a:focus-visible { background: #c1ff720c; }
+.case-page .case-callout { background: #c1ff7208; }
+.case-page .case-callout p { color: #d0d9cf; }
+.case-page .case-next { background: #10191a77; }
+.case-page .case-next-grid a:hover { background: #c1ff720c; }
+.case-page .case-next-grid a[aria-current="page"] { background: #c1ff7208; }
+.case-openvitals .ov-feature { background: #14201add; }
+.case-openvitals .ov-architecture { background: #101e19dd; border-color: #456e5b; }
+.case-openvitals .ov-node { background: #192c23; border-color: #385946; }
+.case-openvitals .ov-output { border-color: #719b7d; }
+.ov-node + .ov-node::before, .ov-output::before { color: var(--case-accent); }
+
+/* Justified copy uses one alignment rule on all pages and all screen sizes.
+   Natural final lines avoid stretching a few words across an entire column. */
+body.portfolio-page p, body.case-page p,
+.case-page .case-section p, .case-page .case-workflow p,
+.case-openvitals .ov-node p, .case-openvitals .ov-output p {
+  text-align: justify;
+  text-align-last: start;
+  text-justify: inter-word;
+  text-indent: 0;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+  hyphenate-limit-lines: 2;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+.case-page .case-section > p + p {
+  text-indent: 1.25em;
+  margin-top: 1em;
+}
+.hero-intro, .project-description, .section-intro,
+.service p, .si-offer p, .experience-description,
+.process-list p, .security-principles p, .fitness-practices p,
+.contact-intro, .case-page .case-lead, .case-page .case-section p {
+  line-height: 1.8;
+  letter-spacing: normal;
+}
+body :is(.hero-intro, .section-intro, .project-description, .detail-body p,
+  .service p, .si-offer p, .experience-description, .recruiter-note p,
+  .process-list p, .security-principles p, .fitness-practices p, .contact-intro),
+body.case-page .case-lead, body.case-page .case-section > p,
+body.case-page .case-callout p, body.case-page .ov-feature p,
+body.case-page .ov-assessment-note {
+  text-indent: 1.1em;
+  word-break: normal;
+  word-spacing: normal;
+}
+.project-description, .detail-body p, .service p, .si-offer p,
+.experience-description, .process-list p, .security-principles p,
+.fitness-practices p { max-width: none; }
+.hero-intro, .section-intro, .contact-intro, .case-page .case-lead { max-width: 100%; }
+.case-page .case-section dd { text-align: justify; text-align-last: start; hyphens: auto; text-wrap: pretty; }
+/* Display headlines and short signal labels are not prose paragraphs. */
+body.portfolio-page .project-tagline,
+body.case-page .ov-headline, body.case-page .ov-secondary {
+  text-align: start;
+  text-indent: 0;
+  hyphens: none;
+  text-wrap: balance;
+}
+/* Short interface labels keep natural spacing; prose remains justified. */
+body.portfolio-page :is(.eyebrow, .project-kicker, .project-role, .venture-status, .book-authors, .book-subtitle, .hero-proof p, .hero-bottom p),
+body.case-page :is(.case-eyebrow, .case-status),
+body.case-page .case-workflow p, body.case-page .ov-node p {
+  text-align: start;
+  text-indent: 0;
+  hyphens: none;
+}
+body.case-page .ov-output p { text-align: center; text-align-last: center; }
+
+@media (max-width: 800px) {
+  .js .site-nav { background: rgb(11 16 20 / .97); }
+}
+@media (max-width: 560px) {
+  .hero-intro, .section-intro, .contact-intro, .case-page .case-lead { font-size: 16px; line-height: 1.85; }
+  body :is(.hero-intro, .section-intro, .project-description, .detail-body p,
+    .service p, .si-offer p, .experience-description, .recruiter-note p,
+    .process-list p, .security-principles p, .fitness-practices p, .contact-intro),
+  body.case-page .case-lead, body.case-page .case-section > p,
+  body.case-page .case-callout p, body.case-page .ov-feature p,
+  body.case-page .ov-assessment-note { text-indent: .75em; }
+}
+@media (forced-colors: active) {
+  .neural-network { display: none; }
+  .engineering-graphic, .project-vector, .collaboration-svg,
+  .fitness-track, .security-artwork, .hero-visual > svg { filter: none; }
+}

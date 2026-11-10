@@ -1,0 +1,73 @@
+/* Registered to the illustration's intrinsic coordinates, with no layout movement. */
+.security-visual { --security-play-state: paused; }
+.security-visual[data-motion-active="true"] { --security-play-state: running; }
+.security-motion {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+.security-orbit {
+  transform-origin: 0 0;
+  animation: security-orbit 28s linear infinite;
+  animation-play-state: var(--security-play-state);
+}
+.security-orbit-trail {
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-dasharray: 70 1840.09;
+  stroke-dashoffset: 547.52;
+  opacity: .45;
+}
+.security-packet {
+  --security-phase: -1s;
+  stroke: #e8f7d4;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 8 108;
+  opacity: 0;
+  animation: security-packet 8s linear infinite;
+  animation-delay: var(--security-phase, 0s);
+  animation-play-state: var(--security-play-state);
+}
+.security-packet:nth-child(2) { --security-phase: -3s; }
+.security-packet:nth-child(3) { --security-phase: -5s; }
+.security-packet:nth-child(4) { --security-phase: -7s; }
+.security-shield-light {
+  stroke: #dff7cc;
+  stroke-width: 2;
+  opacity: .12;
+  animation: security-shield-breathe 8s ease-in-out infinite;
+  animation-play-state: var(--security-play-state);
+}
+.security-node-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: .2;
+  animation: security-node-breathe 6s ease-in-out infinite;
+  animation-delay: var(--security-phase, 0s);
+  animation-play-state: var(--security-play-state);
+}
+.security-node-pulse:nth-child(2) { --security-phase: -1.5s; }
+.security-node-pulse:nth-child(3) { --security-phase: -3s; }
+.security-node-pulse:nth-child(4) { --security-phase: -4.5s; }
+@keyframes security-orbit { to { transform: rotate(360deg); } }
+@keyframes security-packet {
+  0%, 14% { stroke-dashoffset: 8; opacity: 0; }
+  22% { opacity: .85; }
+  58% { opacity: .85; }
+  66%, 100% { stroke-dashoffset: -108; opacity: 0; }
+}
+@keyframes security-shield-breathe {
+  0%, 100% { opacity: .08; }
+  50% { opacity: .52; }
+}
+@keyframes security-node-breathe {
+  0%, 100% { opacity: .12; transform: scale(.7); }
+  50% { opacity: .7; transform: scale(1.15); }
+}
+@media (prefers-reduced-motion: reduce), (forced-colors: active) {
+  .security-motion { display: none; }
+}

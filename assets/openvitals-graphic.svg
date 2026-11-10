@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="520" viewBox="0 0 720 520" fill="none">
+  <title>OpenVitals: from everyday cameras to a pulse signal</title>
+  <desc>A conceptual face region connects to an illustrative pulse waveform, a shared native engine, and five platform targets. The waveform is synthetic, not a measurement.</desc>
+  <defs>
+    <linearGradient id="ov-bg" x1="0" y1="0" x2="720" y2="520" gradientUnits="userSpaceOnUse"><stop stop-color="#17362f"/><stop offset="1" stop-color="#101e1c"/></linearGradient>
+    <linearGradient id="ov-signal" x1="338" y1="208" x2="668" y2="208" gradientUnits="userSpaceOnUse"><stop stop-color="#6bd8c1" stop-opacity=".3"/><stop offset=".45" stop-color="#9bf4d9"/><stop offset="1" stop-color="#6bd8c1" stop-opacity=".45"/></linearGradient>
+    <radialGradient id="ov-halo"><stop stop-color="#74cfa7" stop-opacity=".16"/><stop offset="1" stop-color="#74cfa7" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="720" height="520" rx="18" fill="url(#ov-bg)"/>
+  <circle cx="206" cy="225" r="190" fill="url(#ov-halo)"/>
+  <g stroke="#36584b" stroke-opacity=".38"><path d="M40 100H680M40 180H680M40 260H680M40 340H680M40 420H680M120 84V432M200 84V432M280 84V432M360 84V432M440 84V432M520 84V432M600 84V432"/></g>
+  <g font-family="Arial,sans-serif"><text x="38" y="47" fill="#b5d4c7" font-size="14" letter-spacing="2">CAMERA → SIGNAL → INSIGHT</text><circle cx="668" cy="41" r="5" fill="#9bf4d9"/></g>
+  <rect x="40" y="84" width="266" height="274" rx="16" fill="#10241e" stroke="#456e5b"/>
+  <g stroke="#a4dfba" stroke-width="2" stroke-linecap="round"><path d="M66 134V112H88M258 112H280V134M280 288V310H258M88 310H66V288"/></g>
+  <path d="M173 129C132 129 115 159 118 197L123 240C126 274 149 298 173 298C197 298 220 274 223 240L228 197C231 159 214 129 173 129Z" fill="#1b3a2d" stroke="#7da78c" stroke-width="1.5"/>
+  <path d="M131 198C140 192 149 192 155 197M191 197C199 192 208 192 216 198M171 201L163 230H177M152 257C166 264 181 264 194 257" stroke="#91b89a" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="139" y="151" width="68" height="24" rx="8" fill="#9bf4d9" fill-opacity=".12" stroke="#9bf4d9" stroke-opacity=".5" stroke-dasharray="3 4"/>
+  <rect x="128" y="215" width="24" height="28" rx="6" fill="#9bf4d9" fill-opacity=".12" stroke="#9bf4d9" stroke-opacity=".5" stroke-dasharray="3 4"/>
+  <rect x="194" y="215" width="24" height="28" rx="6" fill="#9bf4d9" fill-opacity=".12" stroke="#9bf4d9" stroke-opacity=".5" stroke-dasharray="3 4"/>
+  <g fill="#a2c4b5" font-family="Arial,sans-serif" font-size="14"><text x="173" y="340" text-anchor="middle">Facial colour regions</text></g>
+  <path d="M307 222H334M327 216L334 222L327 228" stroke="#7ecbb0" stroke-width="1.5"/>
+  <rect x="338" y="84" width="342" height="274" rx="16" fill="#10241e" stroke="#456e5b"/>
+  <text x="362" y="117" fill="#dcefe2" font-family="Arial,sans-serif" font-size="18">A tiny signal. A useful interface.</text>
+  <g stroke="#345348" stroke-width="1"><path d="M358 165H660M358 207H660M358 249H660"/><path d="M402 144V272M466 144V272M530 144V272M594 144V272"/></g>
+  <path d="M358 223C370 223 371 211 381 211S395 231 405 231S415 217 421 212C429 207 428 172 439 166C449 158 448 210 458 219C469 228 475 212 484 214C493 216 493 230 504 230S516 208 524 208C532 208 533 169 544 165C555 162 551 213 564 219C575 225 578 213 588 215C598 217 599 230 609 230S623 208 630 207C637 205 638 175 646 167C651 161 655 169 660 182" stroke="url(#ov-signal)" stroke-width="3" stroke-linecap="round"/>
+  <text x="362" y="298" fill="#9bf4d9" font-family="Arial,sans-serif" font-size="16">Illustrative signal</text>
+  <text x="362" y="327" fill="#a2c4b5" font-family="Arial,sans-serif" font-size="14">Quality · Readiness · Source timing</text>
+  <path d="M173 359V383H509V359M340 383V404" stroke="#5f8c76" stroke-width="1.5"/>
+  <rect x="212" y="404" width="256" height="42" rx="21" fill="#234537" stroke="#7cac8c"/>
+  <text x="340" y="431" fill="#e1f5e7" font-family="Arial,sans-serif" font-size="16" text-anchor="middle">One shared native engine</text>
+  <g fill="#b9d5c6" font-family="Arial,sans-serif" font-size="16" text-anchor="middle"><text x="114" y="486">iOS</text><text x="229" y="486">Android</text><text x="346" y="486">macOS</text><text x="474" y="486">Windows</text><text x="603" y="486">Linux</text></g>
+  <g fill="#658c75"><circle cx="170" cy="480" r="2"/><circle cx="288" cy="480" r="2"/><circle cx="405" cy="480" r="2"/><circle cx="543" cy="480" r="2"/></g>
+</svg>

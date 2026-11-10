@@ -34,6 +34,14 @@
 
   toggle.addEventListener('click', () => setOpen(!open));
 
+  // This is a disclosure, not a modal: leaving it should reveal the page again.
+  document.addEventListener('focusin', event => {
+    if (open && !header.contains(event.target)) setOpen(false);
+  });
+  document.addEventListener('pointerdown', event => {
+    if (open && !header.contains(event.target)) setOpen(false);
+  });
+
   document.addEventListener('keydown', event => {
     if (event.key !== 'Escape' || !open) return;
     event.preventDefault();
@@ -73,6 +81,65 @@
 (() => {
   'use strict';
 
+  const links = Array.from(document.querySelectorAll('#primary-nav a[href^="#"], .chapter-nav a[href^="#"]'));
+  const destinations = new Map();
+  links.forEach(link => {
+    try {
+      const id = decodeURIComponent(link.getAttribute('href').slice(1));
+      const section = id && document.getElementById(id);
+      if (section) destinations.set(link, section);
+    } catch (_) {
+      // Ignore malformed fragments without affecting ordinary navigation.
+    }
+  });
+  if (!destinations.size || typeof window.IntersectionObserver !== 'function') return;
+
+  // Include the hero so navigation does not claim the next section is being read.
+  const sections = Array.from(document.querySelectorAll('main > section[id]'));
+  destinations.forEach(section => {
+    if (!sections.includes(section)) sections.push(section);
+  });
+  sections.sort((a, b) => a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1);
+
+  let observer = null;
+  let readingLine = 0;
+
+  function updateCurrent() {
+    let current = sections[0];
+    sections.forEach(section => {
+      if (section.getBoundingClientRect().top <= readingLine + 1) current = section;
+    });
+    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+      current = sections[sections.length - 1];
+    }
+    destinations.forEach((section, link) => {
+      if (section === current) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
+  function observeSections() {
+    if (observer) observer.disconnect();
+    const header = document.querySelector('.site-header');
+    const headerHeight = header ? header.getBoundingClientRect().height : 0;
+    readingLine = Math.min(window.innerHeight - 2, Math.max(headerHeight + 24, window.innerHeight * 0.3));
+    observer = new window.IntersectionObserver(updateCurrent, {
+      rootMargin: `-${readingLine}px 0px -${Math.max(0, window.innerHeight - readingLine - 1)}px 0px`,
+      threshold: 0
+    });
+    sections.forEach(section => observer.observe(section));
+    updateCurrent();
+  }
+
+  window.addEventListener('resize', observeSections);
+  window.addEventListener('pageshow', observeSections);
+  window.addEventListener('hashchange', updateCurrent);
+  observeSections();
+})();
+
+(() => {
+  'use strict';
+
   const visuals = Array.from(document.querySelectorAll('.hero-visual, .project-visual, .collaboration-visual, .fitness-visual, .security-visual'));
   const visibleVisuals = new Set();
   const entranceSelector = '.hero-enter, .section-heading, .service, .si-offer, .experience-row, .process-list li, .security-principles li, .contact-inner, .project-visual, .fitness-copy, .security-copy';
@@ -80,13 +147,35 @@
     .filter(element => typeof element.animate === 'function');
 
   visuals.forEach(visual => { visual.dataset.motionActive = 'false'; });
-  // Manual pause controls are retired; discard any stale page-state marker.
-  document.documentElement.removeAttribute('data-motion-paused');
+  const motionToggle = document.getElementById('motion-toggle');
+  const motionPreferenceKey = 'ru:motion-paused';
+  let userPaused = false;
+  try {
+    userPaused = sessionStorage.getItem(motionPreferenceKey) === '1';
+  } catch (_) {
+    // The control still works when storage is unavailable.
+  }
+
+  function syncMotionControl() {
+    if (userPaused) document.documentElement.setAttribute('data-motion-paused', 'true');
+    else document.documentElement.removeAttribute('data-motion-paused');
+    if (motionToggle) {
+      motionToggle.setAttribute('aria-pressed', String(userPaused));
+      motionToggle.textContent = userPaused ? 'Resume motion' : 'Pause motion';
+    }
+  }
+  syncMotionControl();
 
   // Unsupported APIs leave the fully visible, static baseline intact.
-  if (typeof window.matchMedia !== 'function' || typeof window.IntersectionObserver !== 'function') return;
+  if (typeof window.matchMedia !== 'function' || typeof window.IntersectionObserver !== 'function') {
+    if (motionToggle) motionToggle.hidden = true;
+    return;
+  }
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (typeof reduced.addEventListener !== 'function' && typeof reduced.addListener !== 'function') return;
+  if (typeof reduced.addEventListener !== 'function' && typeof reduced.addListener !== 'function') {
+    if (motionToggle) motionToggle.hidden = true;
+    return;
+  }
 
   let suspended = false;
   let heroObserver = null;
@@ -95,7 +184,7 @@
   const activeEntrances = new Map();
 
   function motionAllowed() {
-    return !document.documentElement.hasAttribute('data-preloading') && !suspended && !reduced.matches;
+    return !document.documentElement.hasAttribute('data-preloading') && !suspended && !userPaused && !reduced.matches;
   }
 
   function updateVisuals() {
@@ -125,10 +214,11 @@
   }
 
   function configureMotion() {
+    if (motionToggle) motionToggle.hidden = reduced.matches;
     disconnectObservers();
     updateVisuals();
     if (!motionAllowed()) {
-      if (reduced.matches || suspended) cancelEntrances();
+      if (reduced.matches || suspended || userPaused) cancelEntrances();
       else syncEntrances();
       return;
     }
@@ -177,6 +267,17 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
     entranceObserver = observer;
     pending.forEach(element => observer.observe(element));
+  }
+
+  if (motionToggle) {
+    motionToggle.addEventListener('click', () => {
+      userPaused = !userPaused;
+      try {
+        sessionStorage.setItem(motionPreferenceKey, userPaused ? '1' : '0');
+      } catch (_) {}
+      syncMotionControl();
+      configureMotion();
+    });
   }
 
   document.addEventListener('portfolio:ready', configureMotion);

@@ -22,9 +22,14 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <script src="futuristic/preloader.js" async></script>
   <link rel="stylesheet" href="futuristic/style.css">
-  <script src="futuristic/app.js" defer></script>
+  <link rel="stylesheet" href="futuristic/redesign.css?v=20261110-ux2">
+  <link rel="stylesheet" href="futuristic/neural-theme.css?v=20261110-ux2">
+  <link rel="stylesheet" href="futuristic/security-motion.css">
+  <script src="futuristic/app.js?v=20261110-ux2" defer></script>
+  <script src="futuristic/neural.js" defer></script>
 </head>
-<body>
+<body class="portfolio-page">
+  <canvas class="neural-network" id="neural-network" aria-hidden="true"></canvas>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
@@ -32,10 +37,10 @@
       <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" hidden><span>Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
       <nav class="site-nav" id="primary-nav" aria-label="Main navigation">
         <a href="#work">Selected work</a>
-        <a href="#si-workflows">SI &amp; workflows</a>
         <a href="#services">Engineering</a>
-        <a href="#cybersecurity">Cybersecurity</a>
         <a href="#experience">Experience</a>
+        <a href="#si-workflows">SI &amp; workflows</a>
+        <a href="#cybersecurity">Cybersecurity</a>
         <a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
@@ -48,14 +53,15 @@
         <div class="hero-copy">
           <p class="hero-identity hero-enter">Rana Usman<span class="accent">.</span></p>
           <p class="eyebrow hero-enter">Senior Full-Stack Engineer / Technical Lead</p>
-          <h1 id="hero-title" class="hero-enter">Exploring Super Intelligence.<br><span class="accent">Building useful software.</span></h1>
+          <h1 id="hero-title" class="hero-enter"><span class="hero-exploration">Exploring Super Intelligence.</span><span class="hero-statement">Building useful <span class="accent">software.</span></span></h1>
           <p class="hero-intro hero-enter">I build business software, modernize applications, connect systems and automate workflows with today’s intelligent tools and human review.</p>
           <div class="hero-actions hero-enter">
-            <a class="button button-primary" href="mailto:ranausmannoman@gmail.com?subject=Project%20enquiry">Discuss a project <span aria-hidden="true">↗</span></a>
+            <a class="button button-primary hero-work-link" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
+            <a class="button button-outline" href="mailto:ranausmannoman@gmail.com?subject=Project%20enquiry">Discuss a project <span aria-hidden="true">↗</span></a>
             <a class="text-link" href="assets/Usman_Iqbal_Resume.pdf" download>Download CV <span aria-hidden="true">↓</span><span class="sr-only"> (PDF, 2 pages)</span></a>
           </div>
         </div>
-        <div class="hero-visual hero-enter">
+        <div class="hero-visual hero-enter"><div class="neural-frame-label" aria-hidden="true"><span class="signal-dot"></span><span>Engineering in motion</span><span>01 — 03</span></div>
           <svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" fill="none" class="engineering-graphic" role="img" aria-labelledby="hero-graphic-title hero-graphic-desc">
 <title id="hero-graphic-title">Assisted development, integrations and workflow automation</title><desc id="hero-graphic-desc">An original engineering workspace turns a scoped brief into assisted implementation, human review and validated web, mobile and cloud delivery.</desc>
 <defs><linearGradient id="hero-shell" x1="30" y1="140" x2="600" y2="470" gradientUnits="userSpaceOnUse"><stop stop-color="#203b2c"/><stop offset="1" stop-color="#101e18"/></linearGradient><linearGradient id="hero-doc" x1="52" y1="210" x2="218" y2="442" gradientUnits="userSpaceOnUse"><stop stop-color="#304934"/><stop offset="1" stop-color="#1c3024"/></linearGradient></defs>
@@ -79,29 +85,24 @@
           <div class="visual-caption"><span>Ideas → systems → delivery</span></div>
         </div>
       </div>
+      <div class="hero-proof wrap"><p><strong>6+</strong><span>Years building business systems</span></p><p><strong>Web · Mobile · Cloud</strong><span>Full-stack engineering &amp; technical direction</span></p><a href="case-studies/openvitals.html"><span class="signal-dot" aria-hidden="true"></span><span><strong>Building OpenVitals</strong><span>An ongoing product · Explore the technology ↗</span></span></a></div>
       <div class="hero-bottom wrap"><p>Based in Lahore, Pakistan <span aria-hidden="true">·</span> Working internationally</p><a href="#experience">Explore my experience <span aria-hidden="true">↘</span></a></div>
     </section>
 
     <div class="expertise-strip" aria-label="Core technologies"><div class="wrap"><p>Built across the stack</p><ul><li>.NET</li><li>MAUI</li><li>Laravel</li><li>Azure</li><li>AWS</li></ul></div></div>
 
-    <span id="ai-solutions" class="anchor-alias" aria-hidden="true"></span>
-    <section class="section si-section" id="si-workflows" aria-labelledby="si-title" tabindex="-1">
-      <div class="wrap">
-        <div class="section-heading"><p class="eyebrow"><span class="section-number">01</span> SI &amp; workflows</p><div><h2 id="si-title">Super Intelligence.<br><span class="accent">Practical steps today.</span></h2><p class="section-intro">Super Intelligence (SI) is a direction I’m exploring. My work today combines current models, automation and human review to solve practical business problems.</p></div></div>
-        <div class="si-offer-grid">
-          <article class="si-offer"><span class="service-index" aria-hidden="true">01 /</span><h3>Integrate intelligent capabilities</h3><p>Connect useful model capabilities with the software your team already uses, its existing data, interfaces and business rules.</p><ul class="service-tags"><li>Application integration</li><li>APIs</li><li>Human review</li></ul></article>
-          <article class="si-offer"><span class="service-index" aria-hidden="true">02 /</span><h3>Make information easier to work with</h3><p>Shape document and information workflows for summarizing, organizing and extracting useful details, with review steps where judgment matters.</p><ul class="service-tags"><li>Document workflows</li><li>Information handling</li><li>Review steps</li></ul></article>
-          <article class="si-offer"><span class="service-index" aria-hidden="true">03 /</span><h3>Automate practical workflows</h3><p>Connect tools and reduce repetitive handoffs, choosing models or straightforward automation to suit the task.</p><ul class="service-tags"><li>Tool integrations</li><li>Task handoffs</li><li>Workflow automation</li></ul></article>
-        </div>
-        <div class="section-footer"><p>Start with one useful workflow.</p><a class="text-link" href="mailto:ranausmannoman@gmail.com?subject=SI%20and%20workflow%20enquiry">Discuss a workflow <span aria-hidden="true">↗</span></a></div>
-      </div>
-    </section>
+    <nav class="chapter-nav" aria-label="Portfolio chapters"><div class="chapter-inner"><a href="#work"><span aria-hidden="true">01</span>Selected work</a><a href="#services"><span aria-hidden="true">02</span>Engineering</a><a href="#experience"><span aria-hidden="true">03</span>Experience</a><a href="#si-workflows"><span aria-hidden="true">04</span>SI &amp; workflows</a><a href="#approach"><span aria-hidden="true">05</span>My process</a><a href="#cybersecurity"><span aria-hidden="true">06</span>Cybersecurity</a><a href="#reading"><span aria-hidden="true">07</span>Reading</a><a href="#fitness"><span aria-hidden="true">08</span>Fitness</a><a href="#contact"><span aria-hidden="true">09</span>Contact</a></div></nav>
 
     <section class="section work-section" id="work" aria-labelledby="work-title" tabindex="-1">
       <div class="wrap">
-        <div class="section-heading"><p class="eyebrow"><span class="section-number">02</span> Selected work</p><div><h2 id="work-title">Real workflows.<br><span class="muted">Considered engineering.</span></h2><p class="section-intro">Original product illustrations, with a closer look at the workflows and engineering behind each platform.</p></div></div>
+        <div class="section-heading"><p class="eyebrow"><span class="section-number">01</span> Selected work</p><div><h2 id="work-title">Real workflows.<br><span class="muted">Considered engineering.</span></h2><p class="section-intro">Original product illustrations, with a closer look at the workflows and engineering behind each platform.</p></div></div>
         <div class="project-list">
           <!-- selected-work:start -->
+          <article class="project project-openvitals project-featured">
+            <div class="project-visual openvitals"><div class="art-caption"><span>Camera-based physiological sensing</span><span class="project-status">Ongoing product</span></div><img class="project-vector" src="assets/openvitals-graphic.svg?v=20261110-ux2" width="720" height="520" alt="Conceptual camera-to-pulse pipeline with facial colour regions, an illustrative signal, and five platform targets." loading="lazy" decoding="async"><div class="art-footnote figure-tools"><span>Concept illustration · Illustrative signal</span><a class="diagram-link" href="assets/openvitals-graphic.svg?v=20261110-ux2" target="_blank" rel="noopener" aria-label="View full-size OpenVitals diagram (opens in a new tab)">View full-size diagram <span aria-hidden="true">↗</span></a></div></div>
+            <div class="project-copy"><p class="project-kicker">OpenVitals / Native SDK / Computer vision</p><h3>OpenVitals</h3><p class="project-tagline">Turning everyday cameras into a new interface for physiological insight.</p><p class="project-description">A camera-based sensing SDK that brings pulse analysis, signal processing, and local research assessments into mobile and desktop applications. A shared C++ engine connects five platforms through native bindings, putting contactless sensing inside the software people already use.</p><p class="project-role">Product direction, SDK architecture, and AI-assisted engineering · Ongoing product</p><ul class="project-stack" aria-label="Project technologies"><li>Computer Vision</li><li>Signal Processing</li><li>Native SDK</li><li>On-Device Inference</li><li>Cross-Platform</li></ul><div class="project-actions"><a class="project-study" href="case-studies/openvitals.html">Explore the technology <span aria-hidden="true">→</span></a><a class="project-website" href="#contact">Discuss the product <span aria-hidden="true">↗</span></a></div><details class="project-details"><summary>Explore the contribution <span class="disclosure-icon" aria-hidden="true"></span></summary><div class="detail-body"><h4>One shared engine</h4><p>A portable C++17 core connects iOS, Android, macOS, Windows, and Linux through native interfaces, with local signal processing and model inference.</p><h4>Engineering for research</h4><p>Quality-aware results, dedicated research assessment paths, and repeatable evaluation tools support wellness and research applications. The SDK integrates third-party pretrained models.</p></div></details></div>
+          </article>
+
           <article class="project">
             <div class="project-visual"><div class="art-caption"><span>Marketplace modernization</span><span aria-hidden="true">01 /</span></div><svg class="project-vector" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="600" height="440" viewBox="0 0 600 440" fill="none">
   <title>From a product brief to a manufacturing partner</title>
@@ -289,7 +290,7 @@
 
     <section class="section services-section" id="services" aria-labelledby="services-title" tabindex="-1">
       <div class="wrap">
-        <div class="section-heading"><p class="eyebrow"><span class="section-number">03</span> Engineering services</p><div><h2 id="services-title">Move your product<br><span class="accent">forward.</span></h2><p class="section-intro">A focused engagement for your next milestone, or an experienced engineer alongside your team.</p></div></div>
+        <div class="section-heading"><p class="eyebrow"><span class="section-number">02</span> Engineering services</p><div><h2 id="services-title">Move your product<br><span class="accent">forward.</span></h2><p class="section-intro">A focused engagement for your next milestone, or an experienced engineer alongside your team.</p></div></div>
         <div class="service-list">
           <article class="service"><span class="service-index" aria-hidden="true">01 /</span><div><h3>Modernize an existing application</h3><p>Move an established product forward with a practical migration plan, clear release scope and careful collaboration with your team.</p><ul class="service-tags"><li>Legacy applications</li><li>Platform migrations</li><li>Technical direction</li></ul></div><span class="service-symbol" aria-hidden="true">↗</span></article>
           <article class="service"><span class="service-index" aria-hidden="true">02 /</span><div><h3>Connect web &amp; mobile workflows</h3><p>Build the applications and integrations around the way your business works, from .NET and Laravel platforms to MAUI mobile experiences.</p><ul class="service-tags"><li>Web platforms</li><li>APIs &amp; integrations</li><li>Cross-platform mobile</li></ul></div><span class="service-symbol" aria-hidden="true">↗</span></article>
@@ -299,28 +300,9 @@
       </div>
     </section>
 
-    <section class="section security-section" id="cybersecurity" aria-labelledby="security-title" tabindex="-1">
-      <div class="wrap">
-        <div class="security-masthead"><p class="eyebrow"><span class="section-number">04</span> Cybersecurity</p><p class="venture-status">Venture in development</p></div>
-        <div class="security-lead">
-          <div class="security-copy"><p class="security-kicker">Permission first. Purpose always.</p><h2 id="security-title">Independent audits.<br><span class="accent">Clear scope.</span><br>Useful findings.</h2><p class="section-intro">I’m exploring an independent cybersecurity audit venture focused on authorized assessments of web applications and publicly visible configurations.</p><a class="button security-cta" href="mailto:ranausmannoman@gmail.com?subject=Cybersecurity%20venture%20enquiry">Discuss the venture <span aria-hidden="true">↗</span></a></div>
-          <figure class="security-visual" aria-labelledby="security-visual-caption">
-            <img class="security-artwork" src="assets/cybersecurity-boundary.png" alt="A monumental illuminated gateway around a crystalline core, a conceptual illustration of an assessment boundary." width="1672" height="941" loading="lazy" decoding="async">
-            <figcaption id="security-visual-caption">Concept · Scope → assess → report.</figcaption>
-          </figure>
-        </div>
-        <ol class="security-principles" aria-label="Planned assessment approach">
-          <li><span class="service-index" aria-hidden="true">01 /</span><div><h3>Agree the scope</h3><p>Written authorization, approved assets, methods and boundaries come before any assessment.</p></div></li>
-          <li><span class="service-index" aria-hidden="true">02 /</span><div><h3>Make findings useful</h3><p>The planned approach combines clear evidence, practical remediation guidance and agreed retesting.</p></div></li>
-          <li><span class="service-index" aria-hidden="true">03 /</span><div><h3>Handle disclosure responsibly</h3><p>Sensitive findings would be handled confidentially and reported through agreed channels. Essential disclosure is never conditional on payment.</p></div></li>
-        </ol>
-        <div class="security-signoff"><p>Start with a conversation about scope.</p></div>
-      </div>
-    </section>
-
     <section class="section experience-section" id="experience" aria-labelledby="experience-title" tabindex="-1">
       <div class="wrap">
-        <div class="section-heading"><p class="eyebrow"><span class="section-number">05</span> Experience</p><div><h2 id="experience-title">Hands-on engineering.<br><span class="muted">Shared ownership.</span></h2><p class="section-intro">6+ years building business systems across employment and past contract engagements.</p></div></div>
+        <div class="section-heading"><p class="eyebrow"><span class="section-number">03</span> Experience</p><div><h2 id="experience-title">Hands-on engineering.<br><span class="muted">Shared ownership.</span></h2><p class="section-intro">6+ years building business systems across employment and past contract engagements.</p></div></div>
         <div class="experience-list">
           <!-- experience:start -->
           <div class="experience-group"><h3>Employment</h3><article class="experience-row"><p class="experience-date">Mar 2023 — present</p><div><h4>Senior Software Engineer</h4><p class="employer">PureLogics</p><p class="experience-description">Full-stack engineering across staffing workflows and a healthcare kiosk platform, including backend development and coordinated application delivery.</p></div></article><article class="experience-row"><p class="experience-date">Feb 2020 — Mar 2023</p><div><h4>Full-Stack Software Engineer</h4><p class="employer">NETSOL</p><p class="experience-description">Enterprise leasing platforms and client UAT in Indonesia and Australia.</p></div></article></div>
@@ -332,9 +314,22 @@
       </div>
     </section>
 
+<span id="ai-solutions" class="anchor-alias" aria-hidden="true"></span>
+    <section class="section si-section" id="si-workflows" aria-labelledby="si-title" tabindex="-1">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow"><span class="section-number">04</span> SI &amp; workflows</p><div><h2 id="si-title">Super Intelligence.<br><span class="accent">Practical steps today.</span></h2><p class="section-intro">Super Intelligence (SI) is a direction I’m exploring. My work today combines current models, automation and human review to solve practical business problems.</p></div></div>
+        <div class="si-offer-grid">
+          <article class="si-offer"><span class="service-index" aria-hidden="true">01 /</span><h3>Integrate intelligent capabilities</h3><p>Connect useful model capabilities with the software your team already uses, its existing data, interfaces and business rules.</p><ul class="service-tags"><li>Application integration</li><li>APIs</li><li>Human review</li></ul></article>
+          <article class="si-offer"><span class="service-index" aria-hidden="true">02 /</span><h3>Make information easier to work with</h3><p>Shape document and information workflows for summarizing, organizing and extracting useful details, with review steps where judgment matters.</p><ul class="service-tags"><li>Document workflows</li><li>Information handling</li><li>Review steps</li></ul></article>
+          <article class="si-offer"><span class="service-index" aria-hidden="true">03 /</span><h3>Automate practical workflows</h3><p>Connect tools and reduce repetitive handoffs, choosing models or straightforward automation to suit the task.</p><ul class="service-tags"><li>Tool integrations</li><li>Task handoffs</li><li>Workflow automation</li></ul></article>
+        </div>
+        <div class="section-footer"><p>Start with one useful workflow.</p><a class="text-link" href="mailto:ranausmannoman@gmail.com?subject=SI%20and%20workflow%20enquiry">Discuss a workflow <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
     <section class="section approach-section" id="approach" aria-labelledby="approach-title" tabindex="-1">
       <div class="wrap">
-        <div class="section-heading"><p class="eyebrow"><span class="section-number">06</span> My working process</p><div><h2 id="approach-title">How I work with<br><span class="accent">Claude Code and Codex.</span></h2><p class="section-intro">A scoped brief, a supervised implementation and a review loop — with me setting priorities, validating the work and making the final release decision.</p></div></div>
+        <div class="section-heading"><p class="eyebrow"><span class="section-number">05</span> My working process</p><div><h2 id="approach-title">How I work with<br><span class="accent">Claude Code and Codex.</span></h2><p class="section-intro">A scoped brief, a supervised implementation and a review loop — with me setting priorities, validating the work and making the final release decision.</p></div></div>
         <figure class="collaboration-visual" data-motion-active="false">
           <div class="collaboration-heading"><p class="eyebrow">From brief to reviewed change</p></div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 385" class="collaboration-svg collaboration-desktop" role="img" aria-labelledby="collab-desktop-title collab-desktop-desc">
@@ -450,6 +445,64 @@
       </div>
     </section>
 
+    <section class="section security-section" id="cybersecurity" aria-labelledby="security-title" tabindex="-1">
+      <div class="wrap">
+        <div class="security-masthead"><p class="eyebrow"><span class="section-number">06</span> Cybersecurity</p><p class="venture-status">Venture in development</p></div>
+        <div class="security-lead">
+          <div class="security-copy"><p class="security-kicker">Permission first. Purpose always.</p><h2 id="security-title">Independent audits.<br><span class="accent">Clear scope.</span><br>Useful findings.</h2><p class="section-intro">I’m exploring an independent cybersecurity audit venture focused on authorized assessments of web applications and publicly visible configurations.</p><a class="button security-cta" href="mailto:ranausmannoman@gmail.com?subject=Cybersecurity%20venture%20enquiry">Discuss the venture <span aria-hidden="true">↗</span></a></div>
+          <figure class="security-visual" aria-labelledby="security-visual-caption">
+            <img class="security-artwork" src="assets/cybersecurity-assessment-green.webp" alt="A shield connects web applications, cloud infrastructure, servers, and an assessment report within a defined security boundary." width="1402" height="1122" loading="lazy" decoding="async">
+            <svg class="security-motion" viewBox="0 0 1402 1122" fill="none" aria-hidden="true" focusable="false">
+              <defs>
+                <radialGradient id="security-node-light">
+                  <stop stop-color="#e8f7d4" stop-opacity=".8"/>
+                  <stop offset=".35" stop-color="#c1ff72" stop-opacity=".35"/>
+                  <stop offset="1" stop-color="#a8da8a" stop-opacity="0"/>
+                </radialGradient>
+                <mask id="security-orbit-clearance" maskUnits="userSpaceOnUse" x="0" y="0" width="1402" height="1122">
+                  <rect width="1402" height="1122" fill="white"/>
+                  <g fill="black">
+                    <rect x="177" y="192" width="272" height="201" rx="28"/>
+                    <rect x="952" y="192" width="273" height="201" rx="28"/>
+                    <rect x="184" y="586" width="275" height="226" rx="28"/>
+                    <rect x="947" y="586" width="279" height="226" rx="28"/>
+                  </g>
+                </mask>
+              </defs>
+              <g mask="url(#security-orbit-clearance)">
+                <g transform="translate(701 483) scale(1.009868 1)">
+                  <g class="security-orbit">
+                    <circle r="304" class="security-orbit-trail"/>
+                    <circle cy="-304" r="5" fill="#e8f7d4"/>
+                  </g>
+                </g>
+              </g>
+              <g class="security-routes">
+                <path class="security-packet" pathLength="100" d="M448 310H461Q485 310 485 334V426Q485 451 512 451H549"/>
+                <path class="security-packet" pathLength="100" d="M854 451H890Q918 451 918 423V335Q918 310 945 310H955"/>
+                <path class="security-packet" pathLength="100" d="M456 678H484V582Q484 552 514 552H568"/>
+                <path class="security-packet" pathLength="100" d="M834 552H864Q893 552 893 580V678H947"/>
+              </g>
+              <path class="security-shield-light" d="M530 346Q629 327 701 275Q773 327 872 346C866 501 819 612 701 677C583 612 536 501 530 346Z"/>
+              <g fill="url(#security-node-light)">
+                <circle class="security-node-pulse" cx="701" cy="179" r="30"/>
+                <circle class="security-node-pulse" cx="529" cy="489" r="27"/>
+                <circle class="security-node-pulse" cx="873" cy="489" r="27"/>
+                <circle class="security-node-pulse" cx="701" cy="787" r="30"/>
+              </g>
+            </svg>
+            <figcaption id="security-visual-caption">Concept · Scope → assess → report.</figcaption>
+          </figure>
+        </div>
+        <ol class="security-principles" aria-label="Planned assessment approach">
+          <li><span class="service-index" aria-hidden="true">01 /</span><div><h3>Agree the scope</h3><p>Written authorization, approved assets, methods and boundaries come before any assessment.</p></div></li>
+          <li><span class="service-index" aria-hidden="true">02 /</span><div><h3>Make findings useful</h3><p>The planned approach combines clear evidence, practical remediation guidance and agreed retesting.</p></div></li>
+          <li><span class="service-index" aria-hidden="true">03 /</span><div><h3>Handle disclosure responsibly</h3><p>Sensitive findings would be handled confidentially and reported through agreed channels. Essential disclosure is never conditional on payment.</p></div></li>
+        </ol>
+        <div class="security-signoff"><p>Start with a conversation about scope.</p></div>
+      </div>
+    </section>
+
     <section class="section reading-section" id="reading" aria-labelledby="reading-title" tabindex="-1">
       <div class="wrap">
         <div class="section-heading"><p class="eyebrow"><span class="section-number">07</span> Beyond the code</p><div><h2 id="reading-title">Books I’ve read.</h2><p class="section-intro">Two books from my reading shelf, on quantitative reasoning and the changing relationship between people and AI.</p></div></div>
@@ -494,6 +547,6 @@
     </section>
   </main>
 
-  <footer class="site-footer"><div class="wrap footer-main"><a class="brand" href="#top" aria-label="Rana Usman, back to top"><span class="brand-mark" aria-hidden="true">ru.</span><span class="brand-name">Rana Usman</span></a><p>Exploring SI.<br><span>Web, mobile &amp; cloud engineering.</span></p><div class="footer-links"><a href="#cybersecurity">Cybersecurity venture <span aria-hidden="true">↗</span></a><a href="#fitness">Health &amp; fitness <span aria-hidden="true">↗</span></a><a href="assets/Usman_Iqbal_Resume.pdf" download>Download CV <span aria-hidden="true">↓</span><span class="sr-only"> (PDF, 2 pages)</span></a><a href="https://www.linkedin.com/in/ranausman008/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><a href="tel:+923333799535">+92 333 3799535</a></div></div><div class="wrap footer-bottom"><p>© 2026 Rana Usman</p><p>Lahore, Pakistan</p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
+  <footer class="site-footer"><div class="wrap footer-main"><a class="brand" href="#top" aria-label="Rana Usman, back to top"><span class="brand-mark" aria-hidden="true">ru.</span><span class="brand-name">Rana Usman</span></a><p>Exploring SI.<br><span>Web, mobile &amp; cloud engineering.</span></p><div class="footer-links"><a href="#cybersecurity">Cybersecurity venture <span aria-hidden="true">↗</span></a><a href="#fitness">Health &amp; fitness <span aria-hidden="true">↗</span></a><a href="assets/Usman_Iqbal_Resume.pdf" download>Download CV <span aria-hidden="true">↓</span><span class="sr-only"> (PDF, 2 pages)</span></a><a href="https://www.linkedin.com/in/ranausman008/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><a href="tel:+923333799535">+92 333 3799535</a></div></div><div class="wrap footer-bottom"><p>© 2026 Rana Usman</p><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button><p>Lahore, Pakistan</p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
 </body>
 </html>

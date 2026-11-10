@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'none'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0b1014">
+  <title>OpenVitals — Camera-based physiological sensing | Rana Usman</title>
+  <meta name="description" content="OpenVitals is an ongoing camera-based physiological sensing SDK for wellness and research: one C++ engine, five platform targets, local processing, and quality-aware results.">
+  <link rel="canonical" href="https://ranausman.dev/case-studies/openvitals.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Rana Usman">
+  <meta property="og:title" content="OpenVitals — Everyday cameras, physiological insight">
+  <meta property="og:description" content="An ongoing product exploring contactless sensing infrastructure for wellness and research. Product direction, SDK architecture, and AI-assisted engineering by Rana Usman.">
+  <meta property="og:url" content="https://ranausman.dev/case-studies/openvitals.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="OpenVitals — Everyday cameras, physiological insight">
+  <meta name="twitter:description" content="A camera-based physiological sensing SDK with a shared native core, local processing, and quality-aware research assessments.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <script src="../futuristic/preloader.js" async></script>
+  <link rel="stylesheet" href="../futuristic/style.css">
+  <link rel="stylesheet" href="../futuristic/redesign.css?v=20261110-ux2">
+  <link rel="stylesheet" href="../futuristic/case-study.css?v=20261110-ux2">
+  <link rel="stylesheet" href="../futuristic/openvitals.css?v=20261110-ux2">
+  <link rel="stylesheet" href="../futuristic/neural-theme.css?v=20261110-ux2">
+  <script src="../futuristic/app.js?v=20261110-ux2" defer></script>
+  <script src="../futuristic/neural.js" defer></script>
+</head>
+<body class="case-page case-openvitals">
+  <canvas class="neural-network" id="neural-network" aria-hidden="true"></canvas>
+  <a class="skip-link" href="#main">Skip to case study</a>
+  <header class="site-header case-header">
+    <div class="case-header-inner">
+      <a class="brand" href="../index.html" aria-label="Rana Usman, home"><span class="brand-mark" aria-hidden="true">ru.</span><span class="brand-name">Rana Usman</span></a>
+      <nav class="case-header-links" aria-label="Case-study navigation">
+        <a href="../index.html#work"><span aria-hidden="true">←</span> Back to work</a>
+        <a class="case-public-link" href="../index.html#contact">Discuss the product <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="case-container">
+      <nav class="case-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">OpenVitals</span></nav>
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="case-hero-grid">
+          <div class="case-hero-copy">
+            <p class="case-eyebrow">Computer vision meets physiological sensing</p>
+            <h1 class="case-title" id="case-title">OpenVitals</h1>
+            <p class="ov-headline">What if the next sensing interface was already in your camera?</p>
+            <p class="case-lead">OpenVitals transforms subtle changes in facial colour into pulse signals that applications can use. It combines classical signal processing, native performance, and local model inference in an SDK spanning iOS, Android, macOS, Windows, and Linux.</p>
+            <p class="ov-secondary">Everyday hardware. Local processing. One shared engine.</p>
+            <p class="case-status"><strong>Ongoing product · Wellness &amp; research</strong>Product direction, SDK architecture, and AI-assisted engineering</p>
+            <a class="text-link case-hero-action" href="#architecture">Explore the technology <span aria-hidden="true">↓</span></a>
+          </div>
+          <figure class="project-visual case-figure openvitals">
+            <img class="project-vector" src="../assets/openvitals-graphic.svg?v=20261110-ux2" width="720" height="520" alt="A conceptual face region connects to an illustrative pulse waveform, a shared native engine, and five platform targets.">
+            <figcaption class="case-figure-caption figure-tools"><span>Concept illustration · Illustrative signal</span><a class="diagram-link" href="../assets/openvitals-graphic.svg?v=20261110-ux2" target="_blank" rel="noopener" aria-label="View full-size OpenVitals diagram (opens in a new tab)">View full-size diagram <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
+        </div>
+        <dl class="case-summary" aria-label="Product summary">
+          <div class="case-summary-item"><dt>My role</dt><dd>Product direction, SDK architecture, and AI-assisted engineering</dd></div>
+          <div class="case-summary-item"><dt>Product</dt><dd>Contactless sensing infrastructure for wellness and research applications</dd></div>
+          <div class="case-summary-item"><dt>Platform targets</dt><dd>iOS · Android · macOS · Windows · Linux</dd></div>
+        </dl>
+        <dl class="ov-facts" aria-label="SDK architecture at a glance">
+          <div><dt>Platform targets</dt><dd>5</dd></div>
+          <div><dt>Assessment categories</dt><dd>12</dd></div>
+          <div><dt>Integrated third-party TFLite models</dt><dd>35</dd></div>
+          <div><dt>Shared native core</dt><dd>1</dd></div>
+        </dl>
+      </section>
+
+      <div class="case-content-layout">
+        <aside class="case-toc" aria-labelledby="case-toc-title">
+          <h2 id="case-toc-title">In this case study</h2>
+          <nav aria-label="On this page"><ol>
+            <li><a href="#idea"><span aria-hidden="true">01</span>The idea</a></li>
+            <li><a href="#capabilities"><span aria-hidden="true">02</span>Capabilities</a></li>
+            <li><a href="#architecture"><span aria-hidden="true">03</span>Architecture</a></li>
+            <li><a href="#engineering"><span aria-hidden="true">04</span>Engineering story</a></li>
+            <li><a href="#assessments"><span aria-hidden="true">05</span>Assessment breadth</a></li>
+            <li><a href="#contribution"><span aria-hidden="true">06</span>My contribution</a></li>
+            <li><a href="#stack"><span aria-hidden="true">07</span>Technology stack</a></li>
+          </ol></nav>
+        </aside>
+        <article class="case-article" aria-label="OpenVitals case study">
+          <section class="case-section" id="idea" tabindex="-1">
+            <h2><span class="case-chapter" aria-hidden="true">01 /</span>A different way to see a camera.</h2>
+            <p>A camera usually captures what a person looks like. OpenVitals explores a more powerful possibility: using the same stream of pixels to reveal the tiny colour changes associated with blood flow beneath the skin.</p>
+            <p>Those changes are too subtle to judge by eye. The SDK extracts them from facial regions, reconstructs a pulse waveform, evaluates its quality, and returns structured estimates to the host application. This technique is called remote photoplethysmography, or rPPG.</p>
+            <p>The idea is a shift from a specialised sensing interaction to a software capability built around familiar hardware. The camera-pulse path uses an ordinary camera; the SDK makes that signal accessible to application developers through a consistent interface.</p>
+            <p>OpenVitals brings this idea beyond a single demo. Its portable C++ core connects to Swift, Kotlin, and Python, alongside direct C and C++ integrations. Around that core sit dedicated research assessment paths, local model runtimes, and tools for recording and comparing scalar results.</p>
+            <div class="case-callout"><p>Capture locally, process locally, and integrate physiological insight into the application’s own experience.</p></div>
+            <h3>Existing hardware, a new purpose</h3>
+            <p>OpenVitals looks for a physiological signal inside camera frames already available to an application. The opportunity is to extend the usefulness of laptops and phones through software, bringing contactless pulse sensing into familiar interfaces.</p>
+            <h3>Reusable across applications</h3>
+            <p>A shared native engine provides the processing foundation across five platform targets. Developers integrate through the language and packaging conventions of their application: Swift Package Manager for Apple platforms, Kotlin and JNI for Android, CMake for native desktop applications, and Python for analysis and evaluation.</p>
+            <h3>Processing stays close to the person</h3>
+            <p>The sensing engine and model inference run locally. The core processes frames in memory without recording or uploading them. Host applications control camera permissions and presentation; research exports are deliberate actions. This architecture supports private, responsive experiences without making cloud inference part of the sensing loop.</p>
+            <h3>Signal quality is part of the product</h3>
+            <p>A number is useful only when its source is understood. OpenVitals carries readiness, source timing, and quality information alongside its estimates. Applications can distinguish warm-up, motion, missing faces, irregular sampling, and usable signal states instead of treating every frame as a measurement.</p>
+          </section>
+
+          <section class="case-section" id="capabilities" tabindex="-1">
+            <h2><span class="case-chapter" aria-hidden="true">02 /</span>From pixels to an application capability.</h2>
+            <div class="ov-feature-grid">
+              <div class="ov-feature"><span class="ov-feature-index" aria-hidden="true">01</span><h3>Contactless pulse sensing</h3><p>Extract a camera-pulse waveform from subtle facial colour changes using POS, CHROM, and GREEN processing paths.</p></div>
+              <div class="ov-feature"><span class="ov-feature-index" aria-hidden="true">02</span><h3>A broader assessment framework</h3><p>Connect pulse analysis with experimental variability, breathing, stress-index, and dedicated model-based research assessments.</p></div>
+              <div class="ov-feature"><span class="ov-feature-index" aria-hidden="true">03</span><h3>Native across platforms</h3><p>Use a shared C++ engine through Swift, Kotlin/JNI, Python, and direct C/C++ interfaces.</p></div>
+              <div class="ov-feature"><span class="ov-feature-index" aria-hidden="true">04</span><h3>Local model inference</h3><p>Integrate 35 bundled third-party TFLite models through local runtimes, with manifest-based asset integrity checks.</p></div>
+              <div class="ov-feature"><span class="ov-feature-index" aria-hidden="true">05</span><h3>Quality-aware results</h3><p>Carry readiness, units, timestamps, source bounds, and provenance with the output so applications can handle results responsibly.</p></div>
+              <div class="ov-feature"><span class="ov-feature-index" aria-hidden="true">06</span><h3>Built for evaluation</h3><p>Record structured scalar sessions, import independent reference readings, and review time-aligned comparisons in an offline dashboard.</p></div>
+            </div>
+          </section>
+
+          <section class="case-section" id="architecture" tabindex="-1">
+            <h2><span class="case-chapter" aria-hidden="true">03 /</span>One core. Explicit processing paths.</h2>
+            <p>Capture, signal processing, research assessments, and presentation have distinct responsibilities. The camera-pulse pipeline and dedicated research paths retain their own spatial and temporal input requirements, then return a consistent structured result.</p>
+            <figure class="ov-architecture" aria-labelledby="ov-architecture-caption">
+              <div class="ov-paths">
+                <div class="ov-path">
+                  <h3>Camera-pulse path</h3>
+                  <div class="ov-node"><strong>Application camera &amp; face geometry</strong><p>Explicit pixels, regions, and capture timing</p></div>
+                  <div class="ov-node"><strong>Timestamped colour observations</strong><p>Source cadence and quality information</p></div>
+                  <div class="ov-node"><strong>Portable C++ signal engine</strong><p>Quality checks → POS / CHROM / GREEN → pulse analysis</p></div>
+                  <div class="ov-node"><strong>Core estimates &amp; intervals</strong><p>Analysis windows with source timing</p></div>
+                </div>
+                <div class="ov-path">
+                  <h3>Dedicated research paths</h3>
+                  <div class="ov-node"><strong>Assessment-specific inputs</strong><p>Required spatial regions, temporal signals, profile data, or external inputs</p></div>
+                  <div class="ov-node"><strong>Dedicated preprocessing</strong><p>Each assessment’s explicit input contract</p></div>
+                  <div class="ov-node"><strong>Local research model inference</strong><p>Integrated third-party model assets and integrity checks</p></div>
+                  <div class="ov-node"><strong>Research assessments &amp; derived indicators</strong><p>Source completeness and provenance</p></div>
+                </div>
+              </div>
+              <div class="ov-node ov-output"><strong>Structured results</strong><p>Readiness · Units · Source timing · Quality · Provenance</p></div>
+              <div class="ov-integrations">Swift / Kotlin / C and C++ / Python integrations</div>
+              <figcaption id="ov-architecture-caption">Architecture overview. Research paths use their own required inputs; an ordinary heart-rate waveform does not feed every model.</figcaption>
+            </figure>
+          </section>
+
+          <section class="case-section" id="engineering" tabindex="-1">
+            <h2><span class="case-chapter" aria-hidden="true">04 /</span>The engineering behind the signal.</h2>
+            <h3>Building an engine instead of a one-off camera demo</h3>
+            <p>The architectural challenge was to make camera sensing reusable across very different application environments. OpenVitals separates capture, signal processing, research assessments, and presentation. Applications retain control of their camera and UI, while the native core accepts explicit pixel layouts, row strides, face geometry, and monotonic timestamps.</p>
+            <p>A C++17 core exposed through a versioned C ABI provides a common integration boundary. Swift and Kotlin wrappers manage application-facing types and engine lifetime. Python adds an independent processing pipeline, a native bridge, command-line tools, and repeatable offline evaluation.</p>
+            <h3>Making time part of the signal</h3>
+            <p>Camera frame rates are not perfectly regular. A stream requested at 30 frames per second can arrive at a different cadence, and processing pressure can introduce gaps. OpenVitals uses observed timestamps, bounded interpolation, and source-density checks so the processing grid stays connected to real camera observations.</p>
+            <p>Each output uses its own analysis window. This keeps a longer breathing or variability calculation from changing how the heart-rate signal is conditioned. Source timing and freshness remain attached to derived results as they move through the assessment pipeline.</p>
+            <h3>Finding a tiny signal inside a moving image</h3>
+            <p>Pulse-related colour variation shares the image with much stronger effects from motion, exposure, lighting, and facial-region selection. The pipeline combines region sampling, colour projections, filtering, spectral analysis, and harmonic checks to identify candidate pulse rhythms.</p>
+            <p>The investigation also exposed how acquisition choices affect output: preserving camera timestamps, managing browser backpressure, and comparing wider skin regions helped move Mac webcam testing from missing readings to recurring live pulse estimates. Deterministic replay and synthetic positive and negative controls made these changes inspectable and repeatable.</p>
+            <h3>Designing the evidence alongside the SDK</h3>
+            <p>OpenVitals includes tools for exploring where an estimate came from. Shared scalar records carry units, readiness, source times, and provenance across language boundaries. An offline review flow supports importing reference data and comparing aligned observations.</p>
+            <p>The repository also includes automated checks for numerical behaviour, C ABI contracts, lifecycle handling, concurrency, model execution, and memory safety. This makes the evaluation workflow part of the engineering product rather than an afterthought.</p>
+          </section>
+
+          <section class="case-section" id="assessments" tabindex="-1">
+            <h2><span class="case-chapter" aria-hidden="true">05 /</span>A wider research framework.</h2>
+            <p>Camera-pulse estimates, dedicated model-based research assessments, and derived indicators serve different purposes. Their inputs and interpretation stay distinct within the SDK.</p>
+            <details class="ov-assessments">
+              <summary>A framework for 12 assessment categories</summary>
+              <dl class="ov-assessment-list">
+                <div><dt>Heart rate</dt><dd>Quality-gated camera-pulse estimation.</dd></div>
+                <div><dt>Respiratory rate</dt><dd>Experimental breathing-rate estimation from pulse-amplitude modulation.</dd></div>
+                <div><dt>Heart rate variability</dt><dd>Analysis of accepted pulse intervals, with duration-aware time and frequency metrics.</dd></div>
+                <div><dt>Stress index</dt><dd>An experimental pulse-interval histogram index.</dd></div>
+                <div><dt>Blood pressure</dt><dd>Dedicated two-region signal preprocessing and pretrained research model inference.</dd></div>
+                <div><dt>Oxygen saturation</dt><dd>A dedicated optical research assessment using nose-region colour signals.</dd></div>
+                <div><dt>AFib pattern</dt><dd>A research classifier for pulse-pattern assessment.</dd></div>
+                <div><dt>Cardiovascular age</dt><dd>A derived indicator using variability and normative-table lookups.</dd></div>
+                <div><dt>Cardiovascular BMI</dt><dd>A derived model-specific indicator, separate from physical BMI.</dd></div>
+                <div><dt>Cardiovascular risk</dt><dd>A model-based research assessment using explicit, complete source inputs.</dd></div>
+                <div><dt>Pulse respiration quotient</dt><dd>The relationship between available heart-rate and respiratory-rate estimates.</dd></div>
+                <div><dt>Wellness indicators</dt><dd>Six configured research mappings for activity, sleep, equilibrium, metabolism, health, and relaxation.</dd></div>
+              </dl>
+              <p class="ov-assessment-note">These categories have distinct input contracts. They represent assessment breadth, rather than twelve direct measurements from one camera waveform. Some derived scores also require profile data or external inputs.</p>
+            </details>
+          </section>
+
+          <section class="case-section" id="contribution" tabindex="-1">
+            <h2><span class="case-chapter" aria-hidden="true">06 /</span>Connecting the product and the engineering.</h2>
+            <p>I lead OpenVitals’ product direction, architecture, and AI-assisted engineering, connecting the signal-processing engine, native platform integrations, research workflows, and evaluation tools into a coherent SDK. The work combines systems engineering with practical camera investigation: turning an interesting sensing technique into a foundation other developers can integrate.</p>
+            <p>The SDK integrates third-party pretrained models. The OpenVitals source and bundled weights have separate ownership and terms.</p>
+            <a class="button button-primary ov-contact" href="../index.html#contact">Discuss the product <span aria-hidden="true">↗</span></a>
+          </section>
+
+          <section class="case-section" id="stack" tabindex="-1">
+            <h2><span class="case-chapter" aria-hidden="true">07 /</span>From native code to evaluation.</h2>
+            <dl class="ov-stack">
+              <div><dt>Portable processing</dt><dd>C++17, versioned C ABI, CMake</dd></div>
+              <div><dt>Signal analysis</dt><dd>rPPG, POS, CHROM, GREEN, filtering, spectral analysis, pulse-interval analysis</dd></div>
+              <div><dt>Apple integration</dt><dd>Swift, Swift Package Manager, native C bindings</dd></div>
+              <div><dt>Android integration</dt><dd>Kotlin, JNI, Android NDK, CameraX, ML Kit face detection</dd></div>
+              <div><dt>Analysis and tooling</dt><dd>Python, NumPy, SciPy, OpenCV, ctypes</dd></div>
+              <div><dt>Model execution</dt><dd>TFLite models, LiteRT CPU inference, integrity manifests</dd></div>
+              <div><dt>Desktop diagnostics</dt><dd>Browser camera capture, JavaScript, WebSockets, Apple Vision</dd></div>
+              <div><dt>Evaluation and checks</dt><dd>pytest, CTest, sanitizers, Swift concurrency checks, Ruff, mypy, GitHub Actions</dd></div>
+            </dl>
+          </section>
+        </article>
+      </div>
+    </div>
+
+    <section class="case-next" aria-labelledby="case-next-title">
+      <div class="case-container">
+        <div class="case-next-heading"><h2 id="case-next-title">Explore another case study</h2><a class="text-link" href="../index.html#work">All selected work <span aria-hidden="true">↗</span></a></div>
+        <nav aria-label="Case studies"><ul class="case-next-grid">
+          <li><a href="openvitals.html" aria-current="page"><span>This case study · Ongoing product</span><strong>OpenVitals</strong></a></li>
+          <li><a href="makers-row.html"><span>Marketplace modernization</span><strong>Maker’s Row <span aria-hidden="true">↗</span></strong></a></li>
+          <li><a href="guestay.html"><span>Hospitality platform</span><strong>Guestay <span aria-hidden="true">↗</span></strong></a></li>
+          <li><a href="quicktake-health.html"><span>Healthcare kiosk</span><strong>QuickTake Health <span aria-hidden="true">↗</span></strong></a></li>
+          <li><a href="roundhere.html"><span>Events &amp; communities</span><strong>RoundHere <span aria-hidden="true">↗</span></strong></a></li>
+        </ul></nav>
+      </div>
+    </section>
+  </main>
+  <footer class="case-container case-footer"><p>© 2026 Rana Usman · Lahore, Pakistan</p><a href="mailto:ranausmannoman@gmail.com?subject=Project%20enquiry">Discuss a project <span aria-hidden="true">↗</span></a><a href="../index.html">Back to portfolio</a><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button></footer>
+</body>
+</html>
