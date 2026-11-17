@@ -83,7 +83,7 @@ def furniture():
                   + use('via',w//3+h//2+w//5,j*3+h//2,.75) for j in range(3)]
         shapes += [use('smd',4,12,.72),use('smd',12,12,.72)]
         out.append(f'<g transform="translate({x} {y})">'+''.join(shapes)+'</g>')
-    return '<g class="furniture">'+''.join(out)+'</g>' 
+    return '<g class="furniture">'+''.join(out)+'</g>'
 
 def wide_art():
     shape="M23 3H608L617 12H780L805 37V531L774 563H480L472 555H45L23 533H5V54L15 44V12Z"
