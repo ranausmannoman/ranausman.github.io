@@ -68,7 +68,7 @@
     // Browser serialization expands self-closing SVG elements. Leave room for
     // the permanent board artwork, even at a 32px default with every panel open.
     const serializedBytes = artwork.length + 5 * (furniture.length + 1);
-    if (serializedBytes > 104000 && rows > 3) {
+    if (serializedBytes > 100000 && rows > 3) {
       return routeSubstrate(width, height, seed, Math.floor(rows * .9));
     }
     return artwork;
@@ -86,7 +86,7 @@
       field.innerHTML = routeSubstrate(width, height, Number(field.dataset.seed));
       field.setAttribute('viewBox', bounds);
     };
-    fitField();
+    // The authored field covers the first paint. ResizeObserver supplies the initial layout too.
     new ResizeObserver(() => {
       if (!paintFrame) paintFrame = requestAnimationFrame(fitField);
     }).observe(document.body);

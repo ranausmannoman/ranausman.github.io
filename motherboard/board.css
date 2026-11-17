@@ -24,7 +24,41 @@ ul, ol { padding: 0; }
 .brand { font: 600 1rem var(--sans); letter-spacing: -.03em; gap: .8rem; margin-right: auto; }
 .brand-mark { display: grid; place-items: center; height: 2.1rem; width: 2.3rem; color: var(--on-accent); background: var(--accent); font: 600 1.45rem/1 var(--sans); letter-spacing: -.085em; clip-path: polygon(0 0,100% 0,100% 75%,78% 100%,0 100%); }
 .head-links { display: flex; gap: 1.4rem; }
-.head-links a { font-size: .875rem; font-weight: 500; }
+.head-links a { gap: .32em; font-size: .875rem; font-weight: 500; }
+
+/* Keep the original text arrow for plain HTML, and draw the same proportions in every font. */
+.ui-arrow {
+  position: relative;
+  display: inline-block;
+  width: .94em;
+  height: .94em;
+  flex: none;
+  overflow: hidden;
+  vertical-align: -.09em;
+  text-align: start;
+  text-indent: -8em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.ui-arrow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  clip-path: polygon(8% 44%, 67% 44%, 45% 22%, 53% 14%, 89% 50%, 53% 86%, 45% 78%, 67% 56%, 8% 56%);
+  transform: rotate(var(--arrow-angle, 0deg));
+}
+.arrow-up-right { --arrow-angle: -45deg; }
+.arrow-down-right { --arrow-angle: 45deg; }
+.arrow-down { --arrow-angle: 90deg; }
+.arrow-left { --arrow-angle: 180deg; }
+.arrow-up { --arrow-angle: -90deg; }
+.arrow-tail { white-space: nowrap; }
+@media (forced-colors: active) {
+  .ui-arrow::before { background: CanvasText; forced-color-adjust: none; }
+  a .ui-arrow::before { background: LinkText; }
+  button .ui-arrow::before { background: ButtonText; }
+}
 .head-links a:hover, .quiet:hover, .brand:hover { color: var(--accent); }
 .navigator { position: relative; }
 .navigator summary { gap: .45rem; cursor: pointer; list-style: none; font: .75rem var(--mono); }
@@ -374,7 +408,7 @@ svg text { font-family: var(--mono); }
 
 /* Paragraphs share a reading edge. Short labels, headings and control names
    keep their natural spacing. Lists retain a hanging edge for their markers. */
-:where(main p, footer p, figcaption, dd, .case-article li, .detail-body li) {
+:where(main p, footer p, figcaption, dd, .case-section > ul:not([class]) > li, .case-track-list > li, .detail-body li) {
   text-align: justify;
   text-align-last: start;
 }

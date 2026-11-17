@@ -1,33 +1,126 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="520" viewBox="0 0 720 520" fill="none">
-  <title>OpenVitals: from everyday cameras to a pulse signal</title>
-  <desc>A conceptual face region connects to an illustrative pulse waveform, a shared native engine, and five platform targets. The waveform is synthetic, not a measurement.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="520" role="img" aria-labelledby="title" aria-describedby="desc">
+  <title id="title">OpenVitals: from everyday cameras to a pulse signal</title>
+  <desc id="desc">A conceptual face region connects to an illustrative pulse waveform, a shared native engine, and five platform targets. The waveform is synthetic, not a measurement. The highlighted facial regions are the forehead and cheeks. The signal panel shows quality, readiness and source timing. The platform targets are iOS, Android, macOS, Windows and Linux.</desc>
+  <style>
+    @font-face{font-family:Plex;src:url("../motherboard/fonts/plex-sans-latin-wght.woff2?v=ru-x1-plex1") format("woff2");font-weight:100 700;font-display:optional}
+    @font-face{font-family:PlexMono;src:url("../motherboard/fonts/plex-mono-latin-400.woff2?v=ru-x1-plex1") format("woff2");font-weight:400;font-display:optional}
+    :root{width:100%;height:auto;aspect-ratio:940 / 570;max-height:max(100vh,445px);color-scheme:light;background:var(--canvas);
+      --canvas:light-dark(#f4f2f8,#0a0a0b);--board:light-dark(#fff,#131316);--panel:light-dark(#f7f5fc,#19191c);--line:light-dark(#d9d3e4,#38373d);--metal:light-dark(#6d6979,#83808b);--ink:light-dark(#17141d,#f4f1e7);--muted:light-dark(#554e62,#c3bfb1);--copper:light-dark(#6624cc,#ffd21a);--via:light-dark(#9d78d8,#bda34e);--ghost:light-dark(#dac7f6,#45402a);--area:light-dark(#e9dafa,#38321c);--die:light-dark(#22202a,#1b1b1e);--die-edge:light-dark(#504d5c,#65636a);--die-ink:light-dark(#fff,#f3f1e7);--die-copper:light-dark(#d1b6ff,#ffd21a)}
+    @media(prefers-color-scheme:dark){:root{color-scheme:dark}}
+    :root:has(#light:target){color-scheme:light}
+    :root:has(#dark:target){color-scheme:dark}
+    .compact{display:none}
+    @media(max-width:720px) and (max-aspect-ratio:1/1){:root{aspect-ratio:340 / 652;max-height:none}.wide{display:none}.compact{display:block}}
+    @media(max-width:720px) and (min-aspect-ratio:1/1){:root{max-height:none}.wide .strap,.wide .meta,.wide .target{font-size:18px}}
+    text{font-family:Plex,"IBM Plex Sans",Arial,sans-serif;fill:var(--ink)}
+    .name{font-weight:650;letter-spacing:-.055em}.strap{font-family:PlexMono,"IBM Plex Mono",monospace;fill:var(--copper);letter-spacing:.055em}
+    .tagline{font-weight:450;fill:var(--muted)}.label{font-weight:600}.meta,.target{font-family:PlexMono,"IBM Plex Mono",monospace}.meta{fill:var(--muted)}
+    .engine{font-weight:600;fill:var(--die-ink)}.tile{fill:var(--panel);stroke:var(--metal);stroke-width:1.25;stroke-linejoin:round}
+    .wire,.field,.fine,.plot-grid,.metal,.face,.scope,.ticks{fill:none;stroke-linejoin:round;stroke-linecap:round}
+    .wire{stroke:var(--copper);stroke-width:2}.field{stroke:var(--ghost);stroke-width:1}.fine,.plot-grid{stroke:var(--line);stroke-width:1}
+    .metal,.face{stroke:var(--metal);stroke-width:1.6}.face{stroke:var(--ink)}.scope{stroke:var(--copper);stroke-width:3.1}
+    .ticks{stroke:var(--metal);stroke-width:1.1}.shell{fill:var(--board);stroke:var(--metal);stroke-width:1.6}
+    .via{fill:var(--board);stroke:var(--via);stroke-width:1.5}.hole{fill:var(--metal)}.pad{fill:var(--via)}
+  </style>
   <defs>
-    <linearGradient id="ov-bg" x1="0" y1="0" x2="720" y2="520" gradientUnits="userSpaceOnUse"><stop stop-color="#17362f"/><stop offset="1" stop-color="#101e1c"/></linearGradient>
-    <linearGradient id="ov-signal" x1="338" y1="208" x2="668" y2="208" gradientUnits="userSpaceOnUse"><stop stop-color="#6bd8c1" stop-opacity=".3"/><stop offset=".45" stop-color="#9bf4d9"/><stop offset="1" stop-color="#6bd8c1" stop-opacity=".45"/></linearGradient>
-    <radialGradient id="ov-halo"><stop stop-color="#74cfa7" stop-opacity=".16"/><stop offset="1" stop-color="#74cfa7" stop-opacity="0"/></radialGradient>
+    <g id="light"/><g id="dark"/>
+    <g id="via"><circle r="3.2" class="via"/><circle r="1" class="hole"/></g>
+    <g id="screw" fill="none"><circle r="7.5" class="via"/><circle r="4.5" class="metal"/><path d="m-2.3 2.3 4.6-4.6" class="metal"/></g>
+    <g id="smd"><rect x="-7" y="-3" width="14" height="6" rx="1" class="pad"/><rect x="-3.5" y="-4" width="7" height="8" rx="1" fill="var(--die)"/></g>
+    <g id="cluster"><use href="#smd"/><use href="#smd" x="20"/><use href="#smd" x="40"/><use href="#via" x="62"/></g>
+    <g id="field" class="field">
+      <path d="M0 0h46l15 15h51l12-12h25m-149 4h43l15 15h57l12-12h22m-149 4h40l15 15h63l12-12h19m-149 26h19l8 8h30l10-10h48m-115 9h16l8 8h36l10-10h45"/>
+      <circle cx="153" cy="3" r="2.5"/><circle cx="153" cy="10" r="2.5"/><circle cx="153" cy="17" r="2.5"/><circle cx="119" cy="41" r="2.5"/><circle cx="119" cy="48" r="2.5"/>
+    </g>
+    <g id="camera" fill="none">
+      <path d="M14 9H0v17m140-17h14v17m0 86v17h-14M0 112v17h14" class="wire"/>
+      <path d="M26 32h15m-15 7h10m89 67h-13m13 7h-8" class="field"/>
+      <path d="M77 13c-24 0-39 15-40 39l3 27c1 11 6 18 13 26l12 12c6 5 18 5 24 0l12-12c7-8 12-15 13-26l3-27C116 28 101 13 77 13Z" fill="var(--board)" class="face"/>
+      <path d="M48 62c5-3 10-3 15 0m29 0c5-3 11-3 15 0M76 62l-4 17h9m-16 17c5 4 17 4 23 0" class="metal"/>
+      <path d="M58 33h38v14H58zM47 70h14v13H47zM93 70h14v13H93z" fill="var(--area)" stroke="var(--copper)" stroke-width="1.4"/>
+      <path d="M60 38h10m-10 4h5m29-4h-8m-5 5h8M50 74h7m39 0h7" class="field"/>
+    </g>
+    <g id="plot">
+      <path d="M0 1h400m-400 22h400m-400 22h400m-400 22h400m-400 22h400M1 0v90m39-90v90m40-90v90m40-90v90m40-90v90m40-90v90m40-90v90m40-90v90m40-90v90m40-90v90m39-90v90" class="plot-grid"/>
+      <path id="trace" d="M0 65c11 0 12-8 20-8s12 12 20 12c9 0 11-10 17-13 8-3 12-38 20-41 11-2 10 36 22 45 8 5 16-7 22-5 6 1 8 11 16 11s13-9 19-12c7-4 10-41 20-43 10-1 10 41 23 47 8 4 15-6 22-4 6 1 8 12 15 12 9 0 13-10 20-13 8-4 12-39 21-42 10-1 10 39 24 47 7 4 15-6 21-5 6 0 8 11 16 11 8 0 13-10 20-13 9-4 11-35 20-39 10-4 12 27 22 37" class="scope"/>
+    </g>
+    <g id="chip-emblem" fill="none" stroke="var(--die-copper)" stroke-width="1.6">
+      <path d="m0 9 9-9h16l7 7v15l-9 9H8l-8-8Z"/><path d="m6 16 5 1 4-9 4 15 4-8 4 1"/>
+    </g>
+    <pattern id="lands" width="10" height="6" patternUnits="userSpaceOnUse"><rect x="1" width="6" height="5" rx="1" fill="var(--via)"/></pattern>
   </defs>
-  <rect width="720" height="520" rx="18" fill="url(#ov-bg)"/>
-  <circle cx="206" cy="225" r="190" fill="url(#ov-halo)"/>
-  <g stroke="#36584b" stroke-opacity=".38"><path d="M40 100H680M40 180H680M40 260H680M40 340H680M40 420H680M120 84V432M200 84V432M280 84V432M360 84V432M440 84V432M520 84V432M600 84V432"/></g>
-  <g font-family="Arial,sans-serif"><text x="38" y="47" fill="#b5d4c7" font-size="14" letter-spacing="2">CAMERA → SIGNAL → INSIGHT</text><circle cx="668" cy="41" r="5" fill="#9bf4d9"/></g>
-  <rect x="40" y="84" width="266" height="274" rx="16" fill="#10241e" stroke="#456e5b"/>
-  <g stroke="#a4dfba" stroke-width="2" stroke-linecap="round"><path d="M66 134V112H88M258 112H280V134M280 288V310H258M88 310H66V288"/></g>
-  <path d="M173 129C132 129 115 159 118 197L123 240C126 274 149 298 173 298C197 298 220 274 223 240L228 197C231 159 214 129 173 129Z" fill="#1b3a2d" stroke="#7da78c" stroke-width="1.5"/>
-  <path d="M131 198C140 192 149 192 155 197M191 197C199 192 208 192 216 198M171 201L163 230H177M152 257C166 264 181 264 194 257" stroke="#91b89a" stroke-width="1.5" stroke-linecap="round"/>
-  <rect x="139" y="151" width="68" height="24" rx="8" fill="#9bf4d9" fill-opacity=".12" stroke="#9bf4d9" stroke-opacity=".5" stroke-dasharray="3 4"/>
-  <rect x="128" y="215" width="24" height="28" rx="6" fill="#9bf4d9" fill-opacity=".12" stroke="#9bf4d9" stroke-opacity=".5" stroke-dasharray="3 4"/>
-  <rect x="194" y="215" width="24" height="28" rx="6" fill="#9bf4d9" fill-opacity=".12" stroke="#9bf4d9" stroke-opacity=".5" stroke-dasharray="3 4"/>
-  <g fill="#a2c4b5" font-family="Arial,sans-serif" font-size="14"><text x="173" y="340" text-anchor="middle">Facial colour regions</text></g>
-  <path d="M307 222H334M327 216L334 222L327 228" stroke="#7ecbb0" stroke-width="1.5"/>
-  <rect x="338" y="84" width="342" height="274" rx="16" fill="#10241e" stroke="#456e5b"/>
-  <text x="362" y="117" fill="#dcefe2" font-family="Arial,sans-serif" font-size="18">A tiny signal. A useful interface.</text>
-  <g stroke="#345348" stroke-width="1"><path d="M358 165H660M358 207H660M358 249H660"/><path d="M402 144V272M466 144V272M530 144V272M594 144V272"/></g>
-  <path d="M358 223C370 223 371 211 381 211S395 231 405 231S415 217 421 212C429 207 428 172 439 166C449 158 448 210 458 219C469 228 475 212 484 214C493 216 493 230 504 230S516 208 524 208C532 208 533 169 544 165C555 162 551 213 564 219C575 225 578 213 588 215C598 217 599 230 609 230S623 208 630 207C637 205 638 175 646 167C651 161 655 169 660 182" stroke="url(#ov-signal)" stroke-width="3" stroke-linecap="round"/>
-  <text x="362" y="298" fill="#9bf4d9" font-family="Arial,sans-serif" font-size="16">Illustrative signal</text>
-  <text x="362" y="327" fill="#a2c4b5" font-family="Arial,sans-serif" font-size="14">Quality · Readiness · Source timing</text>
-  <path d="M173 359V383H509V359M340 383V404" stroke="#5f8c76" stroke-width="1.5"/>
-  <rect x="212" y="404" width="256" height="42" rx="21" fill="#234537" stroke="#7cac8c"/>
-  <text x="340" y="431" fill="#e1f5e7" font-family="Arial,sans-serif" font-size="16" text-anchor="middle">One shared native engine</text>
-  <g fill="#b9d5c6" font-family="Arial,sans-serif" font-size="16" text-anchor="middle"><text x="114" y="486">iOS</text><text x="229" y="486">Android</text><text x="346" y="486">macOS</text><text x="474" y="486">Windows</text><text x="603" y="486">Linux</text></g>
-  <g fill="#658c75"><circle cx="170" cy="480" r="2"/><circle cx="288" cy="480" r="2"/><circle cx="405" cy="480" r="2"/><circle cx="543" cy="480" r="2"/></g>
+
+  <svg class="wide" width="100%" height="100%" viewBox="0 0 940 570" aria-hidden="true">
+    <rect width="940" height="570" fill="var(--canvas)"/>
+    <path d="M35 13h856l33 33v470l-33 33H36l-21-21V34Z" class="shell"/>
+    <path d="M44 21h843l29 29v459l-31 32H42l-18-18V41Z" class="field"/>
+    <g><use href="#screw" x="34" y="35"/><use href="#screw" x="901" y="50"/><use href="#screw" x="34" y="526"/><use href="#screw" x="900" y="520"/></g>
+    <g><use href="#field" transform="translate(585 21)"/><use href="#field" transform="translate(444 106) rotate(180)"/><use href="#field" transform="translate(899 412) rotate(180)"/><use href="#field" transform="translate(47 389)"/><use href="#field" transform="translate(251 542) rotate(180)"/></g>
+    <text x="51" y="45" font-size="16" class="strap">CAMERA → SIGNAL → INSIGHT</text>
+    <text x="48" y="105" font-size="49" class="name">OpenVitals</text>
+    <text x="886" y="98" text-anchor="end" font-size="24" class="tagline">A tiny signal. A useful interface.</text>
+    <path d="M50 123h820l17-17" class="field"/><use href="#via" x="888" y="105"/>
+
+    <g transform="translate(53 142)">
+      <path d="M0 11 11 0h257l10 10v179l-10 10H0Z" class="tile"/>
+      <text x="17" y="31" font-size="21" class="label">Facial colour regions</text>
+      <path d="M15 42h246" class="fine"/><use href="#camera" transform="translate(62 49)"/>
+      <use href="#via" x="16" y="182"/><use href="#cluster" transform="translate(203 181) scale(.74)"/>
+    </g>
+    <g class="wire"><path d="M332 223h16l12 12h17m-45-6h13l12 12h20m-45-6h11l12 12h22"/></g>
+    <g transform="translate(375 142)">
+      <path d="M0 10 10 0h488l12 12v176l-11 11H0Z" class="tile"/>
+      <text x="18" y="31" font-size="21" class="label">Illustrative signal</text>
+      <path d="M18 42h473" class="fine"/>
+      <svg x="18" y="52" width="474" height="94" viewBox="0 0 400 90" preserveAspectRatio="none"><use href="#plot"/></svg>
+      <text x="19" y="177" font-size="17" class="meta">Quality · Readiness · Source timing</text>
+    </g>
+
+    <g class="wire"><path d="M191 341v9l20 20h100l20 20h25m273-49v9l-20 20H599l-20 20h-27"/></g>
+    <use href="#via" x="191" y="344"/><use href="#via" x="629" y="344"/>
+    <g transform="translate(318 364)">
+      <rect x="18" y="-4" width="263" height="6" fill="url(#lands)"/><rect x="18" y="63" width="263" height="6" fill="url(#lands)"/>
+      <path d="M0 9 9 0h283l8 8v48l-9 9H0Z" fill="var(--die)" stroke="var(--metal)" stroke-width="1.6"/>
+      <path d="M7 13 13 7h273l7 6v39l-6 6H7Z" fill="none" stroke="var(--die-edge)"/>
+      <use href="#chip-emblem" transform="translate(16 17)"/><text x="58" y="40" font-size="19" class="engine">One shared native engine</text>
+    </g>
+    <path d="M468 434v20m-327 28v-13l15-15h623l15 15v13m-490-28v28m164-28v28m163-28v28" class="wire"/>
+    <g fill="var(--panel)" stroke="var(--metal)" stroke-width="1.25">
+      <rect x="68" y="476" width="145" height="40" rx="3"/><rect x="232" y="476" width="145" height="40" rx="3"/><rect x="396" y="476" width="145" height="40" rx="3"/><rect x="560" y="476" width="145" height="40" rx="3"/><rect x="723" y="476" width="145" height="40" rx="3"/>
+    </g>
+    <g text-anchor="middle" font-size="18" class="target"><text x="140" y="502">iOS</text><text x="304" y="502">Android</text><text x="468" y="502">macOS</text><text x="632" y="502">Windows</text><text x="795" y="502">Linux</text></g>
+    <g><use href="#via" x="304" y="454"/><use href="#via" x="468" y="454"/><use href="#via" x="632" y="454"/></g>
+  </svg>
+
+  <svg class="compact" width="100%" height="100%" viewBox="0 0 340 652" aria-hidden="true">
+    <rect width="340" height="652" fill="var(--canvas)"/>
+    <path d="M19 6h291l23 23v595l-21 21H19L7 633V18Z" class="shell"/>
+    <g><use href="#field" transform="translate(220 9) scale(.59)"/><use href="#field" transform="translate(321 505) rotate(180) scale(.67)"/><use href="#field" transform="translate(23 618) scale(.47)"/></g>
+    <use href="#screw" transform="translate(316 31) scale(.78)"/><use href="#screw" transform="translate(314 628) scale(.78)"/>
+    <text x="23" y="27" font-size="13" class="strap">CAMERA → SIGNAL → INSIGHT</text>
+    <text x="21" y="73" font-size="36" class="name">OpenVitals</text>
+    <text x="23" y="104" font-size="15" class="tagline">A tiny signal. A useful interface.</text>
+    <g transform="translate(23 114)">
+      <path d="M0 8 8 0h278l8 8v136l-8 8H0Z" class="tile"/>
+      <text x="12" y="24" font-size="17" class="label">Facial colour regions</text><path d="M12 32h269" class="fine"/>
+      <use href="#camera" transform="translate(78 37) scale(.88)"/><use href="#cluster" transform="translate(14 137) scale(.58)"/><use href="#via" x="279" y="137"/>
+    </g>
+    <path d="M142 266v6l10 10v5m-5-21v4l11 10v7m-5-21v3l11 10v8" class="wire"/>
+    <g transform="translate(23 287)">
+      <path d="M0 8 8 0h277l9 9v139l-9 9H0Z" class="tile"/>
+      <text x="12" y="24" font-size="17" class="label">Illustrative signal</text><path d="M12 32h269" class="fine"/>
+      <svg x="12" y="41" width="269" height="77" viewBox="0 0 400 90" preserveAspectRatio="none"><use href="#plot"/></svg>
+      <text x="12" y="142" font-size="13" class="meta">Quality · Readiness · Source timing</text>
+    </g>
+    <path d="M170 444v24" class="wire"/><use href="#via" x="170" y="450"/>
+    <g transform="translate(31 469)">
+      <rect x="15" y="-4" width="243" height="6" fill="url(#lands)"/><rect x="15" y="53" width="243" height="6" fill="url(#lands)"/>
+      <path d="M0 8 8 0h262l8 8v38l-8 8H0Z" fill="var(--die)" stroke="var(--metal)" stroke-width="1.5"/>
+      <path d="M6 11 11 6h256l5 5v32l-5 5H6Z" fill="none" stroke="var(--die-edge)"/>
+      <use href="#chip-emblem" transform="translate(14 13) scale(.88)"/><text x="51" y="33" font-size="17" class="engine">One shared native engine</text>
+    </g>
+    <path d="M170 528v20m-100 13v-8l6-6h186l8 8v6m-100-14v14m-66-14v44l12 12v7m119-63v44l-12 12v7" class="wire"/>
+    <g fill="var(--panel)" stroke="var(--metal)" stroke-width="1.15"><rect x="25" y="558" width="90" height="30" rx="2"/><rect x="125" y="558" width="90" height="30" rx="2"/><rect x="225" y="558" width="90" height="30" rx="2"/><rect x="67" y="602" width="98" height="30" rx="2"/><rect x="177" y="602" width="92" height="30" rx="2"/></g>
+    <g text-anchor="middle" font-size="14" class="target"><text x="70" y="578">iOS</text><text x="170" y="578">Android</text><text x="270" y="578">macOS</text><text x="116" y="622">Windows</text><text x="223" y="622">Linux</text></g>
+  </svg>
 </svg>

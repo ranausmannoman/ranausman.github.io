@@ -7,8 +7,10 @@
   .case-page :is(.case-pcb,.case-card-shell,.case-hero,.case-card-body,.case-hero-grid,.case-hero-copy,.case-chip,.case-content-layout,.case-article,.case-summary,.case-section,.case-workflow,.case-footer,.ov-feature-grid,.ov-assessment-list,.ov-paths,.ov-stack,.ov-stack > div,.ov-node),
   .fault-board,.fault-copy { display:block !important; position:static; width:100%; max-width:none; min-height:0; padding:0; margin:.45rem 0; }
   .case-hero figure,.case-hero-action,.strava-badge::before {display:none !important;}
+  .ui-arrow { display: inline; width: auto; height: auto; overflow: visible; vertical-align: baseline; text-indent: 0; }
+  .ui-arrow::before { content: none; }
   .studio-lines,.seated-card::after,.case-card-shell::after,.main-ic::after,.main-ic::before,.io-port::before {content:none !important;}
-  .portfolio-page :is(.service,.si-offer,.security-principles li,.process-list li,.experience-row,.more-work),.case-page .case-article .case-section { padding:.3rem 0; }
+  .portfolio-page :is(.service,.si-offer,.security-principles li,.process-list li,.experience-row),.case-page .case-article .case-section { padding:.3rem 0; }
   .portfolio-page .hero-copy {max-width:none;}
   body h1 {font:600 24pt/1.15 var(--sans) !important;} body h2 {font:600 18pt/1.18 var(--sans) !important;}
   body h3 {font:600 14pt/1.2 var(--sans) !important;} body h4 {font:600 12pt/1.2 var(--sans);}
@@ -28,12 +30,13 @@
   }
   .print-identity strong { font-weight: 600; }
   .print-identity p:first-child { font-size: 16pt; }
-  .portfolio-page :is(.chapter-intro, .security-principles li, .thermal-plate, .io-port) {
+  .portfolio-page :is(.chapter-intro, .security-principles li, .shoe-sheet, .io-port) {
     display: block !important;
     min-height: 0;
     padding: 0;
   }
-  .thermal-plate strong { font: 600 11pt/1.4 var(--sans); }
+  .shoe-key { display: none !important; }
+  .fitness-caption strong { font: 600 11pt/1.4 var(--sans); }
   .portfolio-page .strava-badge {
     display: block;
     font-size: 0;

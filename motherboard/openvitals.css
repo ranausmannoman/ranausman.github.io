@@ -63,8 +63,13 @@
   margin-bottom: .85rem;
   color: var(--accent);
 }
-.case-section .ov-feature h3 { margin: 0 0 .5rem; }
-.case-section .ov-feature p, .case-section .ov-node p { margin: 0; }
+.case-section .ov-feature h3 { margin: 0 0 .5rem; text-wrap: balance; }
+.case-section .ov-feature p, .case-section .ov-node p {
+  margin: 0;
+  text-align: start;
+  text-indent: 0;
+  hyphens: manual;
+}
 .ov-architecture {
   container-type: inline-size;
   margin: 1.5rem 0;
@@ -158,11 +163,35 @@
 }
 .ov-assessment-list dt, .ov-stack dt { font-weight: 600; }
 .ov-assessment-list dd, .ov-stack dd { min-width: 0; margin: 0; }
+.ov-stack { container-type: inline-size; }
+.ov-stack > div { grid-template-columns: minmax(0, 1fr); }
+@container (min-width: 32rem) {
+  .ov-stack > div { grid-template-columns: minmax(8.5rem, 28%) minmax(0, 1fr); }
+}
+.ov-stack dd, .ov-chip-list {
+  text-align: start;
+  text-indent: 0;
+}
+.ov-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: .4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ov-chip-list li { max-inline-size: 100%; }
+@media screen {
+  .ov-comma { display: none; }
+}
+@media print {
+  .ov-chip-list, .ov-chip-list li { display: inline; }
+}
 .case-section .ov-assessment-note { margin: 0; padding: 1rem; }
 .ov-chip {
   display: inline-block;
   max-inline-size: 100%;
-  margin-block: .18rem;
   padding: .22rem .42rem;
   border: 1px solid var(--metal-3);
   border-inline-width: 3px;

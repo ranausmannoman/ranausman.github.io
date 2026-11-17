@@ -22,7 +22,7 @@
 .spec a strong { color: var(--accent); }
 .portfolio-page figure { margin: 0; }
 .portfolio-page :is(.project-vector,.security-artwork) { display: block; max-width: 100%; height: auto; }
-.portfolio-page :is(.project-study,.project-website,.diagram-link,.text-link,.button,.contact-email,.board-legend a,.slot-name,footer a,.strava-badge), .motion-toggle, .board-legend a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; gap: .35rem; }
+.portfolio-page :is(.project-study,.project-website,.text-link,.button,.contact-email,.board-legend a,.slot-name,footer a,.strava-badge), .motion-toggle, .board-legend a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; gap: .35rem; }
 .portfolio-page a:not(.primary,.station a,.io-port,.strava-badge):hover { color: var(--accent-strong); }
 .project-list { display: grid; gap: clamp(1.25rem,2.2vw,2rem); }
 .seated-card { display: grid; grid-template-columns: minmax(0,.87fr) minmax(0,1.13fr); gap: 1rem clamp(1.2rem,3vw,3rem); padding: clamp(1rem,2.8vw,2.5rem); background: var(--surface); border: 1px solid var(--metal-3); border-left: .45rem solid var(--metal-2); border-radius: .3rem .9rem .3rem .3rem; position: relative; }
@@ -31,20 +31,18 @@
 .card-stamp { display: block; width: min(9rem,100%); height: auto; }.project-featured .card-stamp { width: min(13rem,100%); }
 .project-visual { min-width: 0; align-self: start; border: 1px solid var(--metal-3); padding: clamp(.7rem,1.3vw,1.35rem); background: var(--surface-2); }
 .art-caption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem; margin-bottom: .9rem; }
-.art-footnote { display: block; margin-top: .6rem; }.figure-tools { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; }
+.art-footnote { display: block; margin-top: .6rem; }
 .project-copy { align-self: center; min-width: 0; }
 .project-copy .slot-name { font-size: clamp(1.6rem,3vw,2.6rem); letter-spacing: -.055em; text-decoration: none; color: var(--ink); }
 .project-copy p,.detail-body p { margin: .6rem 0; }
 .project-tagline { font-weight: 550; }.project-copy .project-role { font: 1rem/1.5 var(--mono); color: var(--ink-2); }
 .project-stack,.service-tags { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; margin-block: 1rem; }
-.project-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .3rem 1rem; }.project-actions a,.diagram-link,.text-link,.board-legend a,.section-footer a,.recruiter-note a { color: var(--accent); }
-.project-details,.compact-project { border-top: 1px solid var(--line); margin-top: .6rem; }
-.project-details summary,.compact-project summary { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem .8rem; min-height: 44px; list-style: none; font-weight: 550; cursor: pointer; }
-.project-details summary::-webkit-details-marker,.compact-project summary::-webkit-details-marker { display:none; }
+.project-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .3rem 1rem; }.project-actions a,.text-link,.board-legend a,.section-footer a,.recruiter-note a { color: var(--accent); }
+.project-details { border-top: 1px solid var(--line); margin-top: .6rem; }
+.project-details summary { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem .8rem; min-height: 44px; list-style: none; font-weight: 550; cursor: pointer; }
+.project-details summary::-webkit-details-marker { display:none; }
 .disclosure-icon { margin-left: auto; width: .6rem; height: .6rem; border: solid var(--ink-2); border-width: 0 2px 2px 0; transform: rotate(45deg); }
 details[open] > summary .disclosure-icon { transform: rotate(225deg); }
-.more-work { padding: 1.25rem; margin-top: 1.6rem; background: var(--surface); border-left: .35rem solid var(--metal-3); }
-.more-work .card-stamp { width: 6rem; margin-bottom: .65rem; }
 .service-list,.si-offer-grid,.process-list,.security-principles { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; list-style: none; }
 .service,.si-offer,.process-list > li,.security-principles li { background: var(--surface); border: 1px solid var(--metal-3); padding: clamp(1rem,2vw,1.75rem); min-width: 0; position: relative; }
 .service { border-top: .45rem double var(--metal-3); }.service-symbol { display: block; text-align: right; color: var(--accent); }
@@ -76,12 +74,54 @@ details[open] > summary .disclosure-icon { transform: rotate(225deg); }
 .security-signoff { margin-top: 1rem; }
 .book-list,.fitness-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
 .book { display: grid; grid-template-columns: minmax(0,.75fr) minmax(0,1.25fr); gap: 1.2rem; align-items: center; padding: 1rem; background: var(--surface); border: 1px solid var(--metal-3); }
-.book-jacket,.thermal-plate { display: grid; align-content: space-between; gap: .5rem; background: var(--component); color: var(--component-mark); padding: 1rem; border: 1px solid var(--metal-3); }
-.book-jacket strong,.thermal-plate strong { font: 400 clamp(1.1rem,2vw,1.9rem)/1.1 var(--mono); }.jack-shape { height: 2.5rem; width: 2.5rem; }
+.book-jacket { display: grid; align-content: space-between; gap: .5rem; background: var(--component); color: var(--component-mark); padding: 1rem; border: 1px solid var(--metal-3); }
+.book-jacket strong { font: 400 clamp(1.1rem,2vw,1.9rem)/1.1 var(--mono); }.jack-shape { height: 2.5rem; width: 2.5rem; }
 .book-copy h3 { margin: .4rem 0; }.book-authors { margin-top: .7rem; }.book-edition { font-style: italic; }
-.thermal-plate { min-height: 12rem; padding: clamp(1rem,3vw,2.3rem); }.thermal-plate svg { width: min(100%,18rem); height:auto; }.thermal-plate strong { color:var(--led); }.fitness-caption { margin: .5rem 0; }.fitness-practices { list-style:none; }
+.shoe-sheet {
+  padding: clamp(.65rem, 2vw, 1.25rem);
+  border: 1px solid var(--metal-3);
+  background-color: var(--surface);
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+}
+.shoe-sheet h3 { width: fit-content; margin: 0; padding-inline-end: .4em; background: var(--surface); font: 600 clamp(1.05rem,2.3vw,1.65rem)/1.25 var(--sans); letter-spacing: -.035em; }
+.shoe-blueprint { display: block; width: 100%; height: auto; margin-top: .4rem; overflow: visible; stroke-linecap: round; stroke-linejoin: round; }
+.shoe-guide, .shoe-axis, .shoe-fine, .shoe-thread, .shoe-seam, .shoe-stitch, .shoe-lace, .shoe-lace-light, .shoe-contour, .shoe-air-seam, .shoe-tread, .shoe-leaders { fill: none; }
+.shoe-guide { stroke: var(--metal-2); stroke-width: 1; }
+.shoe-axis { stroke: var(--metal-2); stroke-width: .75; stroke-dasharray: 7 5 1 5; }
+.shoe-upper { fill: var(--surface-2); stroke: var(--ink); stroke-width: 2.8; }
+.shoe-panel { fill: var(--surface-2); stroke: var(--ink-2); stroke-width: 1.5; }
+.shoe-fine { stroke: var(--ink-3); stroke-width: .8; opacity: .7; }
+.shoe-seam { stroke: var(--ink-2); stroke-width: 1.35; }
+.shoe-stitch { stroke: var(--ink-3); stroke-width: 1; stroke-dasharray: 2 3; }
+.shoe-lace { stroke: var(--ink); stroke-width: 4.8; }
+.shoe-lace-light { stroke: var(--surface); stroke-width: 1.5; }
+.shoe-foam { fill: var(--surface-2); stroke: var(--ink); stroke-width: 3; }
+.shoe-contour { stroke: var(--ink-3); stroke-width: 1.5; }
+.shoe-cavity { fill: var(--component); stroke: var(--metal-3); stroke-width: 1.8; }
+.shoe-air { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2.8; }
+.shoe-thread { stroke: var(--accent); stroke-width: .8; opacity: .6; }
+.shoe-air-seam { stroke: var(--accent); stroke-width: 1.3; }
+.shoe-outsole { fill: var(--metal-2); stroke: var(--ink); stroke-width: 2; }
+.shoe-tread { stroke: var(--ink-2); stroke-width: 1.5; }
+.shoe-leaders { stroke: var(--accent); stroke-width: 1.45; }.shoe-leaders circle { fill: var(--surface); }
+.shoe-key { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: start; gap: .25rem; margin: 0; padding: 0; list-style: none; }
+.shoe-key li { justify-self: center; padding: .1em .2em; background: var(--surface); color: var(--ink-2); font: .75rem/1.35 var(--mono); text-align: center; }
+.fitness-caption { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem .8rem; margin: .65rem 0; }
+.fitness-caption strong { color: var(--ink); font: 500 .75rem/1.4 var(--mono); letter-spacing: .06em; }
+.fitness-practices { list-style:none; }
 .fitness-practices li { display: flex; gap:.8rem; border-bottom:1px solid var(--line); padding:.65rem 0; }
-.fitness-strava { margin-top:1rem; }.strava-badge { background:var(--component);color:var(--component-mark);border:1px solid var(--metal-3);padding:.35rem .75rem; text-decoration:none; }
+.fitness-strava { margin-top: 1rem; }
+@media screen {
+  .fitness-strava {
+    width: fit-content;
+    max-width: 100%;
+    margin-inline-start: auto;
+    margin-block-start: clamp(1.25rem, 2.5vw, 2rem);
+  }
+  .fitness-strava p { margin-block-end: .25rem; }
+}
+.strava-badge { background:var(--component);color:var(--component-mark);border:1px solid var(--metal-3);padding:.35rem .75rem; text-decoration:none; }
 .strava-badge::before {content:''; width:1rem;height:1rem;background:url('../assets/strava-echelon.png') center/contain no-repeat;}
 .io-ports { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.5rem; }
 .io-port { display: inline-flex; align-items: center; gap:.5rem; min-height:44px; min-width:44px; padding:.6rem .85rem; color:var(--component-mark);background:var(--component);border:1px solid var(--metal-3); text-decoration:none; overflow-wrap:anywhere; }
@@ -112,8 +152,8 @@ details[open] > summary .disclosure-icon { transform: rotate(225deg); }
  .footer-main,.footer-bottom {align-items:flex-start;}
 }
 @media(max-width:23em) {
- .seated-card,.more-work,.project-visual {padding:.72rem;}
- .io-port {font-size:1rem;display:block;}.io-port::before {display:inline-block;margin-right:.4rem;}
+ .seated-card,.project-visual {padding:.72rem;}
+ .io-port {font-size:1rem;max-width:100%;gap:.35rem;padding-inline:.55rem;}
  .book-jacket {grid-template-columns:1fr;}
 }
 .hero > .anchor-alias { position:absolute; }

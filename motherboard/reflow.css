@@ -75,7 +75,17 @@
 @media screen and (max-width: 23em) {
   .page, .assembly, .case-pcb { --gutter: 2.5vw; }
   .assembly > .wrap { padding-inline: 1.5vw; }
-  .seated-card, .service, .si-offer, .more-work, .security-principles li,
+  .seated-card, .service, .si-offer, .security-principles li,
   .process-list li, .ov-feature, .case-content-layout, .boot-log li,
   .education-list li { padding-inline: 2vw; }
+  .security-principles li { column-gap: .45rem; }
+  .case-status { text-align: start; }
+  .case-next-grid .arrow-tail {
+    display: inline-flex;
+    max-width: 100%;
+    align-items: baseline;
+    column-gap: .2em;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
 }
