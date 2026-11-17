@@ -67,7 +67,10 @@ details[open] > summary .disclosure-icon { transform: rotate(225deg); }
 .security-lead { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,.8fr); gap: clamp(1rem,4vw,4.5rem); padding-block: 1rem 2rem; }
 .venture-status { display: inline-block; border: 1px solid var(--ink-3); padding: .3rem .65rem; color: var(--ink); background: var(--accent-soft); }
 .security-visual { padding: .7rem; border: 1px solid var(--metal-3); background: var(--surface); }
-.security-artwork,.openvitals img,.ov-figure img { filter: grayscale(1); }
+.openvitals img,.ov-figure img { filter: grayscale(1); }
+.security-artwork { width: 100%; height: auto; display: block; background: var(--surface); }
+.security-traces { fill: none; stroke: var(--trace); stroke-width: 1.35; stroke-linejoin: round; }
+.security-leads { fill: var(--metal-1); stroke: var(--metal-3); stroke-width: 1.25; }
 .security-visual figcaption { margin-top: .5rem; font-size: .875rem; }
 .security-principles li { border-top: 4px solid var(--metal-3); }
 .security-signoff { margin-top: 1rem; }
