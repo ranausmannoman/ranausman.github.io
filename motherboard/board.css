@@ -284,7 +284,7 @@ svg text { font-family: var(--mono); }
 .cpu-face .cpu-name small { position: static; flex: none; }
 .cpu-face .cpu-name b { font: 650 clamp(.875rem,2cqw,1.35rem)/1.05 var(--sans); letter-spacing: -.035em; }
 .cpu-role-mark { text-decoration: none; letter-spacing: .04em; }
-.cpu-model { font: 650 .75rem/1.15 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+.cpu-model { font: 650 .75rem/1.15 var(--mono); letter-spacing: .06em; }
 .makers-mark { display: block; width: 2.4rem; height: auto; margin-bottom: .9rem; }
 @media (max-width: 52em), (max-aspect-ratio: 1/1) {
   .cpu-face .cpu-name b { font-size: 1.1rem; }
@@ -392,4 +392,15 @@ svg text { font-family: var(--mono); }
 }
 @media print {
   body :where(p, dd, li, figcaption) { hyphens: manual; }
+}
+
+
+@media screen and (width > 52em) and (aspect-ratio > 1) {
+  /* Scale the engraved type with the metal lid if browser text is enlarged. */
+  .cpu-face { font-size: clamp(12px, 1.35cqw, .88rem); gap: min(.1rem, .2cqw); }
+  .cpu-face .cpu-name b { font-size: clamp(14px, 2cqw, 1.35rem); }
+  .cpu-face .cpu-name small, .cpu-model { font-size: clamp(12px, 1.5cqw, .75rem); }
+}
+@media screen and (max-height: 27em) and (orientation: landscape) and (width > 75em) {
+  .hero:has(.drawing + .hero-copy) { grid-template-columns: minmax(0, 1fr) minmax(0, .5fr); }
 }

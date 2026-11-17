@@ -70,3 +70,12 @@
   .fitness-practices li { display: block; }
   .project-actions a, .project-copy .slot-name, .io-port { min-width: 0; max-width: 100%; }
 }
+
+/* Give justified prose room inside the nested hardware panels on small phones. */
+@media screen and (max-width: 23em) {
+  .page, .assembly, .case-pcb { --gutter: 2.5vw; }
+  .assembly > .wrap { padding-inline: 1.5vw; }
+  .seated-card, .service, .si-offer, .more-work, .security-principles li,
+  .process-list li, .ov-feature, .case-content-layout, .boot-log li,
+  .education-list li { padding-inline: 2vw; }
+}
