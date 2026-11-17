@@ -1,0 +1,72 @@
+@media screen {
+  :root:not([data-finish]) .mast { position: relative; }
+  :root:not([data-finish]) [id] { scroll-margin-top: .5rem; }
+  :root:not([data-finish]) .switch-seat { display: none; }
+  :root:not([data-finish]) .mast-inner:has(.navigator[open]) {
+    flex-wrap: wrap;
+    align-items: start;
+  }
+  :root:not([data-finish]) .navigator[open] {
+    grid-area: auto / 1 / auto / -1;
+    width: 100%;
+  }
+  :root:not([data-finish]) .navigator[open] nav {
+    position: static;
+    width: 100%;
+    max-height: none;
+    margin-block-end: .5rem;
+  }
+}
+
+/* A larger browser font can leave fewer than 19 em on a full-width phone. */
+@media screen and (max-width: 19em) {
+  :root { --gutter: 3vw; }
+  body { overflow-wrap: anywhere; }
+
+  .mast-inner {
+    display: grid;
+    grid-template-columns: minmax(44px, 1fr) auto;
+    align-items: center;
+    gap: 0 .25rem;
+    padding-block: 3px;
+  }
+  .mast-inner .brand { grid-area: 1 / 1; }
+  .mast-inner .navigator { grid-area: 1 / 2; justify-self: end; }
+  .mast-inner .switch-seat { grid-area: 2 / 1 / 3 / 3; justify-self: end; }
+  .mast-inner .switch { gap: .22rem; padding: 0; }
+  .navigator nav { position: absolute; top: 100%; max-height: calc(100dvh - 6rem); }
+  .mast-inner .navigator { position: static; }
+  [id] { scroll-margin-top: 6rem; }
+
+  .drawing { padding: 2vw; }
+  .board {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding-inline: 2vw;
+  }
+  .board-id { grid-column: 1 / -1; flex-wrap: wrap; }
+  .board .portrait-silk { display: none; }
+  .stations, .station .component-label, .cpu-face, .board-stat { min-width: 0; }
+  .board .station:not(.st-cpu) a {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .25rem;
+    padding-inline: .9rem .2rem;
+  }
+  .board .station:not(.st-cpu) .portrait-part { width: min(75%, 7rem); }
+  .board .station .component-label { justify-self: stretch; }
+  .board .st-cpu .cpu-face { width: 67%; }
+
+  .assembly > .wrap { padding-inline: 3vw; }
+  .chapter-intro, .project-list, .seated-card, .book-list, .fitness-grid,
+  .security-lead, .security-principles, .process-list, .service-list, .si-offer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .assembly .chapter-intro .component-plate {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: .25rem;
+  }
+  .component-plate .part-close { max-width: 100%; justify-self: start; }
+  .chapter-intro .component-plate::after { display: none; }
+  .security-principles li { grid-template-columns: minmax(0, 1fr); }
+  .fitness-practices li { display: block; }
+  .project-actions a, .project-copy .slot-name, .io-port { min-width: 0; max-width: 100%; }
+}
