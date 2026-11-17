@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'none'; connect-src 'none'; media-src 'self'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
@@ -20,7 +20,9 @@
   <meta name="twitter:title" content="Rana Usman — Super Intelligence &amp; practical software">
   <meta name="twitter:description" content="Super Intelligence (SI) exploration, practical software engineering and an independent cybersecurity audit venture in development.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/motherboard/tokens.css?v=ru-x1-b8">
+  <link rel="stylesheet" href="/motherboard/tokens.css?v=ru-x1-plex1">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/motherboard/fonts/plex-sans-latin-wght.woff2?v=ru-x1-plex1">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/motherboard/fonts/plex-mono-latin-400.woff2?v=ru-x1-plex1">
   <script src="/motherboard/finish.js?v=ru-x1-b5" blocking="render"></script>
   <link rel="stylesheet" href="/motherboard/board.css?v=ru-x1-b10">
   <link rel="stylesheet" href="/motherboard/placements.css?v=ru-x1-b5">
@@ -328,5 +330,37 @@
 
 
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://ranausman.dev/#website",
+      "url": "https://ranausman.dev/",
+      "name": "Rana Usman"
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://ranausman.dev/",
+      "url": "https://ranausman.dev/",
+      "name": "Rana Usman — Super Intelligence & practical software",
+      "isPartOf": {
+        "@id": "https://ranausman.dev/#website"
+      },
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "https://ranausman.dev/#person",
+        "name": "Rana Usman",
+        "url": "https://ranausman.dev/",
+        "jobTitle": "Senior Full-Stack Engineer / Technical Lead",
+        "sameAs": [
+          "https://www.linkedin.com/in/ranausman008/"
+        ]
+      }
+    }
+  ]
+}
+  </script>
 </body>
 </html>

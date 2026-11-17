@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'none'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'self'; connect-src 'self'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
@@ -17,7 +17,9 @@
   <meta property="og:url" content="https://ranausman.dev/case-studies/guestay.html">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/motherboard/tokens.css?v=ru-x1-b8">
+  <link rel="stylesheet" href="/motherboard/tokens.css?v=ru-x1-plex1">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/motherboard/fonts/plex-sans-latin-wght.woff2?v=ru-x1-plex1">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/motherboard/fonts/plex-mono-latin-400.woff2?v=ru-x1-plex1">
   <script src="/motherboard/finish.js?v=ru-x1-b5" blocking="render"></script>
   <link rel="stylesheet" href="/motherboard/board.css?v=ru-x1-b10">
   <link rel="stylesheet" href="/motherboard/cases.css?v=ru-x1-b8">
@@ -94,7 +96,7 @@
 
   <main data-board-chapter="pcie" id="main" tabindex="-1">
     <div class="case-container case-pcb" id="neural-network">
-      <nav class="case-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">Guestay</span></nav>
+      <nav id="breadcrumb" class="case-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">Guestay</span></nav>
       <div class="case-card-shell">
         <section class="case-hero" aria-labelledby="case-title">
           <div class="case-metal-bracket"><nav class="case-header-links" aria-label="Case-study navigation">
@@ -120,7 +122,7 @@
         </section>
         <div class="case-content-layout">
         <aside class="case-toc" aria-labelledby="case-toc-title"><h2 id="case-toc-title">In this case study</h2><nav aria-label="On this page"><ol><li><a href="#product"><span aria-hidden="true">01</span>The product</a></li><li><a href="#challenge"><span aria-hidden="true">02</span>The challenge</a></li><li><a href="#contribution"><span aria-hidden="true">03</span>My contribution</a></li><li><a href="#decisions"><span aria-hidden="true">04</span>Technical decisions</a></li><li><a href="#outcomes"><span aria-hidden="true">05</span>Outcome</a></li><li><a href="#stack"><span aria-hidden="true">06</span>Relevant stack</a></li></ol></nav></aside>
-        <article class="case-article" aria-label="Guestay case study">
+        <article id="case-study" class="case-article" aria-label="Guestay case study">
           <!-- case-copy:start -->
           <section class="case-section" id="product" tabindex="-1"><h2><span class="case-chapter" aria-hidden="true">01 /</span>The product</h2><p>Guestay is a vacation-rental platform focused on kosher stays for families and groups. Its public experience combines property discovery with travel dates, guest counts, destination browsing, and accommodation details. Guests can explore rentals and experiences, while property owners have a dedicated host-facing entry point.</p><p>That visible booking journey is one part of a wider hospitality workflow. Guests need clear information before a stay and timely communication afterward. Hosts need ways to work with listings, calendars, and earnings. Operations staff need a connected view of bookings, messages, and the work required to support each stay. These audiences interact with different parts of the product, but they are participating in the same service journey.</p><ol class="case-workflow"><li><span aria-hidden="true">01</span><strong>Guest</strong><p>Discover and book</p></li><li><span aria-hidden="true">02</span><strong>Host</strong><p>Manage the stay</p></li><li><span aria-hidden="true">03</span><strong>Operations</strong><p>Coordinate the workflow</p></li></ol></section>
           <section class="case-section" id="challenge" tabindex="-1"><h2><span class="case-chapter" aria-hidden="true">02 /</span>The challenge</h2><p>My work centered on evolving an established platform while its existing administrative tools continued to be used. A newer web interface needed to become a working operational product, with behavior that matched the established booking system. Replacing screens alone would not be enough: each module needed to connect to real application behavior and fit the workflows of the people using it.</p><p>The project also required careful coordination across public-facing, host-facing, and administrative experiences. Changes needed a clear scope, a reviewable implementation, and checks that focused on how the complete workflow behaved.</p></section>
@@ -136,5 +138,98 @@
     </div>
   </main>
   <footer class="case-container case-footer"><p>© 2026 Rana Usman · Lahore, Pakistan</p><a href="mailto:ranausmannoman@gmail.com?subject=Project%20enquiry">Discuss a project <span aria-hidden="true">↗</span></a><a href="../index.html">Back to portfolio</a><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button></footer>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://ranausman.dev/case-studies/guestay.html",
+      "url": "https://ranausman.dev/case-studies/guestay.html",
+      "name": "Guestay case study — Rana Usman",
+      "isPartOf": {
+        "@id": "https://ranausman.dev/#website"
+      },
+      "mainEntity": {
+        "@id": "https://ranausman.dev/case-studies/guestay.html#case-study"
+      },
+      "breadcrumb": {
+        "@id": "https://ranausman.dev/case-studies/guestay.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://ranausman.dev/case-studies/guestay.html#case-study",
+      "headline": "Guestay",
+      "description": "Modernizing the software behind a connected hospitality experience.",
+      "author": {
+        "@type": "Person",
+        "@id": "https://ranausman.dev/#person",
+        "name": "Rana Usman",
+        "url": "https://ranausman.dev/"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://ranausman.dev/case-studies/guestay.html"
+      },
+      "hasPart": [
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/guestay.html#product",
+          "name": "The product"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/guestay.html#challenge",
+          "name": "The challenge"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/guestay.html#contribution",
+          "name": "My contribution"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/guestay.html#decisions",
+          "name": "Technical decisions"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/guestay.html#outcomes",
+          "name": "Outcome"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/guestay.html#stack",
+          "name": "Relevant stack"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ranausman.dev/case-studies/guestay.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ranausman.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Selected work",
+          "item": "https://ranausman.dev/#work"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Guestay",
+          "item": "https://ranausman.dev/case-studies/guestay.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </body>
 </html>

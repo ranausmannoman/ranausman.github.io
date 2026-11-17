@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'none'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'self'; connect-src 'self'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
@@ -17,7 +17,9 @@
   <meta property="og:url" content="https://ranausman.dev/case-studies/roundhere.html">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/motherboard/tokens.css?v=ru-x1-b8">
+  <link rel="stylesheet" href="/motherboard/tokens.css?v=ru-x1-plex1">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/motherboard/fonts/plex-sans-latin-wght.woff2?v=ru-x1-plex1">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/motherboard/fonts/plex-mono-latin-400.woff2?v=ru-x1-plex1">
   <script src="/motherboard/finish.js?v=ru-x1-b5" blocking="render"></script>
   <link rel="stylesheet" href="/motherboard/board.css?v=ru-x1-b10">
   <link rel="stylesheet" href="/motherboard/cases.css?v=ru-x1-b8">
@@ -94,7 +96,7 @@
 
   <main data-board-chapter="pcie" id="main" tabindex="-1">
     <div class="case-container case-pcb" id="neural-network">
-      <nav class="case-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">RoundHere</span></nav>
+      <nav id="breadcrumb" class="case-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">RoundHere</span></nav>
       <div class="case-card-shell">
         <section class="case-hero" aria-labelledby="case-title">
           <div class="case-metal-bracket"><nav class="case-header-links" aria-label="Case-study navigation">
@@ -116,7 +118,7 @@
         </section>
         <div class="case-content-layout">
         <aside class="case-toc" aria-labelledby="case-toc-title"><h2 id="case-toc-title">In this case study</h2><nav aria-label="On this page"><ol><li><a href="#product"><span aria-hidden="true">01</span>The product</a></li><li><a href="#challenge"><span aria-hidden="true">02</span>The challenge</a></li><li><a href="#contribution"><span aria-hidden="true">03</span>My contribution</a></li><li><a href="#decisions"><span aria-hidden="true">04</span>Technical decisions</a></li><li><a href="#outcomes"><span aria-hidden="true">05</span>Outcome</a></li><li><a href="#stack"><span aria-hidden="true">06</span>Relevant stack</a></li></ol></nav></aside>
-        <article class="case-article" aria-label="RoundHere case study">
+        <article id="case-study" class="case-article" aria-label="RoundHere case study">
           <!-- case-copy:start -->
           <section class="case-section" id="product" tabindex="-1"><h2><span class="case-chapter" aria-hidden="true">01 /</span>The product</h2><p>RoundHere brings events, experts, channels, and recorded sessions into a shared discovery experience. Its public platform helps people find relevant programs, explore communities, connect with expertise, and return to content after a live event. It also gives organizations a place to bring their programs and community activity together.</p><p>A visitor can browse an event, discover the organization or channel behind it, and explore related experts or recordings. For an organizer, the experience extends beyond the event listing into hosting and participation. For an expert, the product offers a way to make expertise discoverable and available through sessions. These connected journeys make RoundHere more than a calendar: discovery leads into interaction, and live participation can become content people revisit.</p><ol class="case-workflow case-workflow-four"><li><span aria-hidden="true">01</span><strong>Discover</strong><p>Events and experts</p></li><li><span aria-hidden="true">02</span><strong>Join</strong><p>Enter the live session</p></li><li><span aria-hidden="true">03</span><strong>Interact</strong><p>Video and conversations</p></li><li><span aria-hidden="true">04</span><strong>Replay</strong><p>Return to the content</p></li></ol></section>
           <section class="case-section" id="challenge" tabindex="-1"><h2><span class="case-chapter" aria-hidden="true">02 /</span>The challenge</h2><p>Live experiences have a different engineering rhythm from ordinary page-based applications. A video session, a chat conversation, and a recording workflow all change while people are using them. The interface needs to reflect those changes, the backend must coordinate the corresponding application behavior, and the experience has to continue across the transition from a scheduled event to a live session and then to a replay.</p><p>My work focused on those connected features. It required moving between frontend components, application logic, real-time events, and third-party media integrations, rather than treating each screen as an isolated deliverable.</p></section>
@@ -132,5 +134,98 @@
     </div>
   </main>
   <footer class="case-container case-footer"><p>© 2026 Rana Usman · Lahore, Pakistan</p><a href="mailto:ranausmannoman@gmail.com?subject=Project%20enquiry">Discuss a project <span aria-hidden="true">↗</span></a><a href="../index.html">Back to portfolio</a><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button></footer>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://ranausman.dev/case-studies/roundhere.html",
+      "url": "https://ranausman.dev/case-studies/roundhere.html",
+      "name": "RoundHere case study — Rana Usman",
+      "isPartOf": {
+        "@id": "https://ranausman.dev/#website"
+      },
+      "mainEntity": {
+        "@id": "https://ranausman.dev/case-studies/roundhere.html#case-study"
+      },
+      "breadcrumb": {
+        "@id": "https://ranausman.dev/case-studies/roundhere.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://ranausman.dev/case-studies/roundhere.html#case-study",
+      "headline": "RoundHere",
+      "description": "Building the live interaction layer for events, experts, and communities.",
+      "author": {
+        "@type": "Person",
+        "@id": "https://ranausman.dev/#person",
+        "name": "Rana Usman",
+        "url": "https://ranausman.dev/"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://ranausman.dev/case-studies/roundhere.html"
+      },
+      "hasPart": [
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/roundhere.html#product",
+          "name": "The product"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/roundhere.html#challenge",
+          "name": "The challenge"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/roundhere.html#contribution",
+          "name": "My contribution"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/roundhere.html#decisions",
+          "name": "Technical decisions"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/roundhere.html#outcomes",
+          "name": "Outcome"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/roundhere.html#stack",
+          "name": "Relevant stack"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ranausman.dev/case-studies/roundhere.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ranausman.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Selected work",
+          "item": "https://ranausman.dev/#work"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "RoundHere",
+          "item": "https://ranausman.dev/case-studies/roundhere.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </body>
 </html>

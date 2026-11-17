@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'none'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'self'; connect-src 'self'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
@@ -17,7 +17,9 @@
   <meta property="og:url" content="https://ranausman.dev/case-studies/makers-row.html">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/motherboard/tokens.css?v=ru-x1-b8">
+  <link rel="stylesheet" href="/motherboard/tokens.css?v=ru-x1-plex1">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/motherboard/fonts/plex-sans-latin-wght.woff2?v=ru-x1-plex1">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/motherboard/fonts/plex-mono-latin-400.woff2?v=ru-x1-plex1">
   <script src="/motherboard/finish.js?v=ru-x1-b5" blocking="render"></script>
   <link rel="stylesheet" href="/motherboard/board.css?v=ru-x1-b10">
   <link rel="stylesheet" href="/motherboard/cases.css?v=ru-x1-b8">
@@ -94,7 +96,7 @@
 
   <main data-board-chapter="pcie" id="main" tabindex="-1">
     <div class="case-container case-pcb" id="neural-network">
-      <nav class="case-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">Maker’s Row</span></nav>
+      <nav id="breadcrumb" class="case-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">Maker’s Row</span></nav>
       <div class="case-card-shell">
         <section class="case-hero" aria-labelledby="case-title">
           <div class="case-metal-bracket"><nav class="case-header-links" aria-label="Case-study navigation">
@@ -116,7 +118,7 @@
         </section>
         <div class="case-content-layout">
         <aside class="case-toc" aria-labelledby="case-toc-title"><h2 id="case-toc-title">In this case study</h2><nav aria-label="On this page"><ol><li><a href="#product"><span aria-hidden="true">01</span>The product</a></li><li><a href="#challenge"><span aria-hidden="true">02</span>The challenge</a></li><li><a href="#contribution"><span aria-hidden="true">03</span>My contribution</a></li><li><a href="#decisions"><span aria-hidden="true">04</span>Technical decisions</a></li><li><a href="#outcomes"><span aria-hidden="true">05</span>Outcome</a></li><li><a href="#stack"><span aria-hidden="true">06</span>Relevant stack</a></li></ol></nav></aside>
-        <article class="case-article" aria-label="Maker’s Row case study">
+        <article id="case-study" class="case-article" aria-label="Maker’s Row case study">
           <!-- case-copy:start -->
           <section class="case-section" id="product" tabindex="-1"><h2><span class="case-chapter" aria-hidden="true">01 /</span>The product</h2><p>Maker’s Row connects brands developing physical products with manufacturing partners. Its marketplace brings together project requirements, manufacturer discovery, proposals, and conversations. A brand can describe what it wants to make, explore factories by capability and location, and compare potential partners. Manufacturers can present their work, discover relevant projects, and respond to prospective customers.</p><p>The public platform spans categories such as apparel, textiles, furniture, packaging, and beauty. Its workflow starts before production: a brand turns an idea into a usable brief, identifies appropriate capabilities, and begins a conversation about feasibility. For a manufacturer, the corresponding workflow is to make expertise discoverable and turn relevant project opportunities into proposals and discussions. Educational resources and AI-assisted tools are additional parts of the public offering.</p><ol class="case-workflow"><li><span aria-hidden="true">01</span><strong>Create a brief</strong><p>Describe the product</p></li><li><span aria-hidden="true">02</span><strong>Find capabilities</strong><p>Explore manufacturers</p></li><li><span aria-hidden="true">03</span><strong>Connect</strong><p>Discuss production</p></li></ol></section>
           <section class="case-section" id="challenge" tabindex="-1"><h2><span class="case-chapter" aria-hidden="true">02 /</span>The challenge</h2><p>Modernizing an established marketplace involves more than publishing a refreshed interface. Existing workflows, business rules, background processing, and release practices all have to be considered together. The transition also has to distinguish the work of the developer building the new experience from the engineering work needed to bring that experience into service.</p><p>My strongest contribution was at that intersection. I had worked on the existing application and its release integration before taking a leading role in the revamped platform’s migration and rollout. That earlier delivery work provided context for the transition and the checks needed around it.</p></section>
@@ -132,5 +134,98 @@
     </div>
   </main>
   <footer class="case-container case-footer"><p>© 2026 Rana Usman · Lahore, Pakistan</p><a href="mailto:ranausmannoman@gmail.com?subject=Project%20enquiry">Discuss a project <span aria-hidden="true">↗</span></a><a href="../index.html">Back to portfolio</a><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button></footer>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://ranausman.dev/case-studies/makers-row.html",
+      "url": "https://ranausman.dev/case-studies/makers-row.html",
+      "name": "Maker’s Row case study — Rana Usman",
+      "isPartOf": {
+        "@id": "https://ranausman.dev/#website"
+      },
+      "mainEntity": {
+        "@id": "https://ranausman.dev/case-studies/makers-row.html#case-study"
+      },
+      "breadcrumb": {
+        "@id": "https://ranausman.dev/case-studies/makers-row.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://ranausman.dev/case-studies/makers-row.html#case-study",
+      "headline": "Maker’s Row",
+      "description": "Modernizing a manufacturing marketplace and coordinating its production migration.",
+      "author": {
+        "@type": "Person",
+        "@id": "https://ranausman.dev/#person",
+        "name": "Rana Usman",
+        "url": "https://ranausman.dev/"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://ranausman.dev/case-studies/makers-row.html"
+      },
+      "hasPart": [
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/makers-row.html#product",
+          "name": "The product"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/makers-row.html#challenge",
+          "name": "The challenge"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/makers-row.html#contribution",
+          "name": "My contribution"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/makers-row.html#decisions",
+          "name": "Technical decisions"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/makers-row.html#outcomes",
+          "name": "Outcome"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/makers-row.html#stack",
+          "name": "Relevant stack"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ranausman.dev/case-studies/makers-row.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ranausman.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Selected work",
+          "item": "https://ranausman.dev/#work"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Maker’s Row",
+          "item": "https://ranausman.dev/case-studies/makers-row.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'none'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'self'; connect-src 'self'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
@@ -19,7 +19,9 @@
   <meta name="twitter:title" content="OpenVitals — Everyday cameras, physiological insight">
   <meta name="twitter:description" content="A camera-based physiological sensing SDK with a shared native core, local processing, and quality-aware research assessments.">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/motherboard/tokens.css?v=ru-x1-b8">
+  <link rel="stylesheet" href="/motherboard/tokens.css?v=ru-x1-plex1">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/motherboard/fonts/plex-sans-latin-wght.woff2?v=ru-x1-plex1">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/motherboard/fonts/plex-mono-latin-400.woff2?v=ru-x1-plex1">
   <script src="/motherboard/finish.js?v=ru-x1-b5" blocking="render"></script>
   <link rel="stylesheet" href="/motherboard/board.css?v=ru-x1-b10">
   <link rel="stylesheet" href="/motherboard/cases.css?v=ru-x1-b8">
@@ -101,7 +103,7 @@
 
   <main data-board-chapter="pcie" id="main" tabindex="-1">
     <div class="case-container case-pcb" id="neural-network">
-      <nav class="case-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">OpenVitals</span></nav>
+      <nav id="breadcrumb" class="case-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">OpenVitals</span></nav>
       <div class="case-card-shell">
         <section class="case-hero" aria-labelledby="case-title">
           <div class="case-metal-bracket"><nav class="case-header-links" aria-label="Case-study navigation">
@@ -146,7 +148,7 @@
             <li><a href="#stack"><span aria-hidden="true">07</span>Technology stack</a></li>
           </ol></nav>
         </aside>
-        <article class="case-article" aria-label="OpenVitals case study">
+        <article id="case-study" class="case-article" aria-label="OpenVitals case study">
           <section class="case-section" id="idea" tabindex="-1">
             <h2><span class="case-chapter" aria-hidden="true">01 /</span>A different way to see a camera.</h2>
             <p>A camera usually captures what a person looks like. OpenVitals explores a more powerful possibility: using the same stream of pixels to reveal the tiny colour changes associated with blood flow beneath the skin.</p>
@@ -283,5 +285,103 @@
     </div>
   </main>
   <footer class="case-container case-footer"><p>© 2026 Rana Usman · Lahore, Pakistan</p><a href="mailto:ranausmannoman@gmail.com?subject=Project%20enquiry">Discuss a project <span aria-hidden="true">↗</span></a><a href="../index.html">Back to portfolio</a><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button></footer>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://ranausman.dev/case-studies/openvitals.html",
+      "url": "https://ranausman.dev/case-studies/openvitals.html",
+      "name": "OpenVitals — Camera-based physiological sensing | Rana Usman",
+      "isPartOf": {
+        "@id": "https://ranausman.dev/#website"
+      },
+      "mainEntity": {
+        "@id": "https://ranausman.dev/case-studies/openvitals.html#case-study"
+      },
+      "breadcrumb": {
+        "@id": "https://ranausman.dev/case-studies/openvitals.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://ranausman.dev/case-studies/openvitals.html#case-study",
+      "headline": "OpenVitals",
+      "description": "OpenVitals transforms subtle changes in facial colour into pulse signals that applications can use. It combines classical signal processing, native performance, and local model inference in an SDK spanning iOS, Android, macOS, Windows, and Linux.",
+      "author": {
+        "@type": "Person",
+        "@id": "https://ranausman.dev/#person",
+        "name": "Rana Usman",
+        "url": "https://ranausman.dev/"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://ranausman.dev/case-studies/openvitals.html"
+      },
+      "hasPart": [
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/openvitals.html#idea",
+          "name": "A different way to see a camera."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/openvitals.html#capabilities",
+          "name": "From pixels to an application capability."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/openvitals.html#architecture",
+          "name": "One core. Explicit processing paths."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/openvitals.html#engineering",
+          "name": "The engineering behind the signal."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/openvitals.html#assessments",
+          "name": "A wider research framework."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/openvitals.html#contribution",
+          "name": "Connecting the product and the engineering."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://ranausman.dev/case-studies/openvitals.html#stack",
+          "name": "From native code to evaluation."
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ranausman.dev/case-studies/openvitals.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ranausman.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Selected work",
+          "item": "https://ranausman.dev/#work"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "OpenVitals",
+          "item": "https://ranausman.dev/case-studies/openvitals.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </body>
 </html>
