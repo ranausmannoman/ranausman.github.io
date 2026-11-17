@@ -1,0 +1,204 @@
+/* Research instrumentation on the OpenVitals expansion card. */
+.ov-headline {
+  max-inline-size: 31ch;
+  margin-block: .6rem 1rem;
+  font-size: clamp(1.55rem, 2.8vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -.035em;
+}
+.ov-secondary {
+  margin-block: 1rem;
+  color: var(--ink-2);
+  font: .85rem/1.55 var(--mono);
+}
+.case-openvitals .project-vector {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 720 / 520;
+  filter: grayscale(1);
+}
+.ov-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr));
+  gap: 1px;
+  margin: 1.5rem 0 0;
+  padding: 1px;
+  background: var(--metal-3);
+}
+.ov-facts > div {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: .4rem;
+  padding: clamp(.85rem, 2vw, 1.5rem);
+  background: var(--surface-2);
+}
+.ov-facts dt, .ov-feature-index, .ov-integrations {
+  color: var(--ink-2);
+  font: .8rem/1.5 var(--mono);
+}
+.ov-facts dd {
+  margin: 0;
+  color: var(--accent);
+  font: 2.35rem/1.1 var(--mono);
+}
+.ov-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1rem;
+  margin-block: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+.ov-feature {
+  padding: clamp(1rem, 2vw, 1.45rem);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--trace);
+  background: var(--surface-2);
+}
+.ov-feature-index {
+  display: block;
+  margin-bottom: .85rem;
+  color: var(--accent);
+}
+.case-section .ov-feature h3 { margin: 0 0 .5rem; }
+.case-section .ov-feature p, .case-section .ov-node p { margin: 0; }
+.ov-architecture {
+  container-type: inline-size;
+  margin: 1.5rem 0;
+  padding: clamp(.75rem, 2vw, 1.7rem);
+  border: 1px solid var(--metal-3);
+  background: var(--surface-2);
+}
+.ov-paths {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15.5rem), 1fr));
+  gap: 1.2rem 1rem;
+}
+@container (min-width: 32rem) {
+  .ov-paths { position: relative; }
+  .ov-path { display: flex; flex-direction: column; }
+  .ov-path-steps { flex: 1; }
+  .ov-paths::after {
+    content: '';
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 100%;
+    height: .6rem;
+    border: 1px solid var(--trace);
+    border-top: 0;
+  }
+  .ov-output::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    height: .65rem;
+    border-left: 1px solid var(--trace);
+  }
+}
+.case-section .ov-path h3 {
+  margin: 0 0 .8rem;
+  color: var(--ink-2);
+  font: .85rem/1.5 var(--mono);
+}
+.ov-path-steps { display: grid; gap: .7rem; list-style: none; padding: 0; }
+.ov-node {
+  position: relative;
+  padding: .9rem 1rem;
+  border: 1px solid var(--metal-3);
+  background: var(--surface);
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.ov-node + .ov-node::before {
+  content: '';
+  position: absolute;
+  top: calc(-.7rem - 1px);
+  left: 1.35rem;
+  width: .18rem;
+  height: .7rem;
+  background: var(--trace);
+}
+.ov-node strong { display: block; font-weight: 600; }
+.case-section .ov-node p { padding-top: .22rem; }
+.ov-output {
+  margin-block-start: 1.25rem;
+  border: 2px solid var(--accent);
+  background: var(--accent-soft);
+}
+.ov-integrations { padding-block: .65rem; text-align: center; }
+.ov-architecture figcaption {
+  padding-block-start: .7rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-2);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+.ov-assessments { margin: 1rem 0; border: 1px solid var(--metal-3); }
+.ov-assessments > summary {
+  min-height: 44px;
+  padding: .9rem 1rem;
+  background: var(--surface-2);
+  cursor: pointer;
+  font-weight: 550;
+}
+.ov-assessments > summary::marker { color: var(--accent); }
+.ov-assessment-list, .ov-stack { margin: 0; }
+.ov-assessment-list { padding-inline: 1rem; }
+.ov-assessment-list > div, .ov-stack > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: .4rem 1rem;
+  padding-block: .85rem;
+  border-bottom: 1px solid var(--line);
+}
+.ov-assessment-list dt, .ov-stack dt { font-weight: 600; }
+.ov-assessment-list dd, .ov-stack dd { min-width: 0; margin: 0; }
+.case-section .ov-assessment-note { margin: 0; padding: 1rem; }
+.ov-chip {
+  display: inline-block;
+  max-inline-size: 100%;
+  margin-block: .18rem;
+  padding: .22rem .42rem;
+  border: 1px solid var(--metal-3);
+  border-inline-width: 3px;
+  background: var(--component);
+  color: var(--component-mark);
+  font: .875rem/1.45 var(--mono);
+  overflow-wrap: anywhere;
+}
+.case-openvitals .ov-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-height: 44px;
+  padding: .55rem .9rem;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 550;
+  text-decoration: none;
+}
+.case-openvitals .ov-contact:hover { background: var(--accent-strong); }
+@media print {
+  .ov-facts, .ov-feature-grid, .ov-paths, .ov-assessment-list > div,
+  .ov-stack > div, .ov-path-steps { display: block; }
+  .ov-facts > div { display: block; padding: .25rem 0; }
+  .ov-facts, .ov-facts > div, .ov-feature, .ov-architecture,
+  .ov-node, .ov-assessments, .ov-assessments > summary, .ov-output, .ov-chip {
+    border: 0;
+    background: var(--surface);
+    color: var(--ink);
+  }
+  .ov-facts dd, .ov-chip { display: inline; font: inherit; }
+  .ov-chip { margin: 0; padding: 0; }
+  .ov-paths::after, .ov-node::before { display: none; }
+  .ov-assessments::details-content { display: block; content-visibility: visible; }
+  .ov-feature, .ov-node, .ov-assessment-list > div, .ov-stack > div { break-inside: avoid; }
+  .ov-architecture, .ov-assessment-list { padding: 0; }
+  .ov-path-steps { padding-inline-start: 1rem; list-style: decimal; }
+  .case-openvitals .project-visual { display: none; }
+}

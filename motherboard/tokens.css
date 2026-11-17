@@ -1,0 +1,51 @@
+/* RU-X1 material specifications. All paint originates here. */
+:root {
+  --surface: #FFFFFF;
+  --surface-2: #F7F5FC;
+  --line: #E4DFF0;
+  --ink: #15131A;
+  --ink-2: #45414F;
+  --ink-3: #696475;
+  --accent: #6D28D9;
+  --accent-strong: #5B21B6;
+  --accent-soft: #EFEAFE;
+  --on-accent: #FFFFFF;
+  --trace: #8B5CF6;
+  --metal-1: #D5D7DD;
+  --metal-2: #A3A8B3;
+  --metal-3: #6F7480;
+  --component: #1C1A22;
+  --component-mark: #F4F2FA;
+  --led: #C4B5FD;
+  --clear: transparent;
+  --sans: 'IBM Plex Sans', 'Plex fallback', Arial, sans-serif;
+  --mono: 'IBM Plex Mono', 'Plex Mono fallback', 'Courier New', monospace;
+  color-scheme: light;
+}
+@media screen {
+  :root[data-finish="dark"] {
+    --surface: #0A0A0B;
+    --surface-2: #141416;
+    --line: #2A2A2F;
+    --ink: #F3F1E7;
+    --ink-2: #BDBAAE;
+    --ink-3: #8F8C80;
+    --accent: #FFD21A;
+    --accent-strong: #FFE066;
+    --accent-soft: #2B2507;
+    --on-accent: #0A0A0B;
+    --trace: #C9A30D;
+    --metal-1: #2E2E33;
+    --metal-2: #4A4A51;
+    --metal-3: #77777F;
+    --component: #1B1B1E;
+    --component-mark: #BDBAAE;
+    --led: #FFD21A;
+    color-scheme: dark;
+  }
+}
+/* The original document policy disables font fetches. Use installed Plex where available. */
+:root {
+  --sans: 'IBM Plex Sans', Arial, sans-serif;
+  --mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+}

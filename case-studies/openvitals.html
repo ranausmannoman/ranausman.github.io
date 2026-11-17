@@ -5,8 +5,8 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'none'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#0b1014">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="Canvas">
   <title>OpenVitals — Camera-based physiological sensing | Rana Usman</title>
   <meta name="description" content="OpenVitals is an ongoing camera-based physiological sensing SDK for wellness and research: one C++ engine, five platform targets, local processing, and quality-aware results.">
   <link rel="canonical" href="https://ranausman.dev/case-studies/openvitals.html">
@@ -19,51 +19,61 @@
   <meta name="twitter:title" content="OpenVitals — Everyday cameras, physiological insight">
   <meta name="twitter:description" content="A camera-based physiological sensing SDK with a shared native core, local processing, and quality-aware research assessments.">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <script src="../futuristic/preloader.js" async></script>
-  <link rel="stylesheet" href="../futuristic/style.css">
-  <link rel="stylesheet" href="../futuristic/redesign.css?v=20261110-ux2">
-  <link rel="stylesheet" href="../futuristic/case-study.css?v=20261110-ux2">
-  <link rel="stylesheet" href="../futuristic/openvitals.css?v=20261110-ux2">
-  <link rel="stylesheet" href="../futuristic/neural-theme.css?v=20261110-ux2">
-  <script src="../futuristic/app.js?v=20261110-ux2" defer></script>
-  <script src="../futuristic/neural.js" defer></script>
+  <link rel="stylesheet" href="/motherboard/tokens.css?v=ru-x1-b1">
+  <script src="/motherboard/finish.js?v=ru-x1-b1" blocking="render"></script>
+  <link rel="stylesheet" href="/motherboard/board.css?v=ru-x1-b1">
+  <link rel="stylesheet" href="/motherboard/cases.css?v=ru-x1-b1">
+  <link rel="stylesheet" href="/motherboard/openvitals.css?v=ru-x1-b1">
+  <link rel="stylesheet" href="/motherboard/print.css?v=ru-x1-b1">
+  <script src="/motherboard/site.js?v=ru-x1-b1" defer></script>
 </head>
 <body class="case-page case-openvitals">
-  <canvas class="neural-network" id="neural-network" aria-hidden="true"></canvas>
-  <a class="skip-link" href="#main">Skip to case study</a>
-  <header class="site-header case-header">
-    <div class="case-header-inner">
-      <a class="brand" href="../index.html" aria-label="Rana Usman, home"><span class="brand-mark" aria-hidden="true">ru.</span><span class="brand-name">Rana Usman</span></a>
-      <nav class="case-header-links" aria-label="Case-study navigation">
+  
+  <a class="skip" href="#main">Skip to case study</a>
+  <svg class="library" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+    <linearGradient id="steel" x2=".8" y2="1" gradientUnits="objectBoundingBox">
+      <stop class="metal-light" /><stop offset=".43" class="metal-light" /><stop offset=".46" class="metal-mid" /><stop offset="1" class="metal-light" /></linearGradient>
+    <linearGradient id="lid" x2="1" y2=".8"><stop class="mask-stop" /><stop offset=".65" class="metal-light" /><stop offset="1" class="mask-stop" /></linearGradient>
+    <pattern id="fingers" width="3" height="6" patternUnits="userSpaceOnUse"><rect width="2" height="6" class="pad" /></pattern>
+    <pattern id="pins" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="3" class="black" /><circle cx="1.5" cy="1.5" r=".65" class="silver" /></pattern>
+    <pattern id="bars" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M0 0V12 M2 0V12 M6 0V12 M10 0V12" class="bar-line" /><path d="M4 0V12 M8 0V12" class="bar-heavy" /></pattern>
+    <pattern id="mask-weave" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".62" class="mesh-dot" /></pattern>
+    <g id="p-smd"><rect x="0" y="0" width="7" height="3" rx="0" class="silver" /><rect x="1.6" y="-0.2" width="3.8" height="3.4" rx="0" class="black" /></g><g id="p-expansion-0"><path d="M4 2H188L195 8V19H118V23H98V19H4Z" class="accent-mask" /><rect x="1" y="0" width="4" height="23" rx="1" class="machined" /><rect x="9" y="4" width="36" height="12" rx="1" class="black-edge" /><path d="M14 12h5l3 -5 4 7 3 -4h9" class="lit-line" /><rect x="54" y="5" width="17" height="11" rx="1" class="black-edge" /><rect x="76" y="5" width="17" height="11" rx="1" class="black-edge" /><rect x="98" y="6" width="42" height="8" rx="0" class="paper" /><rect x="100" y="7" width="22" height="5" rx="0" class="barcode" /><use href="#p-smd" transform="translate(151 6) rotate(0) scale(1)" /><use href="#p-smd" transform="translate(162 6) rotate(0) scale(1)" /><rect x="12" y="18" width="78" height="3" rx="0" class="contacts" /><rect x="95" y="18" width="44" height="3" rx="0" class="contacts" /><circle cx="187" cy="12" r="1.6" class="pad" /></g></defs></svg><header class="mast"><div class="mast-inner">
+  <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">ru.</span><span class="brand-domain">Rana Usman</span><span class="sr-only">Rana Usman, home</span></a>
+  <nav class="head-links" aria-label="Main navigation"><a href="../index.html#work">Selected work</a><a href="../index.html#contact">Contact</a></nav>
+  <details class="navigator"><summary><svg aria-hidden="true" focusable="false" class="mini-art" viewBox="0 0 55 43"><path d="M4 1H47L53 7V36L48 41H3L1 38V4Z" class="mask-edge"/><rect x="17" y="12" width="13" height="11" rx="0" class="mini-foot mini-cpu"/><rect x="5" y="31" width="19" height="5" rx="0" class="mini-foot mini-pcie"/><rect x="27" y="28" width="10" height="8" rx="0" class="mini-foot mini-pch"/><rect x="7" y="17" width="6" height="5" rx="0" class="mini-foot mini-history"/><rect x="6" y="25" width="11" height="3" rx="0" class="mini-foot mini-m2"/><rect x="15" y="6" width="10" height="3" rx="0" class="mini-foot mini-vrm"/><rect x="39" y="28" width="5" height="4" rx="0" class="mini-foot mini-tpm"/><rect x="46" y="24" width="4" height="6" rx="0" class="mini-foot mini-storage"/><rect x="42" y="17" width="6" height="3" rx="0" class="mini-foot mini-fan"/><rect x="3" y="6" width="3" height="8" rx="0" class="mini-foot mini-io"/></svg><span class="dbg-unit" aria-hidden="true"><small>DBG</small><b data-debug>01</b></span><span>Menu</span><i aria-hidden="true"></i></summary>
+    <nav aria-label="Portfolio chapters"><ol><li><a data-chapter="pcie" href="../index.html#work"><span>01</span>Selected work</a></li><li><a data-chapter="pch" href="../index.html#services"><span>02</span>Engineering</a></li><li><a data-chapter="history" href="../index.html#experience"><span>03</span>Experience</a></li><li><a data-chapter="m2" href="../index.html#si-workflows"><span>04</span>SI & workflows</a></li><li><a data-chapter="vrm" href="../index.html#approach"><span>05</span>My process</a></li><li><a data-chapter="tpm" href="../index.html#cybersecurity"><span>06</span>Cybersecurity</a></li><li><a data-chapter="storage" href="../index.html#reading"><span>07</span>Reading</a></li><li><a data-chapter="fan" href="../index.html#fitness"><span>08</span>Fitness</a></li><li><a data-chapter="io" href="../index.html#contact"><span>09</span>Contact</a></li></ol></nav>
+  </details>
+  <div class="switch-seat"><button class="switch" data-switch role="switch" aria-label="Dark theme" aria-checked="false" hidden type="button">
+    <small aria-hidden="true">SW1</small><span class="light-mark" aria-hidden="true">LIGHT</span><i aria-hidden="true"><b></b></i><span class="dark-mark" aria-hidden="true">DARK</span>
+  </button></div>
+</div></header>
+
+  <main data-board-chapter="pcie" id="main" tabindex="-1">
+    <div class="case-container case-pcb" id="neural-network">
+      <nav class="case-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">OpenVitals</span></nav>
+      <div class="case-card-shell">
+        <section class="case-hero" aria-labelledby="case-title">
+          <div class="case-metal-bracket"><nav class="case-header-links" aria-label="Case-study navigation">
         <a href="../index.html#work"><span aria-hidden="true">←</span> Back to work</a>
         <a class="case-public-link" href="../index.html#contact">Discuss the product <span aria-hidden="true">↗</span></a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" tabindex="-1">
-    <div class="case-container">
-      <nav class="case-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">OpenVitals</span></nav>
-      <section class="case-hero" aria-labelledby="case-title">
-        <div class="case-hero-grid">
-          <div class="case-hero-copy">
-            <p class="case-eyebrow">Computer vision meets physiological sensing</p>
-            <h1 class="case-title" id="case-title">OpenVitals</h1>
-            <p class="ov-headline">What if the next sensing interface was already in your camera?</p>
+      </nav></div>
+          <div class="case-card-body">
+            <div class="case-hero-grid">
+              <div class="case-hero-copy"><div class="case-chip"><svg class="case-stamp" width="202" height="30" viewBox="0 0 202 30" aria-hidden="true"><use href="#p-expansion-0" x="2" y="2"/></svg><p class="case-eyebrow">Computer vision meets physiological sensing</p><h1 class="case-title" id="case-title">OpenVitals</h1><p class="case-status"><strong>Ongoing product · Wellness &amp; research</strong>Product direction, SDK architecture, and AI-assisted engineering</p></div><div class="case-hero-detail"><p class="ov-headline">What if the next sensing interface was already in your camera?</p>
             <p class="case-lead">OpenVitals transforms subtle changes in facial colour into pulse signals that applications can use. It combines classical signal processing, native performance, and local model inference in an SDK spanning iOS, Android, macOS, Windows, and Linux.</p>
             <p class="ov-secondary">Everyday hardware. Local processing. One shared engine.</p>
-            <p class="case-status"><strong>Ongoing product · Wellness &amp; research</strong>Product direction, SDK architecture, and AI-assisted engineering</p>
-            <a class="text-link case-hero-action" href="#architecture">Explore the technology <span aria-hidden="true">↓</span></a>
-          </div>
-          <figure class="project-visual case-figure openvitals">
-            <img class="project-vector" src="../assets/openvitals-graphic.svg?v=20261110-ux2" width="720" height="520" alt="A conceptual face region connects to an illustrative pulse waveform, a shared native engine, and five platform targets.">
+
+            <a class="text-link case-hero-action" href="#architecture">Explore the technology <span aria-hidden="true">↓</span></a></div></div>
+              <figure class="project-visual case-figure openvitals">
+            <div class="signal-diagram" role="group" aria-label="A conceptual face region connects to an illustrative pulse waveform, a shared native engine, and five platform targets."><p class="signal-heading">CAMERA → SIGNAL → INSIGHT</p><div class="signal-panels"><div><svg aria-hidden="true" viewBox="56 105 233 212" class="face-regions"><path d="M66 134V112H88M258 112H280V134M280 288V310H258M88 310H66V288"/><path d="M173 129C132 129 115 159 118 197L123 240C126 274 149 298 173 298C197 298 220 274 223 240L228 197C231 159 214 129 173 129Z"/><path d="M131 198C140 192 149 192 155 197M191 197C199 192 208 192 216 198M171 201L163 230H177M152 257C166 264 181 264 194 257"/><rect x="139" y="151" width="68" height="24" rx="5"/><rect x="128" y="215" width="24" height="28" rx="5"/><rect x="194" y="215" width="24" height="28" rx="5"/></svg><strong>Facial colour regions</strong></div><div><b>A tiny signal. A useful interface.</b><svg aria-hidden="true" class="signal-line" viewBox="350 144 318 125"><path d="M358 165H660M358 207H660M358 249H660M402 144V260M466 144V260M530 144V260M594 144V260"/><path d="M358 223C370 223 371 211 381 211S395 231 405 231S415 217 421 212C429 207 428 172 439 166C449 158 448 210 458 219C469 228 475 212 484 214C493 216 493 230 504 230S516 208 524 208C532 208 533 169 544 165C555 162 551 213 564 219C575 225 578 213 588 215C598 217 599 230 609 230S623 208 630 207C637 205 638 175 646 167C651 161 655 169 660 182"/></svg><strong>Illustrative signal</strong><span>Quality · Readiness · Source timing</span></div></div><p class="engine-note">One shared native engine</p><ul><li>iOS</li><li>Android</li><li>macOS</li><li>Windows</li><li>Linux</li></ul></div>
             <figcaption class="case-figure-caption figure-tools"><span>Concept illustration · Illustrative signal</span><a class="diagram-link" href="../assets/openvitals-graphic.svg?v=20261110-ux2" target="_blank" rel="noopener" aria-label="View full-size OpenVitals diagram (opens in a new tab)">View full-size diagram <span aria-hidden="true">↗</span></a></figcaption>
           </figure>
-        </div>
-        <dl class="case-summary" aria-label="Product summary">
+            </div>
+            <dl class="case-summary" aria-label="Product summary">
           <div class="case-summary-item"><dt>My role</dt><dd>Product direction, SDK architecture, and AI-assisted engineering</dd></div>
           <div class="case-summary-item"><dt>Product</dt><dd>Contactless sensing infrastructure for wellness and research applications</dd></div>
-          <div class="case-summary-item"><dt>Platform targets</dt><dd>iOS · Android · macOS · Windows · Linux</dd></div>
+          <div class="case-summary-item"><dt>Platform targets</dt><dd class="case-tech-parts"><span class="tech-package">iOS</span><span class="package-joint"> · </span><span class="tech-package">Android</span><span class="package-joint"> · </span><span class="tech-package">macOS</span><span class="package-joint"> · </span><span class="tech-package">Windows</span><span class="package-joint"> · </span><span class="tech-package">Linux</span></dd></div>
         </dl>
         <dl class="ov-facts" aria-label="SDK architecture at a glance">
           <div><dt>Platform targets</dt><dd>5</dd></div>
@@ -71,9 +81,9 @@
           <div><dt>Integrated third-party TFLite models</dt><dd>35</dd></div>
           <div><dt>Shared native core</dt><dd>1</dd></div>
         </dl>
-      </section>
-
-      <div class="case-content-layout">
+          </div>
+        </section>
+        <div class="case-content-layout">
         <aside class="case-toc" aria-labelledby="case-toc-title">
           <h2 id="case-toc-title">In this case study</h2>
           <nav aria-label="On this page"><ol>
@@ -106,14 +116,14 @@
 
           <section class="case-section" id="capabilities" tabindex="-1">
             <h2><span class="case-chapter" aria-hidden="true">02 /</span>From pixels to an application capability.</h2>
-            <div class="ov-feature-grid">
-              <div class="ov-feature"><span class="ov-feature-index" aria-hidden="true">01</span><h3>Contactless pulse sensing</h3><p>Extract a camera-pulse waveform from subtle facial colour changes using POS, CHROM, and GREEN processing paths.</p></div>
-              <div class="ov-feature"><span class="ov-feature-index" aria-hidden="true">02</span><h3>A broader assessment framework</h3><p>Connect pulse analysis with experimental variability, breathing, stress-index, and dedicated model-based research assessments.</p></div>
-              <div class="ov-feature"><span class="ov-feature-index" aria-hidden="true">03</span><h3>Native across platforms</h3><p>Use a shared C++ engine through Swift, Kotlin/JNI, Python, and direct C/C++ interfaces.</p></div>
-              <div class="ov-feature"><span class="ov-feature-index" aria-hidden="true">04</span><h3>Local model inference</h3><p>Integrate 35 bundled third-party TFLite models through local runtimes, with manifest-based asset integrity checks.</p></div>
-              <div class="ov-feature"><span class="ov-feature-index" aria-hidden="true">05</span><h3>Quality-aware results</h3><p>Carry readiness, units, timestamps, source bounds, and provenance with the output so applications can handle results responsibly.</p></div>
-              <div class="ov-feature"><span class="ov-feature-index" aria-hidden="true">06</span><h3>Built for evaluation</h3><p>Record structured scalar sessions, import independent reference readings, and review time-aligned comparisons in an offline dashboard.</p></div>
-            </div>
+            <ol class="ov-feature-grid">
+              <li class="ov-feature"><span class="ov-feature-index" aria-hidden="true">01</span><h3>Contactless pulse sensing</h3><p>Extract a camera-pulse waveform from subtle facial colour changes using POS, CHROM, and GREEN processing paths.</p></li>
+              <li class="ov-feature"><span class="ov-feature-index" aria-hidden="true">02</span><h3>A broader assessment framework</h3><p>Connect pulse analysis with experimental variability, breathing, stress-index, and dedicated model-based research assessments.</p></li>
+              <li class="ov-feature"><span class="ov-feature-index" aria-hidden="true">03</span><h3>Native across platforms</h3><p>Use a shared C++ engine through Swift, Kotlin/JNI, Python, and direct C/C++ interfaces.</p></li>
+              <li class="ov-feature"><span class="ov-feature-index" aria-hidden="true">04</span><h3>Local model inference</h3><p>Integrate 35 bundled third-party TFLite models through local runtimes, with manifest-based asset integrity checks.</p></li>
+              <li class="ov-feature"><span class="ov-feature-index" aria-hidden="true">05</span><h3>Quality-aware results</h3><p>Carry readiness, units, timestamps, source bounds, and provenance with the output so applications can handle results responsibly.</p></li>
+              <li class="ov-feature"><span class="ov-feature-index" aria-hidden="true">06</span><h3>Built for evaluation</h3><p>Record structured scalar sessions, import independent reference readings, and review time-aligned comparisons in an offline dashboard.</p></li>
+            </ol>
           </section>
 
           <section class="case-section" id="architecture" tabindex="-1">
@@ -123,17 +133,21 @@
               <div class="ov-paths">
                 <div class="ov-path">
                   <h3>Camera-pulse path</h3>
-                  <div class="ov-node"><strong>Application camera &amp; face geometry</strong><p>Explicit pixels, regions, and capture timing</p></div>
-                  <div class="ov-node"><strong>Timestamped colour observations</strong><p>Source cadence and quality information</p></div>
-                  <div class="ov-node"><strong>Portable C++ signal engine</strong><p>Quality checks → POS / CHROM / GREEN → pulse analysis</p></div>
-                  <div class="ov-node"><strong>Core estimates &amp; intervals</strong><p>Analysis windows with source timing</p></div>
+                  <ol class="ov-path-steps">
+                    <li class="ov-node"><strong>Application camera &amp; face geometry</strong><p>Explicit pixels, regions, and capture timing</p></li>
+                    <li class="ov-node"><strong>Timestamped colour observations</strong><p>Source cadence and quality information</p></li>
+                    <li class="ov-node"><strong>Portable C++ signal engine</strong><p>Quality checks → POS / CHROM / GREEN → pulse analysis</p></li>
+                    <li class="ov-node"><strong>Core estimates &amp; intervals</strong><p>Analysis windows with source timing</p></li>
+                  </ol>
                 </div>
                 <div class="ov-path">
                   <h3>Dedicated research paths</h3>
-                  <div class="ov-node"><strong>Assessment-specific inputs</strong><p>Required spatial regions, temporal signals, profile data, or external inputs</p></div>
-                  <div class="ov-node"><strong>Dedicated preprocessing</strong><p>Each assessment’s explicit input contract</p></div>
-                  <div class="ov-node"><strong>Local research model inference</strong><p>Integrated third-party model assets and integrity checks</p></div>
-                  <div class="ov-node"><strong>Research assessments &amp; derived indicators</strong><p>Source completeness and provenance</p></div>
+                  <ol class="ov-path-steps">
+                    <li class="ov-node"><strong>Assessment-specific inputs</strong><p>Required spatial regions, temporal signals, profile data, or external inputs</p></li>
+                    <li class="ov-node"><strong>Dedicated preprocessing</strong><p>Each assessment’s explicit input contract</p></li>
+                    <li class="ov-node"><strong>Local research model inference</strong><p>Integrated third-party model assets and integrity checks</p></li>
+                    <li class="ov-node"><strong>Research assessments &amp; derived indicators</strong><p>Source completeness and provenance</p></li>
+                  </ol>
                 </div>
               </div>
               <div class="ov-node ov-output"><strong>Structured results</strong><p>Readiness · Units · Source timing · Quality · Provenance</p></div>
@@ -191,32 +205,32 @@
           <section class="case-section" id="stack" tabindex="-1">
             <h2><span class="case-chapter" aria-hidden="true">07 /</span>From native code to evaluation.</h2>
             <dl class="ov-stack">
-              <div><dt>Portable processing</dt><dd>C++17, versioned C ABI, CMake</dd></div>
-              <div><dt>Signal analysis</dt><dd>rPPG, POS, CHROM, GREEN, filtering, spectral analysis, pulse-interval analysis</dd></div>
-              <div><dt>Apple integration</dt><dd>Swift, Swift Package Manager, native C bindings</dd></div>
-              <div><dt>Android integration</dt><dd>Kotlin, JNI, Android NDK, CameraX, ML Kit face detection</dd></div>
-              <div><dt>Analysis and tooling</dt><dd>Python, NumPy, SciPy, OpenCV, ctypes</dd></div>
-              <div><dt>Model execution</dt><dd>TFLite models, LiteRT CPU inference, integrity manifests</dd></div>
-              <div><dt>Desktop diagnostics</dt><dd>Browser camera capture, JavaScript, WebSockets, Apple Vision</dd></div>
-              <div><dt>Evaluation and checks</dt><dd>pytest, CTest, sanitizers, Swift concurrency checks, Ruff, mypy, GitHub Actions</dd></div>
+              <div><dt>Portable processing</dt><dd><span class="ov-chip">C++17</span>, <span class="ov-chip">versioned C ABI</span>, <span class="ov-chip">CMake</span></dd></div>
+              <div><dt>Signal analysis</dt><dd><span class="ov-chip">rPPG</span>, <span class="ov-chip">POS</span>, <span class="ov-chip">CHROM</span>, <span class="ov-chip">GREEN</span>, <span class="ov-chip">filtering</span>, <span class="ov-chip">spectral analysis</span>, <span class="ov-chip">pulse-interval analysis</span></dd></div>
+              <div><dt>Apple integration</dt><dd><span class="ov-chip">Swift</span>, <span class="ov-chip">Swift Package Manager</span>, <span class="ov-chip">native C bindings</span></dd></div>
+              <div><dt>Android integration</dt><dd><span class="ov-chip">Kotlin</span>, <span class="ov-chip">JNI</span>, <span class="ov-chip">Android NDK</span>, <span class="ov-chip">CameraX</span>, <span class="ov-chip">ML Kit face detection</span></dd></div>
+              <div><dt>Analysis and tooling</dt><dd><span class="ov-chip">Python</span>, <span class="ov-chip">NumPy</span>, <span class="ov-chip">SciPy</span>, <span class="ov-chip">OpenCV</span>, <span class="ov-chip">ctypes</span></dd></div>
+              <div><dt>Model execution</dt><dd><span class="ov-chip">TFLite models</span>, <span class="ov-chip">LiteRT CPU inference</span>, <span class="ov-chip">integrity manifests</span></dd></div>
+              <div><dt>Desktop diagnostics</dt><dd><span class="ov-chip">Browser camera capture</span>, <span class="ov-chip">JavaScript</span>, <span class="ov-chip">WebSockets</span>, <span class="ov-chip">Apple Vision</span></dd></div>
+              <div><dt>Evaluation and checks</dt><dd><span class="ov-chip">pytest</span>, <span class="ov-chip">CTest</span>, <span class="ov-chip">sanitizers</span>, <span class="ov-chip">Swift concurrency checks</span>, <span class="ov-chip">Ruff</span>, <span class="ov-chip">mypy</span>, <span class="ov-chip">GitHub Actions</span></dd></div>
             </dl>
           </section>
         </article>
       </div>
-    </div>
-
-    <section class="case-next" aria-labelledby="case-next-title">
+        <section class="case-next case-contact-edge" aria-labelledby="case-next-title">
       <div class="case-container">
         <div class="case-next-heading"><h2 id="case-next-title">Explore another case study</h2><a class="text-link" href="../index.html#work">All selected work <span aria-hidden="true">↗</span></a></div>
         <nav aria-label="Case studies"><ul class="case-next-grid">
           <li><a href="openvitals.html" aria-current="page"><span>This case study · Ongoing product</span><strong>OpenVitals</strong></a></li>
-          <li><a href="makers-row.html"><span>Marketplace modernization</span><strong>Maker’s Row <span aria-hidden="true">↗</span></strong></a></li>
+          <li><a rel="next" aria-description="Next project" href="makers-row.html"><span>Marketplace modernization</span><strong>Maker’s Row <span aria-hidden="true">↗</span></strong></a></li>
           <li><a href="guestay.html"><span>Hospitality platform</span><strong>Guestay <span aria-hidden="true">↗</span></strong></a></li>
           <li><a href="quicktake-health.html"><span>Healthcare kiosk</span><strong>QuickTake Health <span aria-hidden="true">↗</span></strong></a></li>
-          <li><a href="roundhere.html"><span>Events &amp; communities</span><strong>RoundHere <span aria-hidden="true">↗</span></strong></a></li>
+          <li><a rel="prev" aria-description="Previous project" href="roundhere.html"><span>Events &amp; communities</span><strong>RoundHere <span aria-hidden="true">↗</span></strong></a></li>
         </ul></nav>
       </div>
     </section>
+      </div>
+    </div>
   </main>
   <footer class="case-container case-footer"><p>© 2026 Rana Usman · Lahore, Pakistan</p><a href="mailto:ranausmannoman@gmail.com?subject=Project%20enquiry">Discuss a project <span aria-hidden="true">↗</span></a><a href="../index.html">Back to portfolio</a><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button></footer>
 </body>

@@ -1,0 +1,23 @@
+@media print {
+  @page { margin: 16mm; }
+  html, body { background:var(--surface); color:var(--ink); font:11pt/1.45 var(--sans); }
+  *, *::before,*::after { background:var(--clear) !important; box-shadow:none !important; text-shadow:none !important; border:0 !important; color:var(--ink) !important; animation:none !important; }
+  body :is(.mast,.skip,.library,svg,.drawing,.board-legend .legend-mark,.component-plate,.project-visual,.book-jacket,.security-visual img,.case-stamp,.project-schematic,.case-hero figure img,.thermal-plate,.case-toc,.case-breadcrumb,.case-metal-bracket,.case-next,.motion-toggle,.disclosure-icon,.role-type::before,.footer-nav,.footer-links,.ref-silk,.service-symbol,.phase-figure,.actions,.hero-actions,.footer-bottom a,.flow-mobile,.case-next-heading,footer button) { display:none !important; }
+  .portfolio-page :is(.page,.wrap,.chapter,.section-heading,.project-list,.project,.project-copy,.spec,.spec > *,.section-footer,.section-footer a,.process-list,.security-principles,.service-list,.si-offer-grid,.security-lead,.book-list,.book,.fitness-grid,.recruiter-note,.footer-main,.footer-bottom,.education-list li,.boot-log li,.flow-wide,.flow-stages,.flow-stages li,.io-ports),
+  .case-page :is(.case-pcb,.case-card-shell,.case-hero,.case-card-body,.case-hero-grid,.case-hero-copy,.case-chip,.case-content-layout,.case-article,.case-summary,.case-section,.case-workflow,.case-footer,.ov-feature-grid,.ov-assessment-list,.ov-paths,.ov-stack,.ov-stack > div,.ov-node),
+  .fault-board,.fault-copy { display:block !important; position:static; width:100%; max-width:none; min-height:0; padding:0; margin:.45rem 0; }
+  .case-hero figure,.fault-drawing,.case-hero-action,.strava-badge::before {display:none !important;}
+  .studio-lines,.seated-card::after,.case-card-shell::after,.main-ic::after,.main-ic::before,.io-port::before {content:none !important;}
+  .portfolio-page :is(.service,.si-offer,.security-principles li,.process-list li,.experience-row,.more-work),.case-page .case-article .case-section { padding:.3rem 0; }
+  .portfolio-page .hero-copy {max-width:none;}
+  body h1 {font:600 24pt/1.15 var(--sans) !important;} body h2 {font:600 18pt/1.18 var(--sans) !important;}
+  body h3 {font:600 14pt/1.2 var(--sans) !important;} body h4 {font:600 12pt/1.2 var(--sans);}
+  body :is(h1,h2,h3,h4,summary,dt) {break-after:avoid;}
+  body p,body li {orphans:3;widows:3;}
+  body a,body button,body summary { min-height:0 !important; min-width:0 !important; padding:0 !important; }
+  details::details-content {display:block;content-visibility:visible;}
+  details > :not(summary){display:block !important;}
+  .card-tech,.project-stack,.service-tags,.stack,.case-tech-parts {display:block !important;padding:0;}
+  :is(.project-stack,.service-tags,.stack) li,.tech-package {display:inline;padding:0 .3em 0 0;}
+  .portfolio-footer,.case-footer {font-size:9pt;}.case-article p {max-width:none;}
+}

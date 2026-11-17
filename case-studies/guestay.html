@@ -5,8 +5,8 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'none'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#0b1014">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="Canvas">
   <title>Guestay case study — Rana Usman</title>
   <meta name="description" content="Modernizing the software behind a connected hospitality experience. Technical Lead · Past contract through Webaryco · started March 2026.">
   <link rel="canonical" href="https://ranausman.dev/case-studies/guestay.html">
@@ -17,92 +17,62 @@
   <meta property="og:url" content="https://ranausman.dev/case-studies/guestay.html">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <script src="../futuristic/preloader.js" async></script>
-  <link rel="stylesheet" href="../futuristic/style.css">
-  <link rel="stylesheet" href="../futuristic/redesign.css?v=20261110-ux2">
-  <link rel="stylesheet" href="../futuristic/case-study.css?v=20261110-ux2">
-  <link rel="stylesheet" href="../futuristic/neural-theme.css?v=20261110-ux2">
-  <script src="../futuristic/app.js?v=20261110-ux2" defer></script>
-  <script src="../futuristic/neural.js" defer></script>
+  <link rel="stylesheet" href="/motherboard/tokens.css?v=ru-x1-b1">
+  <script src="/motherboard/finish.js?v=ru-x1-b1" blocking="render"></script>
+  <link rel="stylesheet" href="/motherboard/board.css?v=ru-x1-b1">
+  <link rel="stylesheet" href="/motherboard/cases.css?v=ru-x1-b1">
+  <link rel="stylesheet" href="/motherboard/print.css?v=ru-x1-b1">
+  <script src="/motherboard/site.js?v=ru-x1-b1" defer></script>
 </head>
 <body class="case-page case-rental">
-  <canvas class="neural-network" id="neural-network" aria-hidden="true"></canvas>
-  <a class="skip-link" href="#main">Skip to case study</a>
-  <header class="site-header case-header">
-    <div class="case-header-inner">
-      <a class="brand" href="../index.html" aria-label="Rana Usman, home"><span class="brand-mark" aria-hidden="true">ru.</span><span class="brand-name">Rana Usman</span></a>
-      <nav class="case-header-links" aria-label="Case-study navigation">
+  
+  <a class="skip" href="#main">Skip to case study</a>
+  <svg class="library" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+    <linearGradient id="steel" x2=".8" y2="1" gradientUnits="objectBoundingBox">
+      <stop class="metal-light" /><stop offset=".43" class="metal-light" /><stop offset=".46" class="metal-mid" /><stop offset="1" class="metal-light" /></linearGradient>
+    <linearGradient id="lid" x2="1" y2=".8"><stop class="mask-stop" /><stop offset=".65" class="metal-light" /><stop offset="1" class="mask-stop" /></linearGradient>
+    <pattern id="fingers" width="3" height="6" patternUnits="userSpaceOnUse"><rect width="2" height="6" class="pad" /></pattern>
+    <pattern id="pins" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="3" class="black" /><circle cx="1.5" cy="1.5" r=".65" class="silver" /></pattern>
+    <pattern id="bars" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M0 0V12 M2 0V12 M6 0V12 M10 0V12" class="bar-line" /><path d="M4 0V12 M8 0V12" class="bar-heavy" /></pattern>
+    <pattern id="mask-weave" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".62" class="mesh-dot" /></pattern>
+    <g id="p-smd"><rect x="0" y="0" width="7" height="3" rx="0" class="silver" /><rect x="1.6" y="-0.2" width="3.8" height="3.4" rx="0" class="black" /></g><g id="p-expansion-2"><path d="M4 2H188L195 8V19H118V23H98V19H4Z" class="accent-mask" /><rect x="1" y="0" width="4" height="23" rx="1" class="machined" /><rect x="10" y="4" width="13" height="12" rx="1" class="black-edge" /><rect x="27" y="4" width="13" height="12" rx="1" class="black-edge" /><rect x="54" y="5" width="17" height="11" rx="1" class="black-edge" /><rect x="76" y="5" width="17" height="11" rx="1" class="black-edge" /><rect x="98" y="6" width="42" height="8" rx="0" class="paper" /><rect x="100" y="7" width="22" height="5" rx="0" class="barcode" /><use href="#p-smd" transform="translate(151 6) rotate(0) scale(1)" /><use href="#p-smd" transform="translate(162 6) rotate(0) scale(1)" /><rect x="12" y="18" width="78" height="3" rx="0" class="contacts" /><rect x="95" y="18" width="44" height="3" rx="0" class="contacts" /><circle cx="187" cy="12" r="1.6" class="pad" /></g></defs></svg><header class="mast"><div class="mast-inner">
+  <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">ru.</span><span class="brand-domain">Rana Usman</span><span class="sr-only">Rana Usman, home</span></a>
+  <nav class="head-links" aria-label="Main navigation"><a href="../index.html#work">Selected work</a><a href="../index.html#contact">Contact</a></nav>
+  <details class="navigator"><summary><svg aria-hidden="true" focusable="false" class="mini-art" viewBox="0 0 55 43"><path d="M4 1H47L53 7V36L48 41H3L1 38V4Z" class="mask-edge"/><rect x="17" y="12" width="13" height="11" rx="0" class="mini-foot mini-cpu"/><rect x="5" y="31" width="19" height="5" rx="0" class="mini-foot mini-pcie"/><rect x="27" y="28" width="10" height="8" rx="0" class="mini-foot mini-pch"/><rect x="7" y="17" width="6" height="5" rx="0" class="mini-foot mini-history"/><rect x="6" y="25" width="11" height="3" rx="0" class="mini-foot mini-m2"/><rect x="15" y="6" width="10" height="3" rx="0" class="mini-foot mini-vrm"/><rect x="39" y="28" width="5" height="4" rx="0" class="mini-foot mini-tpm"/><rect x="46" y="24" width="4" height="6" rx="0" class="mini-foot mini-storage"/><rect x="42" y="17" width="6" height="3" rx="0" class="mini-foot mini-fan"/><rect x="3" y="6" width="3" height="8" rx="0" class="mini-foot mini-io"/></svg><span class="dbg-unit" aria-hidden="true"><small>DBG</small><b data-debug>01</b></span><span>Menu</span><i aria-hidden="true"></i></summary>
+    <nav aria-label="Portfolio chapters"><ol><li><a data-chapter="pcie" href="../index.html#work"><span>01</span>Selected work</a></li><li><a data-chapter="pch" href="../index.html#services"><span>02</span>Engineering</a></li><li><a data-chapter="history" href="../index.html#experience"><span>03</span>Experience</a></li><li><a data-chapter="m2" href="../index.html#si-workflows"><span>04</span>SI & workflows</a></li><li><a data-chapter="vrm" href="../index.html#approach"><span>05</span>My process</a></li><li><a data-chapter="tpm" href="../index.html#cybersecurity"><span>06</span>Cybersecurity</a></li><li><a data-chapter="storage" href="../index.html#reading"><span>07</span>Reading</a></li><li><a data-chapter="fan" href="../index.html#fitness"><span>08</span>Fitness</a></li><li><a data-chapter="io" href="../index.html#contact"><span>09</span>Contact</a></li></ol></nav>
+  </details>
+  <div class="switch-seat"><button class="switch" data-switch role="switch" aria-label="Dark theme" aria-checked="false" hidden type="button">
+    <small aria-hidden="true">SW1</small><span class="light-mark" aria-hidden="true">LIGHT</span><i aria-hidden="true"><b></b></i><span class="dark-mark" aria-hidden="true">DARK</span>
+  </button></div>
+</div></header>
+
+  <main data-board-chapter="pcie" id="main" tabindex="-1">
+    <div class="case-container case-pcb" id="neural-network">
+      <nav class="case-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">Guestay</span></nav>
+      <div class="case-card-shell">
+        <section class="case-hero" aria-labelledby="case-title">
+          <div class="case-metal-bracket"><nav class="case-header-links" aria-label="Case-study navigation">
         <a href="../index.html#work"><span aria-hidden="true">←</span> Back to work</a>
         <a class="case-public-link" href="https://guestay.com/" target="_blank" rel="noopener noreferrer">Visit product <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" tabindex="-1">
-    <div class="case-container">
-      <nav class="case-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">Guestay</span></nav>
-      <section class="case-hero" aria-labelledby="case-title">
-        <div class="case-hero-grid">
-          <div class="case-hero-copy">
-            <p class="case-eyebrow">Hospitality platform / Incremental modernization</p>
-            <h1 class="case-title" id="case-title">Guestay</h1>
-            <p class="case-lead">Modernizing the software behind a connected hospitality experience.</p>
-            <p class="case-status"><strong>Delivered modules · Incremental modernization</strong>Webaryco · Past contract · started March 2026 · Technical Lead</p>
-            <a class="text-link case-hero-action" href="#contribution">Explore my contribution <span aria-hidden="true">↓</span></a>
-          </div>
-          <figure class="project-visual rental hero-visual case-figure">
-            <svg class="project-vector" role="img" aria-labelledby="guestay-illustration-title" aria-describedby="guestay-illustration-desc" xmlns="http://www.w3.org/2000/svg" width="600" height="440" viewBox="0 0 600 440" fill="none">
-  <title id="guestay-illustration-title">A villa stay with a clear booking journey</title>
-  <desc id="guestay-illustration-desc">Conceptual illustration of a villa, sample booking dates and a search bar for destination, dates and guests.</desc>
-  <defs>
-    <linearGradient id="villaSky" x1="24" y1="56" x2="314" y2="346" gradientUnits="userSpaceOnUse"><stop stop-color="#4d4169"/><stop offset="1" stop-color="#2b2541"/></linearGradient>
-  </defs>
-  <rect x="24" y="56" width="290" height="290" rx="18" fill="url(#villaSky)" stroke="#75668c"/>
-  <circle cx="242" cy="115" r="33" fill="#bdacd0" fill-opacity=".45"/>
-  <path d="M42 102H112M55 118H92" stroke="#9b89b3" stroke-opacity=".5" stroke-linecap="round"/>
-  <g class="villa-platform">
-    <rect x="44" y="246" width="252" height="62" rx="12" fill="#514166" stroke="#89759c"/>
-  </g>
-  <g stroke="#9b86ad" stroke-width="1.5" stroke-linejoin="round">
-    <path d="M68 171L174 148L238 176L132 201Z" fill="#ece3eb"/>
-    <path d="M68 171L132 201V286L68 252Z" fill="#b5a1c2"/>
-    <path d="M132 201L238 176V252L132 286Z" fill="#d8c9df"/>
-    <path d="M68 171L68 160L174 137L238 165V176M68 160L132 190L238 165" fill="#f3eaf1"/>
-    <path d="M132 190V201"/>
-  </g>
-  <path d="M84 201L112 214V258L84 244Z" fill="#534366" stroke="#e5d7e9"/>
-  <path d="M152 207L216 191V236L152 253Z" fill="#66537e" stroke="#f1e4ee" stroke-width="2"/>
-  <path d="M174 202V247M195 197V241" stroke="#bbadc9"/>
-  <g stroke="#a995b5" stroke-width="3" stroke-linecap="round"><path d="M48 238C61 195 65 151 59 127"/><path d="M59 127C43 111 35 120 35 137M59 127C71 107 91 112 96 126M59 127C51 105 66 94 77 99M59 127C78 126 88 139 88 151"/></g>
-  <g fill="#b0b59c"><path d="M45 118C33 115 31 129 35 137C37 125 41 123 52 125Z"/><path d="M65 119C78 107 91 112 96 126C84 120 77 121 65 126Z"/><path d="M60 116C57 101 67 94 77 99C66 101 66 111 64 121Z"/></g>
-  <text x="44" y="89" fill="#efe8f4" font-family="Arial,sans-serif" font-weight="700" font-size="30">Villa stay</text>
-  <rect x="328" y="56" width="248" height="290" rx="18" fill="#f4eff9" stroke="#d0c0df"/>
-  <g font-family="Arial,sans-serif" fill="#342840"><text x="350" y="91" font-weight="700" font-size="30">Booking dates</text><text x="350" y="124" font-size="16" fill="#6a577b">Your dates</text></g>
-  <path d="M350 136H554" stroke="#d9cee3"/>
-  <g font-family="Arial,sans-serif" font-size="16" fill="#756184" text-anchor="middle"><text x="364" y="157">M</text><text x="392" y="157">T</text><text x="420" y="157">W</text><text x="448" y="157">T</text><text x="476" y="157">F</text><text x="504" y="157">S</text><text x="532" y="157">S</text></g>
-  <rect x="406" y="168" width="140" height="30" rx="15" fill="#d8c6ec"/>
-  <rect class="booking-highlight" x="406" y="168" width="140" height="30" rx="15" stroke="#9a73bc" stroke-width="1.5" stroke-dasharray="6 10"/>
-  <g font-family="Arial,sans-serif" font-size="16" text-anchor="middle" fill="#574465"><text x="364" y="189">12</text><text x="392" y="189">13</text></g>
-  <g font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#3b264b"><text x="420" y="189">14</text><text x="448" y="189">15</text><text x="476" y="189">16</text><text x="504" y="189">17</text><text x="532" y="189">18</text></g>
-  <g font-family="Arial,sans-serif" font-size="16" text-anchor="middle" fill="#73607f"><text x="364" y="224">19</text><text x="392" y="224">20</text><text x="420" y="224">21</text><text x="448" y="224">22</text><text x="476" y="224">23</text><text x="504" y="224">24</text><text x="532" y="224">25</text><text x="364" y="259">26</text><text x="392" y="259">27</text><text x="420" y="259">28</text><text x="448" y="259">29</text><text x="476" y="259">30</text><text x="504" y="259">31</text><text x="532" y="259">1</text></g>
-  <path d="M350 275H554" stroke="#d9cee3"/>
-  <rect x="350" y="291" width="204" height="34" rx="10" fill="#e2d7ee"/>
-  <path d="M363 307L368 312L377 302" stroke="#715184" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="386" y="313" fill="#513562" font-family="Arial,sans-serif" font-size="16" font-weight="700">14–18 confirmed</text>
-  <rect x="24" y="366" width="552" height="56" rx="14" fill="#322a47" stroke="#89769e"/>
-  <path d="M208 380V408M390 380V408" stroke="#736082"/>
-  <g fill="#eee7f4" font-family="Arial,sans-serif" font-size="16"><text x="42" y="400" font-size="30">Destination</text><text x="228" y="400" font-size="30">Dates</text><text x="410" y="400" font-size="30">Guests</text></g>
-  <circle cx="545" cy="394" r="18" fill="#c5afd9"/>
-  <circle cx="542" cy="391" r="5" stroke="#3e2d50" stroke-width="2"/>
-  <path d="M546 395L551 400" stroke="#3e2d50" stroke-width="2" stroke-linecap="round"/>
-</svg>
+      </nav></div>
+          <div class="case-card-body">
+            <div class="case-hero-grid">
+              <div class="case-hero-copy"><div class="case-chip"><svg class="case-stamp" width="202" height="30" viewBox="0 0 202 30" aria-hidden="true"><use href="#p-expansion-2" x="2" y="2"/></svg><p class="case-eyebrow">Hospitality platform / Incremental modernization</p><h1 class="case-title" id="case-title">Guestay</h1><p class="case-status"><strong>Delivered modules · Incremental modernization</strong>Webaryco · Past contract · started March 2026 · Technical Lead</p></div><div class="case-hero-detail"><p class="case-lead">Modernizing the software behind a connected hospitality experience.</p>
+            
+            <a class="text-link case-hero-action" href="#contribution">Explore my contribution <span aria-hidden="true">↓</span></a></div></div>
+              <figure class="project-visual rental hero-visual case-figure">
+            <span hidden id="villaSky"></span><div class="project-schematic" role="group" aria-labelledby="guestay-illustration-title" aria-describedby="guestay-illustration-desc"><span class="sr-only" id="guestay-illustration-title">A villa stay with a clear booking journey</span><span class="sr-only" id="guestay-illustration-desc">Conceptual illustration of a villa, sample booking dates and a search bar for destination, dates and guests.</span><div class="schematic-duo"><div class="schematic-panel villa-panel"><b>Villa stay</b><svg class="schematic-house" viewBox="25 87 225 208" aria-hidden="true" focusable="false">
+  <g class="garment-seam"><path d="M48 238C61 195 65 151 59 127"/><path d="M59 127C43 111 35 120 35 137M59 127C71 107 91 112 96 126M59 127C51 105 66 94 77 99M59 127C78 126 88 139 88 151"/></g>
+  <g class="garment-cut"><path d="M68 171L174 148L238 176L132 201Z"/><path d="M68 171L132 201V286L68 252Z"/><path d="M132 201L238 176V252L132 286Z"/><path d="M68 171V160L174 137L238 165V176L132 201Z"/></g>
+  <g class="garment-seam"><path d="M68 160L132 190L238 165M132 190V201"/><path d="M84 201L112 214V258L84 244ZM152 207L216 191V236L152 253Z"/><path d="M174 202V247M195 197V241"/></g>
+</svg></div><div class="schematic-panel calendar-panel"><b>Booking dates</b><p>Your dates</p><div class="schematic-calendar"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>1</span></div><strong>14–18 confirmed</strong></div></div><div class="schematic-stages"><span>Destination</span><span>Dates</span><span>Guests</span></div></div>
             <figcaption class="case-figure-caption"><span>Concept illustration · Property booking</span></figcaption>
           </figure>
-        </div>
-        <dl class="case-summary" aria-label="Contribution summary"><div class="case-summary-item"><dt>Role</dt><dd>Technical Lead · Past contract</dd></div><div class="case-summary-item"><dt>Team</dt><dd>Webaryco · Past contract · started March 2026</dd></div><div class="case-summary-item"><dt>Scope</dt><dd>Technical direction, admin integration, host workflows and guest messaging</dd></div><div class="case-summary-item"><dt>Stack</dt><dd>Next.js · React · TypeScript · Tailwind CSS · CodeIgniter / PHP · MariaDB</dd></div></dl>
-      </section>
-
-      <div class="case-content-layout">
+            </div>
+            <dl class="case-summary" aria-label="Contribution summary"><div class="case-summary-item"><dt>Role</dt><dd>Technical Lead · Past contract</dd></div><div class="case-summary-item"><dt>Team</dt><dd>Webaryco · Past contract · started March 2026</dd></div><div class="case-summary-item"><dt>Scope</dt><dd>Technical direction, admin integration, host workflows and guest messaging</dd></div><div class="case-summary-item"><dt>Stack</dt><dd class="case-tech-parts"><span class="tech-package">Next.js</span><span class="package-joint"> · </span><span class="tech-package">React</span><span class="package-joint"> · </span><span class="tech-package">TypeScript</span><span class="package-joint"> · </span><span class="tech-package">Tailwind CSS</span><span class="package-joint"> · </span><span class="tech-package">CodeIgniter</span><span class="package-joint"> / </span><span class="tech-package">PHP</span><span class="package-joint"> · </span><span class="tech-package">MariaDB</span></dd></div></dl>
+          </div>
+        </section>
+        <div class="case-content-layout">
         <aside class="case-toc" aria-labelledby="case-toc-title"><h2 id="case-toc-title">In this case study</h2><nav aria-label="On this page"><ol><li><a href="#product"><span aria-hidden="true">01</span>The product</a></li><li><a href="#challenge"><span aria-hidden="true">02</span>The challenge</a></li><li><a href="#contribution"><span aria-hidden="true">03</span>My contribution</a></li><li><a href="#decisions"><span aria-hidden="true">04</span>Technical decisions</a></li><li><a href="#outcomes"><span aria-hidden="true">05</span>Outcome</a></li><li><a href="#stack"><span aria-hidden="true">06</span>Relevant stack</a></li></ol></nav></aside>
         <article class="case-article" aria-label="Guestay case study">
           <!-- case-copy:start -->
@@ -115,9 +85,9 @@
           <!-- case-copy:end -->
         </article>
       </div>
+        <section class="case-next case-contact-edge" aria-labelledby="case-next-title"><div class="case-container"><div class="case-next-heading"><h2 id="case-next-title">Explore another case study</h2><a class="text-link" href="../index.html#work">All selected work <span aria-hidden="true">↗</span></a></div><nav aria-label="Case studies"><ul class="case-next-grid"><li><a href="openvitals.html"><span>Ongoing product · Native SDK</span><strong>OpenVitals <span aria-hidden="true">↗</span></strong></a></li><li><a rel="next" aria-description="Next project" href="quicktake-health.html"><span>Healthcare kiosk</span><strong>QuickTake Health <span aria-hidden="true">↗</span></strong></a></li><li><a rel="prev" aria-description="Previous project" href="makers-row.html"><span>Manufacturing marketplace</span><strong>Maker’s Row <span aria-hidden="true">↗</span></strong></a></li><li><a href="guestay.html" aria-current="page"><span>This case study</span><strong>Guestay</strong></a></li><li><a href="roundhere.html"><span>Events &amp; communities</span><strong>RoundHere <span aria-hidden="true">↗</span></strong></a></li></ul></nav></div></section>
+      </div>
     </div>
-
-    <section class="case-next" aria-labelledby="case-next-title"><div class="case-container"><div class="case-next-heading"><h2 id="case-next-title">Explore another case study</h2><a class="text-link" href="../index.html#work">All selected work <span aria-hidden="true">↗</span></a></div><nav aria-label="Case studies"><ul class="case-next-grid"><li><a href="openvitals.html"><span>Ongoing product · Native SDK</span><strong>OpenVitals <span aria-hidden="true">↗</span></strong></a></li><li><a href="quicktake-health.html"><span>Healthcare kiosk</span><strong>QuickTake Health <span aria-hidden="true">↗</span></strong></a></li><li><a href="makers-row.html"><span>Manufacturing marketplace</span><strong>Maker’s Row <span aria-hidden="true">↗</span></strong></a></li><li><a href="guestay.html" aria-current="page"><span>This case study</span><strong>Guestay</strong></a></li><li><a href="roundhere.html"><span>Events &amp; communities</span><strong>RoundHere <span aria-hidden="true">↗</span></strong></a></li></ul></nav></div></section>
   </main>
   <footer class="case-container case-footer"><p>© 2026 Rana Usman · Lahore, Pakistan</p><a href="mailto:ranausmannoman@gmail.com?subject=Project%20enquiry">Discuss a project <span aria-hidden="true">↗</span></a><a href="../index.html">Back to portfolio</a><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button></footer>
 </body>
