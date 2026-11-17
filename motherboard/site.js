@@ -1,7 +1,7 @@
 (() => {
   /* Lay out one etched circuit field over the actual page, including expanded content.
      Device outlines retain their physical proportions at every viewport. */
-  function routeSubstrate(width, height, seed) {
+  function routeSubstrate(width, height, seed, maxRows = Infinity) {
     const packages = ['via', 'array', 'soic', 'crystal', 'qfn', 'header', 'choke', 'via'];
     let randomState = seed + 1;
     const sample = () => {
@@ -11,7 +11,7 @@
     // Let plates on very large / zoomed documents breathe while retaining a bounded SVG.
     const pitch = Math.max(width < 650 ? 155 : 226, Math.sqrt(width * height / 420));
     const columns = Math.max(2, Math.ceil(width / pitch));
-    const rows = Math.max(3, Math.ceil(height / (pitch * .8)));
+    const rows = Math.max(3, Math.min(maxRows, Math.ceil(height / (pitch * .8))));
     const columnWidth = width / columns;
     const rowHeight = height / rows;
     const nodes = [];
@@ -64,7 +64,14 @@
         }
       });
     });
-    return '<path class="etched-traces" d="'+wiring.join('')+'"/><g class="etched-parts">'+furniture.join('')+'</g>';
+    const artwork = '<path class="etched-traces" d="'+wiring.join('')+'"/><g class="etched-parts">'+furniture.join('')+'</g>';
+    // Browser serialization expands self-closing SVG elements. Leave room for
+    // the permanent board artwork, even at a 32px default with every panel open.
+    const serializedBytes = artwork.length + 5 * (furniture.length + 1);
+    if (serializedBytes > 104000 && rows > 3) {
+      return routeSubstrate(width, height, seed, Math.floor(rows * .9));
+    }
+    return artwork;
   }
 
   const field = document.querySelector('.pcb-field');

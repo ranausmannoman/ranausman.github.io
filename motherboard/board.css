@@ -327,7 +327,7 @@ svg text { font-family: var(--mono); }
     height: 100%;
     pointer-events: none;
     user-select: none;
-    opacity: .105;
+    opacity: var(--etch-opacity);
   }
   .etched-traces, .etched-parts {
     fill: none;
@@ -342,6 +342,7 @@ svg text { font-family: var(--mono); }
 /* Etching travels across the mask and the raised panel finishes. The blending
    preserves dark ink on the white laminate and light ink on the black laminate. */
 @media screen and (forced-colors: none) {
+  :root:not([data-finish="dark"]) body { background-color: var(--surface); }
   .pcb-substrate { z-index: 2; mix-blend-mode: multiply; }
   :root[data-finish="dark"] .pcb-substrate { mix-blend-mode: screen; }
   .pcb-field { overflow: hidden; }
@@ -363,7 +364,7 @@ svg text { font-family: var(--mono); }
     width: 100%;
     height: 100%;
     pointer-events: none;
-    opacity: .085;
+    opacity: var(--mast-etch-opacity);
   }
   .fault-drawing { position: relative; z-index: 3; }
 }

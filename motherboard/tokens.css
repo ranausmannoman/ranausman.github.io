@@ -4,13 +4,15 @@
   --surface-2: #F7F5FC;
   --line: #E4DFF0;
   --ink: #15131A;
-  --ink-2: #45414F;
-  --ink-3: #696475;
+  --ink-2: #37333F;
+  --ink-3: #57515F;
   --accent: #6D28D9;
   --accent-strong: #5B21B6;
   --accent-soft: #EFEAFE;
   --on-accent: #FFFFFF;
   --trace: #8B5CF6;
+  --etch-opacity: .23;
+  --mast-etch-opacity: .18;
   --metal-1: #D5D7DD;
   --metal-2: #A3A8B3;
   --metal-3: #6F7480;
@@ -35,6 +37,8 @@
     --accent-soft: #2B2507;
     --on-accent: #0A0A0B;
     --trace: #C9A30D;
+    --etch-opacity: .105;
+    --mast-etch-opacity: .085;
     --metal-1: #2E2E33;
     --metal-2: #4A4A51;
     --metal-3: #77777F;
