@@ -1,0 +1,32 @@
+{
+  "https://guestay.com/": {
+    "method": "GET",
+    "statusAndDestination": "200 https://guestay.com/",
+    "error": ""
+  },
+  "https://makersrow.com/": {
+    "method": "GET",
+    "statusAndDestination": "200 https://makersrow.com/",
+    "error": ""
+  },
+  "https://quicktakehealth.com/": {
+    "method": "GET",
+    "statusAndDestination": "200 https://quicktakehealth.com/",
+    "error": ""
+  },
+  "https://roundhere.io/": {
+    "method": "GET",
+    "statusAndDestination": "200 https://roundhere.io/",
+    "error": ""
+  },
+  "https://strava.com/athletes/1903872184": {
+    "method": "GET",
+    "statusAndDestination": "200 https://www.strava.com/athletes/1903872184",
+    "error": ""
+  },
+  "https://www.linkedin.com/in/ranausman008/": {
+    "method": "GET",
+    "statusAndDestination": "999 https://www.linkedin.com/in/ranausman008/",
+    "error": ""
+  }
+}

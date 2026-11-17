@@ -1,0 +1,669 @@
+{
+  "sourceHashes": {
+    "index.html": {
+      "match": true,
+      "sha256": "529935ac46b6196480fba2c2b985f492f433674051e5f8fe485a4f9d926d86b8"
+    },
+    "case-studies/guestay.html": {
+      "match": true,
+      "sha256": "29a16bcb4e9ed256b1c2a6710c74964ce0f1de6f88d97211d0e0c48c187ba571"
+    },
+    "case-studies/makers-row.html": {
+      "match": true,
+      "sha256": "613c0098a0ffb0a897354e4e31c1e031e311eb7d26fc7661db02239b7668f5e7"
+    },
+    "case-studies/openvitals.html": {
+      "match": true,
+      "sha256": "0eaeb72de9e3ba54673785c371f08af17c886921eda139f5c7be1982d1b33b94"
+    },
+    "case-studies/quicktake-health.html": {
+      "match": true,
+      "sha256": "efcf1c34d8a4c1f748d97ff91b969cab1684ccaf8360e4ebbcbf879fae3f238a"
+    },
+    "case-studies/roundhere.html": {
+      "match": true,
+      "sha256": "9dbea64a37e7eed8dfac45ee42ed852baa8ca8f54f571a59197f7a95dfdcecaf"
+    }
+  },
+  "assets": {
+    "assets/Usman_Iqbal_Resume.pdf": true,
+    "assets/collaboration-desktop.svg": true,
+    "assets/collaboration-mobile.svg": true,
+    "assets/cybersecurity-assessment-green.webp": true,
+    "assets/cybersecurity-assessment.webp": true,
+    "assets/cybersecurity-boundary.png": true,
+    "assets/engineering-graphic.svg": true,
+    "assets/favicon.svg": true,
+    "assets/kiosk-graphic.svg": true,
+    "assets/live-events-graphic.svg": true,
+    "assets/marketplace-graphic.svg": true,
+    "assets/neural-signal-hero.mp4": true,
+    "assets/neural-signal-hero.webm": true,
+    "assets/neural-signal-poster.webp": true,
+    "assets/openvitals-graphic.svg": true,
+    "assets/rental-graphic.svg": true,
+    "assets/strava-echelon.png": true,
+    "assets/strava-wordmark.png": true,
+    "futuristic/app.js": true,
+    "futuristic/case-study.css": true,
+    "futuristic/cinema.css": true,
+    "futuristic/cinema.js": true,
+    "futuristic/neural-theme.css": true,
+    "futuristic/neural.js": true,
+    "futuristic/openvitals.css": true,
+    "futuristic/preloader.js": true,
+    "futuristic/redesign.css": true,
+    "futuristic/security-motion.css": true,
+    "futuristic/style.css": true
+  },
+  "hrefDeltas": [],
+  "localUrls": {
+    "http://127.0.0.1:4187/assets/Usman_Iqbal_Resume.pdf": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/assets/openvitals-graphic.svg?v=20261110-ux2": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/guestay.html": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/guestay.html#challenge": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/guestay.html#contribution": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/guestay.html#decisions": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/guestay.html#main": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/guestay.html#outcomes": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/guestay.html#product": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/guestay.html#stack": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/makers-row.html": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/makers-row.html#challenge": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/makers-row.html#contribution": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/makers-row.html#decisions": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/makers-row.html#main": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/makers-row.html#outcomes": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/makers-row.html#product": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/makers-row.html#stack": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/openvitals.html": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/openvitals.html#architecture": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/openvitals.html#assessments": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/openvitals.html#capabilities": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/openvitals.html#contribution": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/openvitals.html#engineering": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/openvitals.html#idea": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/openvitals.html#main": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/openvitals.html#stack": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/quicktake-health.html": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/quicktake-health.html#challenge": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/quicktake-health.html#contribution": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/quicktake-health.html#decisions": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/quicktake-health.html#main": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/quicktake-health.html#outcomes": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/quicktake-health.html#product": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/quicktake-health.html#stack": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/roundhere.html": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/roundhere.html#challenge": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/roundhere.html#contribution": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/roundhere.html#decisions": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/roundhere.html#main": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/roundhere.html#outcomes": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/roundhere.html#product": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/case-studies/roundhere.html#stack": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/index.html": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/index.html#approach": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/index.html#contact": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/index.html#cybersecurity": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/index.html#experience": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/index.html#fitness": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/index.html#main": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/index.html#reading": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/index.html#services": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/index.html#si-workflows": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/index.html#top": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/index.html#work": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/redesign/preview/#approach": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/redesign/preview/#main": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/redesign/preview/#stack": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/redesign/preview/#top": {
+      "exists": true,
+      "anchorFound": true
+    },
+    "http://127.0.0.1:4187/redesign/preview/#work": {
+      "exists": true,
+      "anchorFound": true
+    }
+  },
+  "externalUrls": [
+    "https://guestay.com/",
+    "https://makersrow.com/",
+    "https://quicktakehealth.com/",
+    "https://roundhere.io/",
+    "https://strava.com/athletes/1903872184",
+    "https://www.linkedin.com/in/ranausman008/"
+  ],
+  "emailAndTelephone": [
+    "mailto:ranausmannoman@gmail.com",
+    "mailto:ranausmannoman@gmail.com?subject=Cybersecurity%20venture%20enquiry",
+    "mailto:ranausmannoman@gmail.com?subject=Engineering%20role%20enquiry",
+    "mailto:ranausmannoman@gmail.com?subject=Project%20enquiry",
+    "mailto:ranausmannoman@gmail.com?subject=SI%20and%20workflow%20enquiry",
+    "tel:+923333799535"
+  ],
+  "excerptChecks": [
+    {
+      "text": "Exploring Super Intelligence. Building useful software.",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "I build business software, modernize applications, connect systems and automate workflows with today’s intelligent tools and human review.",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Rana Usman.",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Senior Full-Stack Engineer / Technical Lead",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Lahore, Pakistan",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Built across the stack",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": ".NET",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "MAUI",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Laravel",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Azure",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "AWS",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Full-stack engineering & technical direction",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Web · Mobile · Cloud",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Building OpenVitals",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "An ongoing product · Explore the technology ↗",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Real workflows.Considered engineering.",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Maker’s Row / Laravel / AWS",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Maker’s Row",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Senior Full-Stack Engineer · Embark (past contract)",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Laravel",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "PHP",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "MySQL",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Vue",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Redis",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Horizon",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Stripe",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Algolia",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "AWS EC2",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "S3",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Laravel Forge",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Directed the production rollout of a Laravel marketplace upgrade and a blue/green AWS migration, with rehearsals and verification before release.",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "How I work withClaude Code and Codex.",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "A scoped brief, a supervised implementation and a review loop — with me setting priorities, validating the work and making the final release decision.",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Claude Code supervises",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "I use Claude Code to shape the plan, break work into tasks, delegate implementation to Codex and review the returned changes against the brief.",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Codex implements",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "Codex works through the scoped implementation, updates the code, runs relevant checks and revises the changes as review feedback comes back.",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "I own the outcome",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "I set priorities and constraints, review the code and behavior, validate the result with the team and decide what is ready to merge or release.",
+      "presentInExistingCopy": true
+    },
+    {
+      "text": "© 2026 Rana Usman",
+      "presentInExistingCopy": true
+    }
+  ],
+  "previewLinks": [
+    {
+      "url": "http://127.0.0.1:4187/redesign/preview/#main",
+      "fromSource": false,
+      "withinPreview": true,
+      "anchorFound": true
+    },
+    {
+      "url": "http://127.0.0.1:4187/redesign/preview/#top",
+      "fromSource": false,
+      "withinPreview": true,
+      "anchorFound": true
+    },
+    {
+      "url": "http://127.0.0.1:4187/redesign/preview/#work",
+      "fromSource": false,
+      "withinPreview": true,
+      "anchorFound": true
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#contact",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/redesign/preview/#work",
+      "fromSource": true,
+      "withinPreview": true,
+      "anchorFound": true
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#services",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#experience",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#si-workflows",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/redesign/preview/#approach",
+      "fromSource": false,
+      "withinPreview": true,
+      "anchorFound": true
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#cybersecurity",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#reading",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#fitness",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#contact",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "mailto:ranausmannoman@gmail.com?subject=Project%20enquiry",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/assets/Usman_Iqbal_Resume.pdf",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/redesign/preview/#top",
+      "fromSource": true,
+      "withinPreview": true,
+      "anchorFound": true
+    },
+    {
+      "url": "http://127.0.0.1:4187/redesign/preview/#work",
+      "fromSource": true,
+      "withinPreview": true,
+      "anchorFound": true
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#services",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#experience",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#si-workflows",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/redesign/preview/#approach",
+      "fromSource": true,
+      "withinPreview": true,
+      "anchorFound": true
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#cybersecurity",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#reading",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#fitness",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#contact",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/redesign/preview/#stack",
+      "fromSource": false,
+      "withinPreview": true,
+      "anchorFound": true
+    },
+    {
+      "url": "mailto:ranausmannoman@gmail.com?subject=Project%20enquiry",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/case-studies/openvitals.html",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/index.html#work",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "https://makersrow.com/",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/case-studies/makers-row.html",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/case-studies/openvitals.html",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/case-studies/guestay.html",
+      "fromSource": true,
+      "withinPreview": false
+    },
+    {
+      "url": "http://127.0.0.1:4187/redesign/preview/#top",
+      "fromSource": true,
+      "withinPreview": true,
+      "anchorFound": true
+    }
+  ],
+  "renderedTextDifferences": [],
+  "externalScope": "Exact source and href preservation; direct HTTP status recorded separately where reachable.",
+  "cv": {
+    "status": 200,
+    "sha256": "f887c0e964323df1eac08af7b486a5711f2910fde80b701697e2b59d76ea8bc4",
+    "downloadAttribute": 1
+  }
+}

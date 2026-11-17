@@ -1,0 +1,288 @@
+{
+  "scenarios": {
+    "keyboard": {
+      "skip": "main",
+      "menuOrder": [
+        "pcie",
+        "pch",
+        "history",
+        "m2",
+        "vrm",
+        "tpm",
+        "storage",
+        "fan",
+        "io"
+      ],
+      "boardOrder": [
+        "cpu",
+        "pcie",
+        "pch",
+        "history",
+        "m2",
+        "vrm",
+        "tpm",
+        "storage",
+        "fan",
+        "io",
+        "dimm",
+        "power"
+      ],
+      "escapeRestoresFocus": true
+    },
+    "browserRestart": "The same on-disk profile retained dark after a browser restart with a light OS preference."
+  },
+  "engines": {
+    "chromium": {
+      "version": "157.0.8103.79",
+      "firstVisit": {
+        "finish": "light",
+        "surface": "rgb(255, 255, 255)",
+        "scheme": "light",
+        "theme": "#FFFFFF",
+        "checked": "false",
+        "switchVisible": true
+      },
+      "passiveAnimations": 0,
+      "darkReloadAndSiblingDocument": true,
+      "otherTabFollows": true,
+      "spaceAndEnter": true,
+      "reducedActiveAnimations": [],
+      "print": {
+        "surface": "rgb(255, 255, 255)",
+        "scheme": "light"
+      },
+      "blockedStore": true,
+      "jsOff": {
+        "finish": null,
+        "surface": "rgb(255, 255, 255)",
+        "scheme": "light",
+        "theme": "Canvas",
+        "checked": "false",
+        "switchVisible": false
+      },
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    "firefox": {
+      "version": "159.0",
+      "firstVisit": {
+        "finish": "light",
+        "surface": "rgb(255, 255, 255)",
+        "scheme": "light",
+        "theme": "#FFFFFF",
+        "checked": "false",
+        "switchVisible": true
+      },
+      "passiveAnimations": 0,
+      "darkReloadAndSiblingDocument": true,
+      "otherTabFollows": true,
+      "spaceAndEnter": true,
+      "reducedActiveAnimations": [],
+      "print": {
+        "surface": "rgb(255, 255, 255)",
+        "scheme": "light"
+      },
+      "blockedStore": true,
+      "jsOff": {
+        "finish": null,
+        "surface": "rgb(255, 255, 255)",
+        "scheme": "light",
+        "theme": "Canvas",
+        "checked": "false",
+        "switchVisible": false
+      },
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    "webkit": {
+      "version": "27.2",
+      "firstVisit": {
+        "finish": "light",
+        "surface": "rgb(255, 255, 255)",
+        "scheme": "light",
+        "theme": "#FFFFFF",
+        "checked": "false",
+        "switchVisible": true
+      },
+      "passiveAnimations": 0,
+      "darkReloadAndSiblingDocument": true,
+      "otherTabFollows": true,
+      "spaceAndEnter": true,
+      "reducedActiveAnimations": [],
+      "print": {
+        "surface": "rgb(255, 255, 255)",
+        "scheme": "light"
+      },
+      "blockedStore": true,
+      "jsOff": {
+        "finish": null,
+        "surface": "rgb(255, 255, 255)",
+        "scheme": "light",
+        "theme": "Canvas",
+        "checked": "false",
+        "switchVisible": false
+      },
+      "pageErrors": [],
+      "externalRequests": []
+    }
+  },
+  "noContentFlash": {
+    "chromium": [
+      {
+        "time": 212.3,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 228.9,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 245.7,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 262.3,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 279,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 295.6,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 312.3,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 329,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      }
+    ],
+    "firefox": [
+      {
+        "time": 220.8,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 228.3,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 234.6,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 248.6,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 255.3,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 263,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 269.9,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 276.2,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      }
+    ],
+    "webkit": [
+      {
+        "time": 229,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 254,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 261,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 275,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 289,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 303,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 317,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      },
+      {
+        "time": 330,
+        "finish": "dark",
+        "background": "rgb(10, 10, 11)"
+      }
+    ]
+  },
+  "transfer": {
+    "fonts": [
+      [
+        "IBM Plex Sans",
+        "loaded"
+      ],
+      [
+        "IBM Plex Mono",
+        "loaded"
+      ],
+      [
+        "Plex fallback",
+        "loaded"
+      ],
+      [
+        "Plex Mono fallback",
+        "unloaded"
+      ]
+    ],
+    "artBytes": 68661,
+    "js": [
+      [
+        "/redesign/preview/finish.js",
+        1625
+      ],
+      [
+        "/redesign/preview/board.js",
+        2288
+      ]
+    ]
+  }
+}
