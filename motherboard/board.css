@@ -5,6 +5,7 @@ a { color: inherit; text-decoration-thickness: .08em; text-underline-offset: .24
 button, summary { color: inherit; font: inherit; }
 button, a, summary { touch-action: manipulation; }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.station a:focus-visible { box-shadow: 0 0 0 8px var(--surface); }
 ::selection { background: var(--accent); color: var(--on-accent); }
 h1, h2, h3, p, ol, ul { margin: 0; }
 ul, ol { padding: 0; }
@@ -279,9 +280,11 @@ svg text { font-family: var(--mono); }
 @media (max-height: 27em) and (orientation: landscape) {
   .hero { padding-top: .85rem; }
 }
-.cpu-name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 .36rem; }
-.cpu-face .cpu-name small { position: static; }
-.cpu-face .cpu-name b { font: 400 clamp(.85rem,1.8cqw,1.2rem)/1.16 var(--mono); letter-spacing: -.06em; }
+.cpu-name { display: flex; width: 100%; align-items: baseline; justify-content: space-between; gap: .25rem; }
+.cpu-face .cpu-name small { position: static; flex: none; }
+.cpu-face .cpu-name b { font: 650 clamp(.875rem,2cqw,1.35rem)/1.05 var(--sans); letter-spacing: -.035em; }
+.cpu-role-mark { text-decoration: none; letter-spacing: .04em; }
+.cpu-model { font: 650 .75rem/1.15 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 .makers-mark { display: block; width: 2.4rem; height: auto; margin-bottom: .9rem; }
 @media (max-width: 52em), (max-aspect-ratio: 1/1) {
   .cpu-face .cpu-name b { font-size: 1.1rem; }
@@ -367,4 +370,26 @@ svg text { font-family: var(--mono); }
     opacity: var(--mast-etch-opacity);
   }
   .fault-drawing { position: relative; z-index: 3; }
+}
+
+/* Paragraphs share a reading edge. Short labels, headings and control names
+   keep their natural spacing. Lists retain a hanging edge for their markers. */
+:where(main p, footer p, figcaption, dd, .case-article li, .detail-body li) {
+  text-align: justify;
+  text-align-last: start;
+}
+.case-workflow li p { text-align: start; }
+:where(.hero .intro, .section-intro, .project-description, .project-tagline,
+  .detail-body p, .service p, .si-offer p, .section-footer p,
+  .experience-description, .recruiter-note p, .process-list p,
+  .security-principles p, .security-signoff p, .fitness-practices p,
+  .contact-intro, .case-hero-detail .case-lead, .case-section > p,
+  .case-callout p, .ov-feature p, .ov-node p, .ov-assessment-note,
+  .ov-assessment-list dd, .ov-stack dd) {
+  text-indent: clamp(.75rem, 2vw, 1.2rem);
+  hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+}
+@media print {
+  body :where(p, dd, li, figcaption) { hyphens: manual; }
 }
