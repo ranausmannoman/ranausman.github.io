@@ -9,6 +9,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 h1, h2, h3, p, ol, ul { margin: 0; }
 ul, ol { padding: 0; }
 [hidden] { display: none !important; }
+/* The head has chosen a finish. Reserve the parsed control's space until its state is bound. */
+:root[data-finish] .switch[hidden] { display: inline-flex !important; visibility: hidden; }
 .sr-only, .skip:not(:focus) { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; white-space: nowrap; }
 .skip:focus { position: fixed; z-index: 10; top: 6px; left: 8px; padding: .65rem 1rem; background: var(--surface); }
 .page, .mast-inner { width: min(calc(100% - 2 * var(--gutter)), 100rem); margin-inline: auto; }
