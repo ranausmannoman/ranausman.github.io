@@ -11,8 +11,9 @@
   --accent-soft: #EFEAFE;
   --on-accent: #FFFFFF;
   --trace: #8B5CF6;
-  --etch-opacity: .23;
-  --mast-etch-opacity: .18;
+  --etch-opacity: .27;
+  --bracket-link: var(--ink);
+  --mast-etch-opacity: .21;
   --metal-1: #D5D7DD;
   --metal-2: #A3A8B3;
   --metal-3: #6F7480;
@@ -38,6 +39,7 @@
     --on-accent: #0A0A0B;
     --trace: #C9A30D;
     --etch-opacity: .105;
+    --bracket-link: var(--accent);
     --mast-etch-opacity: .085;
     --metal-1: #2E2E33;
     --metal-2: #4A4A51;

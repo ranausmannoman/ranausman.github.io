@@ -23,7 +23,7 @@
 }
 .case-metal-bracket::before { top: .85rem; }.case-metal-bracket::after { bottom: .85rem; }
 .case-metal-bracket nav { display: flex; flex-direction: column; gap: .45rem; width: 100%; }
-.case-metal-bracket a { color: var(--ink); font: 500 .875rem/1.45 var(--sans); }
+.case-page .case-metal-bracket a { color: var(--bracket-link); font: 500 .875rem/1.45 var(--sans); }
 .case-card-body { position: relative; min-width: 0; padding: clamp(1.25rem, 3vw, 3rem); }
 .case-card-body::before {
   content: ''; position: absolute; inset: .5rem 1.35rem auto auto; width: 4.6rem; height: .38rem;
@@ -61,6 +61,7 @@
 .case-toc a { padding-inline: .6rem; }
 .case-toc a[aria-current="location"] { background: var(--accent-soft); color: var(--ink); box-shadow: inset 3px 0 var(--accent); font-weight: 600; }
 .case-toc a span, .case-chapter { flex: none; color: var(--accent); font: .75rem/1.5 var(--mono); }
+.case-toc a[aria-current] span { color: var(--accent-strong); }
 .case-toc a:hover, .case-toc a:focus-visible { text-decoration: underline; }
 .case-article { min-width: 0; width: min(100%,72ch); }
 .case-section + .case-section { margin-top: clamp(1.6rem,3.5vw,3rem); padding-top: clamp(1.6rem,2.8vw,2.5rem); border-top: 1px solid var(--line); }
